@@ -111,8 +111,9 @@ Workflows
 Creating themes
 ---------------
 
-You can create a theme via the make:theme order. By default this will create an
-embeded theme. Similarly you can create a style in that theme.
+You can create a theme via the `make:theme` order. By default this will create 
+an embeded theme. Similarly you can create a style in that theme via 
+`make:style`.
 
 You may move your theme anywhere if you wish and simply map it in your 
 `environmnet.php` file. Typically you want to do this for the main themes in 
