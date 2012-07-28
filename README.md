@@ -70,12 +70,14 @@ it you can among other things create modules (`make:module`) & classes
 (`make:class`). 
 
  * When creating modules via overlord, you can pass the `--sandbox-template` 
-flag to create a module for writing shortcircuits, for the purpose of debugging.
+flag to create a module for writing "shortcircuits", for the purpose of 
+debugging complex operations in your code. Once activated the `/sandbox/` route
+will point to your shortcircuted snippet.
 
  * The `--mockup-template` is another `make:module` flag that creates a mockup
 module which makes life easier for designers. The mockup module gives admin 
-rights to guest users and creates a path /mockup/ where designers can view
-theme targets, create dummy content and and view pages with different access
+rights to guest users and creates a path `/mockup/` where designers can view
+theme targets, create dummy content and view pages with different access
 levels.
 
  * When creating classes you can specify is tests should be auto-generated via
