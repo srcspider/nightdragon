@@ -59,7 +59,7 @@ General Tips
 ============
 
  * All non-class files are located in `+App` in each module. This includes 
-configuration files (`+App/config/`), translation files (`+App/lang`), views,
+configuration files (`+App/config`), translation files (`+App/lang`), views,
 themes, etc.
 
  * If you create a module and need to use a third party component the best way
