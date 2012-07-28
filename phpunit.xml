@@ -1,0 +1,19 @@
+<phpunit colors="true" bootstrap="setup.php">
+
+	<php>
+		<env name="IS_UNITTEST" value="yes" />
+	</php>
+
+	<testsuites>
+		<testsuite name="project">
+			<directory>modules/.</directory>
+		</testsuite>
+	</testsuites>
+
+	<testsuites>
+		<testsuite name="ibidem">
+			<directory>plugins/ibidem/.</directory>
+		</testsuite>
+	</testsuites>
+
+</phpunit>

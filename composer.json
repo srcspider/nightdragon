@@ -1,0 +1,167 @@
+{
+	"name": "example/template",
+	"version": "0.0",
+	"description": "tempate",
+	"keywords": ["template"],
+	"type": "library",
+	"license": "BSD-2",
+
+	"minimum-stability": "dev",
+
+	"require": {
+		"php": ">=5.4.0",
+		"ibidem/cfs": "*",
+		"ibidem/types": "*",
+		"ibidem/base": "*",
+		"ibidem/theme": "*",
+		"ibidem/cache": "*",
+		"ibidem/access": "*",
+		"ibidem/backend": "*",
+		"ibidem/legacy": "*",
+		"ibidem/schematics" : "*"
+	},
+
+	"config": {
+		"vendor-dir": "plugins",
+		"bin-dir": "plugins/binary"
+	},
+
+	"repositories": {
+		"reference/ibidem/cfs": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/cfs",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-cfs.git",
+					"type": "git",
+					"reference": "ibidem/php5.4"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\cfs": "../.."}
+				}
+			}
+		},
+		"reference/ibidem/types": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/types",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-types.git",
+					"type": "git",
+					"reference": "ibidem/php5.4"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\types": "../.."}
+				}
+			}
+		},
+		"reference/ibidem/base": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/base",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-base.git",
+					"type": "git",
+					"reference": "ibidem/php5.4"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\base": "../.."}
+				}
+			}
+		},
+		"reference/ibidem/theme": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/theme",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-theme.git",
+					"type": "git",
+					"reference": "ibidem/php5.4"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\theme": "../.."}
+				}
+			}
+		},
+		"reference/ibidem/cache": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/cache",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-cache.git",
+					"type": "git",
+					"reference": "ibidem/php5.4"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\cache": "../.."}
+				}
+			}
+		},
+		"reference/ibidem/access": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/access",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-access.git",
+					"type": "git",
+					"reference": "ibidem/php5.4"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\access": "../.."}
+				}
+			}
+		},
+		"reference/ibidem/backend": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/backend",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-backend.git",
+					"type": "git",
+					"reference": "ibidem/php5.4"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\backend": "../.."}
+				}
+			}
+		},
+		"reference/ibidem/legacy": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/legacy",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-legacy.git",
+					"type": "git",
+					"reference": "ibidem/php5.3"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\legacy": "../.."}
+				}
+			}
+		},
+		"reference/ibidem/schematics": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/schematics",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-schematics.git",
+					"type": "git",
+					"reference": "master"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\schematics": "../.."}
+				}
+			}
+		}
+	}
+		
+}
