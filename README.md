@@ -166,7 +166,7 @@ flags will be read and sent to your Task_* class. You can access them via
 Creating backends
 -----------------
 
-Backends are basically a way of easily creating cross-application interfaces for
+Backends are a way of easily creating cross-application interfaces for
 managing your application. They are not designed for users but the system 
 administrators. Management of generic functionality for which you've created
 modules should be done via backends, if at all possible.
