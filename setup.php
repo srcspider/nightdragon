@@ -85,9 +85,3 @@ if (\file_exists(PLGPATH.$ds.'autoload'.EXT))
 
 // done; cleaning up
 unset($ds, $cfspath);
-
-// fix PHP Bug #62339 (we preload them)
-// "zend_mm_heap corrupted when trait is autoloaded after a class that uses it."
-// should be fix'ed in PHP 5.4.4 and later... hopefully.
-\trait_exists('\app\Trait_Document', true);
-\trait_exists('\app\Trait_Params', true);
