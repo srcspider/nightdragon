@@ -18,7 +18,7 @@ You will also need to do some basic configuration before things will work:
 <pre>
 cd www.draft
 cp .htaccess.sample .htaccess
-cp .config.sample.php config.php
+cp config.sample.php config.php
 </pre>
 
 You will need to set the domain in the new `config.php` file. And if the project
