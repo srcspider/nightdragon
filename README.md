@@ -11,7 +11,23 @@ curl -s http://getcomposer.org/installer | php
 php composer.phar install
 </pre>
 
-On windows use git bash and have php in your path.
+(On windows use git bash and have php in your path.)
+
+You will also need to do some basic configuration before things will work:
+
+<pre>
+cd www.draft
+cp .htaccess.sample .htaccess
+cp .config.sample.php config.php
+</pre>
+
+You will need to set the domain in the new `config.php` file. And if the project
+files are located somewhere else then the parent directory to the public docs
+also set the `system.dir` to point to the root of the project.
+
+If you're using a directory instead of the domain root, you will also need to
+set the correct rewrite base in the new `.htaccess` file as well as the `path` 
+in the new `config.php` file.
 
 Running Tests
 =============
@@ -336,3 +352,103 @@ can be useful when using modules but not using the modules relays.
 You can also overwrite a relays route declaration to serve your needs, if 
 somehow a relay in a module conflicts with a path you wish to have in your 
 application.
+
+Schematics
+----------
+
+Schematics are used as a means of creating/migrating your database.
+
+Any schematic is composed of two elements, the channel+nominator and the serial
+number. The channel and nominator categorize the schematic and map it to a class
+while the serial identifies the target version to which the channel of the 
+schematic will be at after it is applied.
+
+A channel+nominator looks like this `default:demo-init`. The channel serves to
+isolate the migration operations. Different channels can have the same serial,
+but the same channel needs unique serials, except for jump serials. The 
+nominator specifies the rest of the class. Semicolons and dashes are converted 
+to spaces and the Schematic_ prefix is added to obtain the class. For the 
+example the class would be `Schamtic_Default_Demo_Init`.
+
+Since the class mapping can go deep, you can use the command 
+`db:schematic -n yournamespace -s default:demo-init` to have it created for you.
+
+All Schematic class files may define (at most) 4 operations: up, down, move, 
+build. `up` is where code for creating database structures should be placed, 
+`down` on the other hand is where teardown code is placed. `build` is for 
+operation that populate the database, and `move` is for operations that either
+add new structural elements, convert existing ones, etc.
+
+For ease of use (with simple schematics) the methods `create`, `destroy`, and
+`update` from the class `\app\Schematic` may be used. This are not necessary 
+for the schematic to function however; any approach may be applied as long as
+the 4 methods maintain the purpose defined above.
+
+Example `up`
+<pre>
+function up()
+{
+	\app\Schematic::create($this->serial, '\app\Model_Example');
+}
+</pre>
+
+Example `down`
+<pre>
+function down() 
+{
+	\app\Schematic::destroy
+		(
+			\app\Model_Example::table()
+		);
+}
+</pre>
+
+Example `build`
+<pre>
+function build()
+{
+	\app\Model_Example::assemble(array('message' => 'hello, world'));
+}
+</pre>
+
+Example `move`
+<pre>
+function move()
+{
+	\app\Schematic::update($this->serial, '\app\Model_Example');
+}
+</pre>
+
+All migrations need to be defined in the `steps` category of a 
+`ibidem/schematics` configuration file.
+
+Example:
+<pre>
+'steps' => array
+	(
+		'default:demo-init'    => [ 'serial' => '1:0-default' ],
+		'default:demo-update1' => [ 'serial' => '2:0-default' ],
+		'default:demo-update2' => [ 'serial' => '2:1-default' ],
+	),
+</pre>
+
+Serials are read as follows: The first number is the version number. Smaller
+numbers are executed before larger numbers. The 2nd, 3rd etc (to infinity) 
+numbers are priority numbers, larger numbers are executed first. The word(s) 
+after the dash is the tag. A tag is basically a branch in a tree of schematics 
+in a channel. Tags are used to differentiate between two possible database 
+versions with conflicting outcomes (such a different 
+interpretation/representation of particular feature in the application). Mostly 
+you just deal with the `default` tag. 
+
+The basic commands for managing schematics are,
+
+ * `db:schematic` (mentioned earlier) for easily creating schematic classes
+ * `db:init` for initializing the database; required for most operations
+ * `db:version` for checking current database channel serials
+ * `db:uninstall` for running teardown code
+ * `db:install` for running teardown code then building everything to the latest
+defined schematic
+ * `db:reset` for doing an install to a set serial, instead of the latest
+ * `db:upgrade` for performing all schematics from the last schematic (not 
+including) to the latest one.

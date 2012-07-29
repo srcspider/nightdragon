@@ -12,6 +12,8 @@ $system_config = include 'config.php';
 
 require $system_config['system.dir'].'setup.php';
 
+\app\Lang::lang($system_config['lang']);
+
 // go though all relays
 \app\Relay::check_all();
 

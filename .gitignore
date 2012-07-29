@@ -2,6 +2,7 @@
 +App/logs/*
 +App/cache/*
 www.draft/config.php
+www.draft/.htaccess
 
 # Composer junk
 plugins/*
