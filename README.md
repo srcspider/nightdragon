@@ -419,7 +419,7 @@ function move()
 }
 </pre>
 
-All migrations need to be defined in the `steps` category of a 
+All schematics need to be defined in the `steps` category of a 
 `ibidem/schematics` configuration file.
 
 Example:
