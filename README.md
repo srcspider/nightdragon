@@ -371,11 +371,12 @@ while the serial identifies the target version to which the channel of the
 schematic will be at after it is applied.
 
 A channel+nominator looks like this `default:demo-init`. The channel serves to
-isolate the migration operations. Different channels can have the same serial,
-but the same channel needs unique serials, except for jump serials. The 
-nominator specifies the rest of the class. Semicolons and dashes are converted 
-to spaces and the Schematic_ prefix is added to obtain the class. Thus, the 
-class for our earlier example would be `Schamtic_Default_Demo_Init`.
+isolate the migration operations. Different channels can have the same serial
+mean different things, but the same channel needs serials to mean a clearly 
+defined point in the codebases lifecycle, except for jump serials. The nominator 
+specifies the rest of the class. Semicolons and dashes are converted to spaces 
+and the Schematic_ prefix is added to obtain the class. Thus, the class for our 
+earlier example would be `Schamtic_Default_Demo_Init`.
 
 Since the class mapping can go deep, you can use the command 
 `db:schematic -n yournamespace -s default:demo-init` to have it created for you.
