@@ -29,6 +29,13 @@ If you're using a directory instead of the domain root, you will also need to
 set the correct rewrite base in the new `.htaccess` file as well as the `path` 
 in the new `config.php` file.
 
+On production environment it's best to just use the `mv` command instead of the
+`cp` command to avoid the duplicate files.
+<pre>
+mv .htaccess.sample .htaccess
+mv config.sample.php config.php
+</pre>
+
 Running Tests
 =============
 
