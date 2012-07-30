@@ -387,16 +387,25 @@ build. `up` is where code for creating database structures should be placed,
 operation that populate the database, and `move` is for operations that either
 add new structural elements, convert existing ones, etc.
 
-For ease of use (with simple schematics) the methods `create`, `destroy`, and
-`update` from the class `\app\Schematic` may be used. This are not necessary 
-for the schematic to function however; any approach may be applied as long as
-the 4 methods maintain the purpose defined above.
+For ease of use (with simple schematics) the methods `constraints`, `table`, 
+`processor`, `destroy`, and `update` from the class `\app\Schematic` may be 
+used. This are not necessary for the schematic to function however; any approach 
+may be applied as long as the 4 methods maintain the purpose defined above.
 
 Example `up`
 <pre>
 function up()
 {
-	\app\Schematic::create($this->serial, '\app\Model_Example');
+	\app\Schematic::table
+		(
+			\app\Model_Example::table(),
+			'
+				`id`        :key_primary,
+				`message`   varchar(255),
+
+				PRIMARY KEY(`id`)
+			'
+		);
 }
 </pre>
 
@@ -423,7 +432,66 @@ Example `move`
 <pre>
 function move()
 {
-	\app\Schematic::update($this->serial, '\app\Model_Example');
+	\app\Schematic::alter
+		(
+			\app\Model_Example::table(),
+			'
+				ADD COLUMN `user` :key_foreign AFTER `message`
+			'
+		);
+}
+</pre>
+
+Example `constraints`
+<pre>
+function bind()
+{
+	\app\Schematic::constraints
+		(
+			[
+				\app\Model_Example::table() => array
+					(
+						'user' => [ \app\Model_User::table(), 'CASCADE', 'CASCADE' ],
+					),
+			]
+		);
+}
+</pre>
+
+Example `processor`
+<pre>
+function move()
+{
+	// [...]
+
+	$sql_update_birthday = \app\SQL::prepare
+		(
+			__METHOD__.':update_birthday',
+			'
+				UPDATE `'.\app\Model_Profile::table().'`
+				   SET birthday = :birthday
+				 WHERE user = :user
+			',
+			'mysql'
+		)
+		->bind(':user', $user)
+		->bind(':birthday', $birthday);
+		
+	\app\Schematic::processor
+		(
+			\app\Model_Profile::table(), 
+			\app\Model_Profile::count(),
+			function ( & $profile) use ($sql_update_birthday, $user, $birthday)
+			{
+				if (static::valid_ssn($profile['ssn']))
+				{
+					$user = $profile['user'];
+					$birthday = static::ssn_to_birthday($user['ssn']);
+					$sql_update_birthday->execute();
+				}
+			},
+			1000 # how many rows to process at a time
+		);
 }
 </pre>
 
