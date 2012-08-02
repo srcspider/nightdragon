@@ -8,7 +8,7 @@ if (PHP_VERSION_ID < 50400)
 }
 
 // define PUBDIR
-\define('PUBDIR', \realpath(\dirname(\dirname(__FILE__).DIRECTORY_SEPARATOR.'..')).DIRECTORY_SEPARATOR);
+\define('PUBDIR', \realpath(\dirname(\dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..')).DIRECTORY_SEPARATOR);
 
 $system_config = include '../config.php';
 

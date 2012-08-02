@@ -10,6 +10,13 @@ if (PHP_VERSION_ID < 50400)
 
 $system_config = include 'config.php';
 
+
+if ($system_config['maintanence']['enabled'] && $_GET['bypass'] !== $system_config['maintanence']['bypass'])
+{
+	require 'downtime.php';
+	exit;
+}
+
 require $system_config['system.dir'].'setup.php';
 
 \app\Lang::lang($system_config['lang']);
