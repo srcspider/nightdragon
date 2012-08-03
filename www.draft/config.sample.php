@@ -5,7 +5,7 @@ return array
 		'maintanence' => array
 			(
 				'enabled' => true,
-				'bypass' => 'thereisnocowlevel', # allows you to bypass the 503
+				'passcode' => 'thereisnocowlevel', # allows you to bypass the 503
 			
 				// specify a retry so crawlers don't miss-mark the site
 				'retry-after' => null, # format: Sat, 8 Oct 2011 18:27:00 GMT

@@ -10,8 +10,8 @@ if (PHP_VERSION_ID < 50400)
 
 $system_config = include 'config.php';
 
-
-if ($system_config['maintanence']['enabled'] && $_GET['bypass'] !== $system_config['maintanence']['bypass'])
+// downtime?
+if ($system_config['maintanence']['enabled'] && ( ! isset($_GET['passcode']) || $_GET['passcode'] !== $system_config['maintanence']['passcode']))
 {
 	require 'downtime.php';
 	exit;

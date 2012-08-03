@@ -1,8 +1,7 @@
 <?php namespace app;
 
-// The following is just a sneaky way of specifying relays so we don't have to 
-// edit this file each time we add a new one; you can add handling for types
-// we you'll (eventually) need JSON relays, etc.
+// The following is a sneaky way of specifying relays so we don't have to edit 
+// this file each time we add a new one; you can add handling for types you need
 
 $mvc_stack = function ($relay, $target)
 	{
