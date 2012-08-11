@@ -23,7 +23,9 @@
 		'themes' => array
 			(
 				// explicit themes; themes can also just be embeded in modules,
-				// in which case there's no need for them to appear here.
+				// in which case there's no need for them to appear here. If you
+				// need to package configuration files such as language files
+				// you can also create as a file path
 				'classic' => DOCROOT.'themes/classic',
 			),
 	);
