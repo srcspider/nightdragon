@@ -5,8 +5,10 @@
 				// project modules
 				MODPATH.'demo' => 'demo',
 			
-				// library modules
+				// library legacy code
 				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'legacy' => 'ibidem\legacy',
+			
+				// library modules
 				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'backend' => 'ibidem\backend',
 				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'access' => 'ibidem\access',
 				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'base' => 'ibidem\base',
