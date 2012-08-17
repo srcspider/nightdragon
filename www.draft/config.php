@@ -1,5 +1,6 @@
 <?php \defined('PUBDIR') or die;
 
+// this file can be accessed in your app as the 'ibidem/base' configuration
 return array
 	(
 		// required information
@@ -27,7 +28,7 @@ return array
 		'caching' => true,
 	
 		// path on system to private files (password, etc), these act as any 
-		// typical file-only module
+		// typical file-only module; you may have config files, etc
 		'private.files' => \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'..')
 			. DIRECTORY_SEPARATOR.'ibidem.private'.DIRECTORY_SEPARATOR,
 

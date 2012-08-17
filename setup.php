@@ -26,7 +26,14 @@ CFS::modules($env_config['modules']);
 // allow application to store and overwrite config files, routes, etc; 
 // everything except classes. You should always define your classes in 
 // appropriate modules in the MODPATH
-CFS::add_frontpaths(array(APPPATH));
+CFS::add_frontpaths([APPPATH]);
+
+// attempt to load private configuration
+$pubdir_config = include PUBDIR.'config'.EXT;
+if (isset($pubdir_config['private.config']) && \file_exists($pubdir_config['private.config']))
+{
+	\app\CFS::add_frontpaths([$pubdir_config['private.config']]);
+}
 
 // you are not suppose to overwrite namespaces and abstracts; that's a misuse. 
 // hence it makes no sense to search for them in \app\Class calls. Namespaces
