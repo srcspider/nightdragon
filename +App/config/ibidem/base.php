@@ -13,6 +13,9 @@ else # PUBDIR not defined
 	// probably cli or something else
 	return array
 		(
-			// empty (assume system defaults)
+			// assume private files are just outside the project; customize
+			// this to actual path if not valid
+			'private.files' => \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'../../../..')
+				. DIRECTORY_SEPARATOR.'ibidem.private'.DIRECTORY_SEPARATOR,
 		);
 }

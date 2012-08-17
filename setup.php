@@ -29,10 +29,21 @@ CFS::modules($env_config['modules']);
 CFS::add_frontpaths([APPPATH]);
 
 // attempt to load private configuration
-$pubdir_config = include PUBDIR.'config'.EXT;
-if (isset($pubdir_config['private.config']) && \file_exists($pubdir_config['private.config']))
+if (\defined('PUBDIR'))
 {
-	\app\CFS::add_frontpaths([$pubdir_config['private.config']]);
+	$pubdir_config = include PUBDIR.'config'.EXT;
+	if (isset($pubdir_config['private.config']) && \file_exists($pubdir_config['private.config']))
+	{
+		\app\CFS::add_frontpaths([$pubdir_config['private.config']]);
+	}
+}
+else # console or other
+{
+	$base_config = include APPPATH.'config/ibidem/base'.EXT;
+	if (\file_exists($base_config['private.files']))
+	{
+		\app\CFS::add_frontpaths([$base_config['private.files']]);
+	}
 }
 
 // you are not suppose to overwrite namespaces and abstracts; that's a misuse. 
