@@ -27,6 +27,8 @@ $theme_resources = function ($relay, $target)
 	};
 
 \app\Relay::process('\ibidem\theme\Layer_Theme::style', $theme_resources);
+\app\Relay::process('\ibidem\theme\Layer_Theme::script-map', $theme_resources);
+\app\Relay::process('\ibidem\theme\Layer_Theme::script-src', $theme_resources);
 \app\Relay::process('\ibidem\theme\Layer_Theme::script', $theme_resources);
 \app\Relay::process('\ibidem\theme\Layer_Theme::resource', $theme_resources);
 
