@@ -9,7 +9,7 @@ $ds = DIRECTORY_SEPARATOR;
 // set the full path to the docroot
 \define('DOCROOT', \realpath(\dirname(__FILE__)).$ds);
 
-$cfspath = DOCROOT.'plugins'.$ds.'ibidem'.$ds.'cfs'.$ds.'+App'.$ds;
+$cfspath = DOCROOT.'vendor'.$ds.'ibidem'.$ds.'cfs'.$ds.'+App'.$ds;
 
 // we load the default environment; if you want custom APPPATH, MODPATH, PLGPATH
 // simply define them before this statement, they will not be redefined.

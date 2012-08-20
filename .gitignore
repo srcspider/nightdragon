@@ -3,7 +3,7 @@
 +App/cache/*
 
 # Composer junk
-plugins/*
+vendor/*
 composer.phar
 composer.lock
 
