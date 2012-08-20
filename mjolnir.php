@@ -13,7 +13,7 @@ $cfspath = DOCROOT.'plugins'.$ds.'ibidem'.$ds.'cfs'.$ds.'+App'.$ds;
 
 // we load the default environment; if you want custom APPPATH, MODPATH, PLGPATH
 // simply define them before this statement, they will not be redefined.
-require $cfspath.'default.environment.php';
+require $cfspath.'default.mjolnir.php';
 
 
 # ---- Modules --------------------------------------------------------------- #

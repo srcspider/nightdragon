@@ -7,37 +7,61 @@ Project Title
 Installing dependencies...
 
 <pre>
-curl -s http://getcomposer.org/installer | php
-php composer.phar install
+install
 </pre>
 
 (On windows use git bash and have php in your path.)
 
 You will also need to do some basic configuration before things will work:
 
-<pre>
-cd www.draft
-cp .htaccess.sample .htaccess
-cp config.sample.php config.php
-</pre>
-
-You will need to set the domain in the new `config.php` file. And if the project
-files are located somewhere else then the parent directory to the public docs
-also set the `system.dir` to point to the root of the project.
+ * you will need to set the domain in the new `config.php` file 
+ * if the project files are located somewhere else then the parent directory to 
+the public docs also set the `system.dir` to point to the root of the project
+ * if the private files (database configuration, passwords, keys, etc) are 
+located anywhere else other then the directory directly above you will need to 
+edit the `private.files` variable
 
 If you're using a directory instead of the domain root, you will also need to
-set the correct rewrite base in the new `.htaccess` file as well as the `path` 
-in the new `config.php` file.
+set the correct rewrite base in the `www.draft/.htaccess` file as well as the 
+`path` in the `www.draft/config.php` file.
 
-On production environment it's best to just use the `mv` command instead of the
-`cp` command to avoid the duplicate files.
-<pre>
-mv .htaccess.sample .htaccess
-mv config.sample.php config.php
-</pre>
+The `www.draft` directory is where all the files that need to be in your public
+directory are located.
 
 Running Tests
 =============
+
+Unit testing is supported via PHPUnit, behaviour testing is supported via behat.
+
+It is recommended...
+
+ * only write either unit tests or behaviour tests
+ * you write behaviour tests ;)
+
+<b>To run behaviour tests</b> you simply need to have a `behat.yaml` somewhere 
+in your system (it is recomended you place them in `+App/features`). Then run:
+
+<pre>
+order run:behat
+</pre>
+(yes, no parameters)
+
+The framework will scan and run the behat command on the `behat.yaml`. Note that
+all paths in your `behat.yaml` are relative to the directory where the file is
+located. Here is the minimum `behat.yaml` file for the tests to run:
+
+<pre>
+default:
+  paths:
+    features:   '.'
+    bootstrap:  './bootstrap'
+</pre>
+
+The framework will only scan registered modules for `behat.yaml`s.
+
+<b>To run unit tests</b> simply call phpunit on the `phpunit.xml` configuration
+file. You may edit the file to suit your needs better. Any class that works with
+the Instantiatable class will allow you to replace itself with a mock.
 
 <pre>
 phpunit -c phpunit.xml
@@ -359,6 +383,35 @@ can be useful when using modules but not using the modules relays.
 You can also overwrite a relays route declaration to serve your needs, if 
 somehow a relay in a module conflicts with a path you wish to have in your 
 application.
+
+Creating Routes
+-----------------
+
+Relays are the default way of matching a request to a handler stack. 
+Unfortunately, relays are long as hell. In the case of a typical web application
+we have quite a lot of simply `some_pattern => some_key` matching, so to allow
+for easy definition of this we have routes.
+
+The syntax for a route is simply:
+<pre>
+	"the-<pattern>/goes/here"
+		=> [ 'key', [ 'param' => '/regex/' ], [ 'POST', 'GET', ... ],
+</pre>
+
+Example:
+<pre>
+<?php namespace app;
+
+$slug = [ 'slug' => '#[a-z-]+#' ];
+$id = [ 'id' => '#[0-9]+#' ];
+
+return array
+	(
+		// the 'GET' method is assumed when no methods are mentioned
+		"profile/<id>-<slug>"
+			=> [ 'profile', $key + $slug ],
+	),
+</pre>
 
 Schematics
 ----------

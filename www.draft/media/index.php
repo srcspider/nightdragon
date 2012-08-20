@@ -11,7 +11,7 @@ if (PHP_VERSION_ID < 50400)
 $system_config = include '../config.php';
 
 // require core files
-require $system_config['system.dir'].'setup.php';
+require_once $system_config['system.dir'].'mjolnir.php';
 
 // run as theme file request
 \app\Mjolnir::themes($system_config);
