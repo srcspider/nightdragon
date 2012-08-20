@@ -11,6 +11,9 @@
 	"require": {
 		"php": ">=5.4.0",
 		"behat/behat": "2.4.*@stable",
+		"behat/mink": "1.4@stable",
+		"behat/mink-zombie-driver": "*",
+		"behat/mink-sahi-driver": "*",
 		"ibidem/cfs": "*",
 		"ibidem/types": "*",
 		"ibidem/base": "*",
