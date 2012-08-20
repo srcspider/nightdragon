@@ -1,11 +1,22 @@
-<?php \defined('PUBDIR') or die;
+<?php
 
-// this file can be accessed in your app as the 'ibidem/base' configuration
+if (\realpath(__FILE__) == \realpath($_SERVER['SCRIPT_FILENAME']))
+{
+	header("HTTP/1.0 404 Not Found");
+	exit(1);
+}
+
+// define the public files directory
+if ( ! \defined('PUBDIR'))
+{
+	\define('PUBDIR', \realpath(\dirname(__FILE__)).DIRECTORY_SEPARATOR);
+}
+
 return array
 	(
 		// required information
 		'domain' => 'your.domain.tld',
-		'path' => '/', # must END and START with a /
+		'path' => '/', # must end and start with a /
 	
 		// turn on maintainence mode when performing long running modifications
 		// in a live environment; you can customize the placeholder downtime.php
@@ -28,7 +39,7 @@ return array
 		'caching' => true,
 	
 		// path on system to private files (password, etc), these act as any 
-		// typical file-only module; you may have config files, etc
+		// typical file-only module
 		'private.files' => \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'..')
 			. DIRECTORY_SEPARATOR.'ibidem.private'.DIRECTORY_SEPARATOR,
 

@@ -18,7 +18,9 @@
 		"ibidem/access": "*",
 		"ibidem/backend": "*",
 		"ibidem/legacy": "*",
-		"ibidem/schematics" : "*"
+		"ibidem/schematics" : "*",
+		"ibidem/database" : "*",
+		"ibidem/html" : "*"
 	},
 
 	"config": {
@@ -159,6 +161,36 @@
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\schematics": "../.."}
+				}
+			}
+		},
+		"reference/ibidem/html": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/html",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-html.git",
+					"type": "git",
+					"reference": "ibidem/php5.4"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\html": "../.."}
+				}
+			}
+		},
+		"reference/ibidem/database": {
+			"type": "package",
+			"package": {
+				"name": "ibidem/database",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/srcspider/ibidem-database.git",
+					"type": "git",
+					"reference": "ibidem/php5.4"
+				},
+				"autoload": {
+					"psr-0": {"ibidem\\database": "../.."}
 				}
 			}
 		}

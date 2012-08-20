@@ -1,15 +1,6 @@
 #!/usr/bin/env php
 <?php namespace app;
 
-// running on a the command line?
-if (\php_sapi_name() === 'cli')
-{
-	require 'setup.php';
+require 'setup.php';
 
-	Layer::stack
-		(
-			Layer_TaskRunner::instance()
-				->writer(Writer_Console::instance())
-				->args($_SERVER['argv'])
-		);
-}
+\app\Mjolnir::overlord();

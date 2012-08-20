@@ -15,6 +15,8 @@
 				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'cache' => 'ibidem\cache',
 				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'theme' => 'ibidem\theme',
 				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'schematics' => 'ibidem\schematics',
+				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'database' => 'ibidem\database',
+				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'html' => 'ibidem\html',
 			),
 		'namespaces' => array
 			(
