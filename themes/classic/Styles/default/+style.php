@@ -9,7 +9,6 @@
 		// common files
 		'common' => array
 			(
-				'lib/boilerplate-1.1', 
 				'unsorted'
 			),
 	
