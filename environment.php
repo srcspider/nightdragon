@@ -6,7 +6,7 @@
 				MODPATH.'demo' => 'demo',
 			
 				// library legacy code
-				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'legacy' => 'ibidem\legacy',
+#				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'legacy' => 'ibidem\legacy',
 			
 				// library modules
 				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'backend' => 'ibidem\backend',
