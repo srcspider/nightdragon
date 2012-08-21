@@ -41,7 +41,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-cfs.git",
 					"type": "git",
-					"reference": "wip/basic-api-refactoring"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\cfs": "../.."}
@@ -56,7 +56,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-types.git",
 					"type": "git",
-					"reference": "wip/basic-api-refactoring"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\types": "../.."}
@@ -71,7 +71,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-base.git",
 					"type": "git",
-					"reference": "wip/basic-api-refactoring"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\base": "../.."}
@@ -86,7 +86,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-theme.git",
 					"type": "git",
-					"reference": "wip/basic-api-refactoring"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\theme": "../.."}
@@ -101,7 +101,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-cache.git",
 					"type": "git",
-					"reference": "wip/basic-api-refactoring"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\cache": "../.."}
@@ -116,7 +116,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-access.git",
 					"type": "git",
-					"reference": "wip/basic-api-refactoring"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\access": "../.."}
@@ -131,7 +131,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-backend.git",
 					"type": "git",
-					"reference": "wip/basic-api-refactoring"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\backend": "../.."}
@@ -146,7 +146,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-legacy.git",
 					"type": "git",
-					"reference": "wip/basic-api-refactoring"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\legacy": "../.."}
@@ -176,7 +176,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-html.git",
 					"type": "git",
-					"reference": "wip/basic-api-refactoring"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\html": "../.."}
@@ -191,7 +191,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-database.git",
 					"type": "git",
-					"reference": "wip/basic-api-refactoring"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\database": "../.."}
