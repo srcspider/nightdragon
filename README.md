@@ -7,8 +7,10 @@ Project Title
 Installing dependencies...
 
 <pre>
-install
+install-vendor
 </pre>
+
+Alternatively, simply open install-vendor and use it as a guide.
 
 (On windows use git bash and have php in your path.)
 
