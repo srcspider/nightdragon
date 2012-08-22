@@ -44,9 +44,8 @@ It is recommended...
 in your system (it is recomended you place them in `+App/features`). Then run:
 
 <pre>
-order run:behat
+php order behat --ansi --expand
 </pre>
-(yes, no parameters)
 
 The framework will scan and run the behat command on the `behat.yaml`. Note that
 all paths in your `behat.yaml` are relative to the directory where the file is
