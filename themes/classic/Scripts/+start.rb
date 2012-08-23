@@ -26,7 +26,7 @@ def read_configuration()
 end#def
 
 def regenerate(key, files)
-	`java -jar compiler.jar --compilation_level SIMPLE_OPTIMIZATIONS --js #{files.join(' ')} --js_output_file ./closure/#{key}.min.js --create_source_map ./closure/#{key}.min.js.map --source_map_format=V3`;
+	`java -jar compiler.jar --compilation_level WHITESPACE_ONLY --js #{files.join(' ')} --js_output_file ./closure/#{key}.min.js --create_source_map ./closure/#{key}.min.js.map --source_map_format=V3`;
 end#def
 
 def process (r)
@@ -45,7 +45,7 @@ def process (r)
 	$config['targets'].each do |key, files|
 		files.each do |file|
 			if file.eql? r
-				puts ' >>> recompiling [#{key}]'
+				puts " >>> recompiling [#{key}]"
 				# regenerate the closure
 				regenerate(key, files);
 			end#if
