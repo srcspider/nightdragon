@@ -60,6 +60,10 @@ default:
 
 The framework will only scan registered modules for `behat.yaml`s.
 
+You may also imediatly follow the `php order behat` command with 
+`--feature "something"` to filter out all features except the ones that match
+the pattern.
+
 <b>To run unit tests</b> simply call phpunit on the `phpunit.xml` configuration
 file. You may edit the file to suit your needs better. Any class that works with
 the Instantiatable class will allow you to replace itself with a mock.
@@ -74,14 +78,18 @@ anywhere, but make sure to point phpunit.xml to that location.
 Overview
 ========
 
-`www.draft/` is a draft of the folder your users should be accessing. The 
-`media/static` folder on it's root is where general purpose static content 
+`drafts/www.apache/` is a draft of the folder your users should be accessing. 
+The `media/static` folder on it's root is where general purpose static content 
 should be placed. The `media/index.php` should contain all the dynamic media 
 handling. Use `thumbs` for basic thumbnails.
 
-`plugins/` contains external libraries and tools, be it modules or other 
+The `drafts/` folder may contain all sorts of other configuration files. For 
+example you could have a `www.ngnx/` directory, or a `sphinx.conf` file, or a 
+`php.ini` file, etc.
+
+`vendor/` contains external libraries and tools, be it modules or other 
 libraries that are not modules themselves but also not module dependent; such as 
-the autoloader
+the autoloader; vendor distributed binaries located in `vendor/binary` by default
 
 `modules/` contains your project modules. *All your code should go here!*
 
@@ -106,9 +114,9 @@ with the exception of some conditional phpunit configuration code.
 General Tips
 ============
 
- * All non-class files are located in `+App` in each module. This includes 
-configuration files (`+App/config`), translation files (`+App/lang`), views,
-themes, etc.
+ * All non-class files are located in the directory of `+App` in each module. 
+This includes configuration files (`+App/config`), translation files (`+App/lang`), 
+views, themes, etc (and also 3rd party files, `+App/vendor`).
 
  * If you create a module and need to use a third party component the best way
 is to just stick it into `+App/vendor` and load it into an adapter class.
