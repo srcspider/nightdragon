@@ -330,7 +330,7 @@ Here's an example:
 <pre>
 'frontend' => array
 	(
-		'route' => \app\Route_Pattern::instance()->standard('', []),
+		'matcher' => \app\Route_Pattern::instance()->standard('', []),
 		'controller' => '\app\Controller_Frontend',
 		'action' => 'action_index',
 	)
@@ -403,7 +403,7 @@ for easy definition of this we have routes.
 
 The syntax for a route is simply:
 <pre>
-	"the-<pattern>/goes/here"
+	"the-&lt;pattern&gt;/goes/here"
 		=> [ 'key', [ 'param' => '/regex/' ], [ 'POST', 'GET', ... ],
 </pre>
 
@@ -417,7 +417,7 @@ $id = [ 'id' => '#[0-9]+#' ];
 return array
 	(
 		// the 'GET' method is assumed when no methods are mentioned
-		"profile/<id>-<slug>"
+		"profile/&lt;id&gt;-&lt;slug&gt;"
 			=> [ 'profile', $key + $slug ],
 	),
 </pre>
