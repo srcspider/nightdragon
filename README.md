@@ -432,16 +432,16 @@ number. The channel and nominator categorize the schematic and map it to a class
 while the serial identifies the target version to which the channel of the 
 schematic will be at after it is applied.
 
-A channel+nominator looks like this `default:demo-init`. The channel serves to
+A channel+nominator looks like this `our-demo:base`. The channel serves to
 isolate the migration operations. Different channels can have the same serial
 mean different things, but the same channel needs serials to mean a clearly 
 defined point in the codebases lifecycle, except for jump serials. The nominator 
 specifies the rest of the class. Semicolons and dashes are converted to spaces 
-and the Schematic_ prefix is added to obtain the class. Thus, the class for our 
-earlier example would be `Schamtic_Default_Demo_Init`.
+and the `Schematic_` prefix is added to obtain the class. Thus, the class for our 
+earlier example would be `Schamtic_Our_Demo_Base`.
 
 Since the class mapping can go deep, you can use the command 
-`db:schematic -n yournamespace -s default:demo-init` to have it created for you.
+`make:schematic -n yournamespace -s our-demo:base` to have it created for you.
 
 All Schematic class files may define (at most) 4 operations: up, down, move, 
 build. `up` is where code for creating database structures should be placed, 
@@ -564,9 +564,9 @@ Example:
 <pre>
 'steps' => array
 	(
-		'default:demo-init'    => [ 'serial' => '1:0-default' ],
-		'default:demo-update1' => [ 'serial' => '2:0-default' ],
-		'default:demo-update2' => [ 'serial' => '2:1-default' ],
+		'namespace-something:base'            => [ 'serial' => '1:0-default' ],
+		'namespace-something:timestamp-field' => [ 'serial' => '2:0-default' ],
+		'namespace-something:assoc-to-X'      => [ 'serial' => '2:1-default' ],
 	),
 </pre>
 
@@ -581,12 +581,12 @@ you just deal with the `default` tag.
 
 The basic commands for managing schematics are,
 
- * `db:schematic` (mentioned earlier) for easily creating schematic classes
+ * `make:schematic` (mentioned earlier) for easily creating schematic classes
  * `db:init` for initializing the database; required for most operations
  * `db:version` for checking current database channel serials
  * `db:uninstall` for running teardown code
  * `db:install` for running teardown code then building everything to the latest
-defined schematic
+defined schematic (will run db:uninstall and db:init by itself)
  * `db:reset` for doing an install to a set serial, instead of the latest
  * `db:upgrade` for performing all schematics from the last schematic (not 
 including) to the latest one.
