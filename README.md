@@ -111,6 +111,26 @@ with the exception of some conditional phpunit configuration code.
 
 `composer.json` is your package management. See: http://getcomposer.org/
 
+Refactoring classes and methods
+===============================
+
+Refactoring methods in an IDE is quite straight forward. As long as the IDE has
+scanned the honeypot file and made the connection between classes, the process 
+should just work.
+
+Refactoring classes on the other hand is a 3-step process due to how IDE's need
+to be able to understand the link between the dynamic app namespace and regular
+namespaces.
+
+Steps:
+
+ * go to the honeypot file and refactor the app version
+ * then refactor the specific module version
+ * then change the file name of the class to match the new class name
+
+Note that methods you access in views though variables may not get refactored 
+if the IDE didn't get hinted to the type of the variable in that context.
+
 General Tips
 ============
 
