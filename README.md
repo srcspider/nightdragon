@@ -29,7 +29,7 @@ example) as well as the `path` in the `drafts/www.apache/config.php` file (again
 as an example if you're using apache). You should try not to use `.htaccess` 
 files but for simplicity this is the default for testing.
 
-The `drafts/www.&lt;server&gt;` directory is where all the files that need to be 
+The `drafts/www.<server>` directory is where all the files that need to be 
 in your public directory are located. Various settings such as configuration 
 files for things like sphinx, etc should also go in `drafts/`.
 
