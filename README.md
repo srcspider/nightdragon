@@ -24,11 +24,14 @@ located anywhere else other then the directory directly above you will need to
 edit the `private.files` variable
 
 If you're using a directory instead of the domain root, you will also need to
-set the correct rewrite base in the `www.draft/.htaccess` file as well as the 
-`path` in the `www.draft/config.php` file.
+set the correct rewrite base in the `drafts/www.apache/.htaccess` file (as an
+example) as well as the `path` in the `drafts/www.apache/config.php` file (again
+as an example if you're using apache). You should try not to use `.htaccess` 
+files but for simplicity this is the default for testing.
 
-The `www.draft` directory is where all the files that need to be in your public
-directory are located.
+The `drafts/www.&lt;server&gt;` directory is where all the files that need to be 
+in your public directory are located. Various settings such as configuration 
+files for things like sphinx, etc should also go in `drafts/`.
 
 Running Tests
 =============
