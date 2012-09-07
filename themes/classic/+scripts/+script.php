@@ -23,6 +23,25 @@
 					(
 						// load common
 					),
+			
+			//// Exceptions ////////////////////////////////////////////////////
+			
+				'exception-NotFound' => array
+					(
+						// empty
+					),
+				'exception-NotAllowed' => array
+					(
+						// empty
+					),
+				'exception-NotApplicable' => array
+					(
+						// empty
+					),
+				'exception-Unknown' => array
+					(
+						// empty
+					),
 			),
 	);
 
