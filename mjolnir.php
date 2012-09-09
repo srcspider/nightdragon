@@ -32,9 +32,9 @@ CFS::add_frontpaths([APPPATH]);
 if (\defined('PUBDIR'))
 {
 	$pubdir_config = include PUBDIR.'config'.EXT;
-	if (isset($pubdir_config['private.config']) && \file_exists($pubdir_config['private.config']))
+	if (isset($pubdir_config['private.files']) && \file_exists($pubdir_config['private.files']))
 	{
-		\app\CFS::add_frontpaths([$pubdir_config['private.config']]);
+		\app\CFS::add_frontpaths([$pubdir_config['private.files']]);
 	}
 }
 else # console or other

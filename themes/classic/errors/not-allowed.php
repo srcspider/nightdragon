@@ -1,3 +1,3 @@
-<h3>Not Allowed</h3>
+<h1>Not Allowed</h1>
 
 <?= \app\Exception::debuginfo_for($exception) ?>

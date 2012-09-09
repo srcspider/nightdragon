@@ -1,9 +1,3 @@
-<small>This repository is meant to act as a template. (it's designed to be
-generic)</small>
-
-Project Title
-=============
-
 Installing dependencies...
 
 <pre>
@@ -68,14 +62,14 @@ You may also imediatly follow the `php order behat` command with
 the pattern.
 
 <b>To run unit tests</b> simply call phpunit on the `phpunit.xml` configuration
-file. You may edit the file to suit your needs better. Any class that works with
-the Instantiatable class will allow you to replace itself with a mock.
+file. You must create the file to suit your needs. Any class that works with
+the `Instantiatable` class will allow you to replace it with a mock.
 
 <pre>
 phpunit -c phpunit.xml
 </pre>
 
 Tests are located in each module's <code>+App/tests</code>. You may place them 
-anywhere, but make sure to point phpunit.xml to that location.
+anywhere, but make sure to point `phpunit.xml` to that location.
 
 See: docs/README.md for more information

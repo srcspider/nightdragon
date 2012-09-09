@@ -1,0 +1,22 @@
+
+// we include everything from everything since anything can happen on  error 
+// pages; considering they are not displayed in anything but extreme 
+// circumstances any overhead is negligible.
+
+// twitter bootstrap
+@import '../+lib/twitter/bootstrap';
+@import '../+lib/twitter/responsive';
+
+// jquery ui
+@import '../+lib/jquery/ui/jquery.ui.accordion';
+@import '../+lib/jquery/ui/jquery.ui.autocomplete';
+@import '../+lib/jquery/ui/jquery.ui.button';
+@import '../+lib/jquery/ui/jquery.ui.core';
+@import '../+lib/jquery/ui/jquery.ui.datepicker';
+@import '../+lib/jquery/ui/jquery.ui.dialog';
+@import '../+lib/jquery/ui/jquery.ui.progressbar';
+@import '../+lib/jquery/ui/jquery.ui.resizable';
+@import '../+lib/jquery/ui/jquery.ui.selectable';
+@import '../+lib/jquery/ui/jquery.ui.slider';
+@import '../+lib/jquery/ui/jquery.ui.tabs';
+@import '../+lib/jquery/ui/jquery.ui.theme';

@@ -1,4 +1,4 @@
-<?php namespace demo;
+<?php namespace demo\core;
 
 /**
  * @package    demo
@@ -9,19 +9,11 @@
  */
 class Controller_Frontend extends \app\Controller_Web
 {
-	protected static $target = 'frontend';
-
-	// or you can write the explicit version
+	use \app\Trait_Controller_DemoBase;
 	
-//	function action_index()
-//	{
-//		$view = \app\ThemeView::instance()
-//			->target('frontend')
-//			->layer($this->layer)
-//			->context(\app\Context_Frontend::instance())
-//			->control($this);
-//		
-//		$this->body($view->render());
-//	}
+	/**
+	 * @var string target for auto-resolving
+	 */
+	protected static $target = 'frontend';
 
 } # class

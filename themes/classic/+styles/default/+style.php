@@ -9,6 +9,7 @@
 		// common files
 		'common' => array
 			(
+				'base',
 				'unsorted'
 			),
 	
@@ -18,26 +19,67 @@
 			(
 				'frontend' => array
 					(
-						// has style, inherits common
+						// twitter bootstrap
+						'+lib/twitter/bootstrap',
+						'+lib/twitter/responsive',
+					),
+			
+				'about' => array
+					(
+						// twitter bootstrap
+						'+lib/twitter/bootstrap',
+						'+lib/twitter/responsive',
+					
+						// SyntaxHighlighter
+						'+vendor/SyntaxHighlighter/shCore',
+						'+vendor/SyntaxHighlighter/shCoreDefault',
+						'+vendor/SyntaxHighlighter/shThemeRDark',
+					),
+			
+			//// Style Reference ///////////////////////////////////////////////
+			
+				'ref' => array # should be called only via mockup/
+					(
+						// SyntaxHighlighter
+						'+vendor/SyntaxHighlighter/shCore',
+						'+vendor/SyntaxHighlighter/shThemeRDark',
+					
+						// twitter bootstrap
+						'+lib/twitter/bootstrap',
+						'+lib/twitter/responsive',
+				
+						// jquery ui
+						'+lib/jquery/ui/jquery.ui.accordion',
+						'+lib/jquery/ui/jquery.ui.autocomplete',
+						'+lib/jquery/ui/jquery.ui.button',
+						'+lib/jquery/ui/jquery.ui.core',
+						'+lib/jquery/ui/jquery.ui.datepicker',
+						'+lib/jquery/ui/jquery.ui.dialog',
+						'+lib/jquery/ui/jquery.ui.progressbar',
+						'+lib/jquery/ui/jquery.ui.resizable',
+						'+lib/jquery/ui/jquery.ui.selectable',
+						'+lib/jquery/ui/jquery.ui.slider',
+						'+lib/jquery/ui/jquery.ui.tabs',
+						'+lib/jquery/ui/jquery.ui.theme',					
 					),
 			
 			//// Exceptions ////////////////////////////////////////////////////
 			
 				'exception-NotFound' => array
 					(
-						// empty
+						'errors/base'
 					),
 				'exception-NotAllowed' => array
 					(
-						// empty
+						'errors/base'
 					),
 				'exception-NotApplicable' => array
 					(
-						// empty
+						'errors/base'
 					),
 				'exception-Unknown' => array
 					(
-						// empty
+						'errors/base'
 					),
 			),
 	);

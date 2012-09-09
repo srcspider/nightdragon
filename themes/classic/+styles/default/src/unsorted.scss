@@ -1,6 +1,14 @@
 
 // This file should contain rules that are needed but who's placed remains
 // to be determined in the design. It's often easier to add the style and put it
-// in the correct place later. :) Best to use this file then misplace rules in
-// other files.
+// in the correct place later. :) Best to use this file then to misplace rules 
+// in other files.
 
+
+// example: random hotfix
+body .syntaxhighlighter {
+	overflow-y: hidden !important;
+	font-size: small !important;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

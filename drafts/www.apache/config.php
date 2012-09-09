@@ -38,6 +38,12 @@ return array
 		// turns on/off caching globally
 		'caching' => true,
 	
+		// turns on/off development mode
+		'development' => false,
+	
+		// specifies the mockup namespace
+		'mockup-ns' => 'app',
+	
 		// path on system to private files (password, etc), these act as any 
 		// typical file-only module
 		'private.files' => \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'..')

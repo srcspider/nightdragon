@@ -1,3 +1,3 @@
-<h3>Unknown Error</h3>
+<h1>Unknown Error</h1>
 
 <?= \app\Exception::debuginfo_for($exception) ?>

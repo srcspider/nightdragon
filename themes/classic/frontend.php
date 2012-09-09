@@ -1,7 +1,7 @@
 <?
-	/* @var $context \app\Context_Frontend */
-
 	namespace app;
+
+	/* @var $context Context_Frontend */	
 ?>
 
-<?= $context->message() ?>
+<?= $theme->partial('demofiles/frontend')->render() ?>

@@ -1,10 +1,13 @@
 <?php return array
 	(
 		'modules' => array
-			(			
+			(
 				// project modules
-				MODPATH.'demo' => 'demo',
+				MODPATH.'demo' => 'demo\core',
 			
+				// development modules
+				MODPATH.'+mockup' => 'mockup',
+
 				// library legacy code
 #				PLGPATH.'ibidem'.DIRECTORY_SEPARATOR.'legacy' => 'ibidem\legacy',
 			

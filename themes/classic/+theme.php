@@ -1,16 +1,23 @@
 <?php return array
 	(	
-		// mapping targets to files
+		// target-to-file mapping
 		'targets' => array
 			(
 				'frontend' => array
 					(
-						'common/html5', 'frontend' 
+						'components/base',
+						'frontend' 
 					),
 			
-			//// Style /////////////////////////////////////////////////////////
+				'about' => array
+					(
+						'components/base',
+						'about' 
+					),
 			
-				'style' => array
+			//// Style Reference ///////////////////////////////////////////////
+			
+				'ref' => array # should be called only via mockup/
 					(
 						'+mockup'
 					),
@@ -19,18 +26,22 @@
 			
 				'exception-NotFound' => array
 					(
+						'components/errors/base',
 						'errors/not-found' 
 					),
 				'exception-NotAllowed' => array
 					(
+						'components/errors/base',
 						'errors/not-allowed' 
 					),
 				'exception-NotApplicable' => array
 					(
+						'components/errors/base',
 						'errors/not-applicable' 
 					),
 				'exception-Unknown' => array
 					(
+						'components/errors/base',
 						'errors/unknown' 
 					),
 			),

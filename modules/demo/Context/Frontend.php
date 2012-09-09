@@ -1,4 +1,4 @@
-<?php namespace demo;
+<?php namespace demo\core;
 
 /**
  * @package    demo
@@ -9,7 +9,7 @@
  */
 class Context_Frontend extends \app\Instantiatable
 {
-	use \app\Trait_Context_Base;
+	use \app\Trait_Context_DemoBase;
 
 	function message()
 	{

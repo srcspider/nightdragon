@@ -4,5 +4,17 @@
 
 return array
 	(
-		'/' => [ 'frontend' ],
+	
+		'/' 
+			=> [ 'frontend' ],
+	
+		'/about' 
+			=> [ 'about' ],
+	
+	
+	//// API ///////////////////////////////////////////////////////////////////
+	
+		'/api/frontend/<action>' 
+			=> [ [ 'frontend.jsent' => 'frontend' ], ['action' => '(status)'] ],
+	
 	);
