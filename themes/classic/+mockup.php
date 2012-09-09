@@ -1,4 +1,6 @@
 <? 
+	namespace app;
+
 	# do mockups of various theme elements here, you can then access them via 
 	# the mockup route: /mockup/style
 ?>
@@ -15,20 +17,17 @@
 		$test = 12;
 	}
 	</pre>
-
-	<select data-placeholder="Your Favorite Type of Bear" multiple 
-			class="chzn-select">
-
-		<option value=""></option>
-		<option>American Black Bear</option>
-		<option>Asiatic Black Bear</option>
-		<option>Brown Bear</option>
-		<option>Giant Panda</option>
-		<option selected="">Sloth Bear</option>
-		<option disabled="">Sun Bear</option>
-		<option>Polar Bear</option>
-		<option disabled="">Spectacled Bear</option>
-
-	</select>
 	
+	<?= $f = Form::i('twitter.general', $control->act('test')) ?>
+
+		<?= $f->select('Bear', 'bear[]')
+			->values([['title'=>'White', 'id' => 1], ['title'=>'Black', 'id' => 2]], 'id',  'title')
+			->classes(['chzn-select']) ?>
+	
+		<div class="form-actions">
+			<button class="btn" type="submit">Test</button>
+		</div>
+
+	<?= $f->close() ?>
+		
 </div>

@@ -1,7 +1,9 @@
 ;(function ($) {
 
 	$(function () {
-		$(".chzn-select").chosen();
+		$("select.chzn-select").each(function () {
+			$(this).chosen();
+		});
 	});
 
 } (window.jQuery))
