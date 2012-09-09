@@ -1,5 +1,5 @@
 <?
-	/** @var $context \app\Context_Frontend */
+	/** @var $context \app\Context_Start */
 
 	namespace app;
 	

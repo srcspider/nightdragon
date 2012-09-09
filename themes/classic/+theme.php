@@ -3,16 +3,19 @@
 		// target-to-file mapping
 		'targets' => array
 			(
-				'frontend' => array
+			
+			//// Demo //////////////////////////////////////////////////////////
+			
+				'demo' => array
 					(
 						'components/base',
-						'frontend' 
+						'demofiles/start' 
 					),
 			
 				'about' => array
 					(
 						'components/base',
-						'about' 
+						'demofiles/about' 
 					),
 			
 			//// Style Reference ///////////////////////////////////////////////

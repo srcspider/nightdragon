@@ -16,7 +16,7 @@ trait Trait_Context_DemoBase
 	
 	function site_url()
 	{
-		return \app\URL::href('frontend');
+		return \app\URL::href('demo');
 	}
 	
 	function navlist()

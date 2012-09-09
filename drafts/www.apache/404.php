@@ -1,8 +1,4 @@
-<?
-	\header('HTTP/1.1 404 Not Found');
-	
-	$system_config = include 'config.php';
-?>
+<? \header('HTTP/1.1 404 Not Found'); ?>
 <!doctype html>
 <html>
 	<head>

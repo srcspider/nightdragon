@@ -213,7 +213,7 @@ so even if it doesn't work now, you can show it and the design works. Of course 
 little rule set previously the bogus data code <b>should not</b> and <b>must not</b> be in
 our theme files. The theme files are <b>final</b>!</p>
 
-<?= $mockup_example = $context->mockup_example() ?>
+<? $mockup_example = $context->mockup_example() ?>
 <p>
 	So here comes the mockup feature to the rescue. To view a bogus version of any file, simply 
 	call it's target via <code>/mockup/</code>. So for example this very page is 
@@ -341,7 +341,7 @@ function mockup_example()
 <p>
 	As the example shows, you should use the blank state of your application as a tutorial
 	pointing your users to where they need to go. If you do not treat the blank state properly
-	you're users are more likely to just go somewhere else rather then build on your app. In
+	your users are more likely to just go somewhere else rather then build on your app. In
 	the example we left a simple message; in a real app some graphical pointers are much better.
 </p>
 

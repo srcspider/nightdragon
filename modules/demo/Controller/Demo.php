@@ -7,13 +7,13 @@
  * @copyright  (c) 2012, Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-class Controller_Frontend extends \app\Controller_Web
+class Controller_Demo extends \app\Controller_Web
 {
 	use \app\Trait_Controller_DemoBase;
 	
 	/**
 	 * @var string target for auto-resolving
 	 */
-	protected static $target = 'frontend';
+	protected static $target = 'demo';
 
 } # class

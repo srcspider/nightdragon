@@ -6,7 +6,7 @@ return array
 	(
 	
 		'/' 
-			=> [ 'frontend' ],
+			=> [ 'demo' ],
 	
 		'/about' 
 			=> [ 'about' ],
@@ -14,7 +14,7 @@ return array
 	
 	//// API ///////////////////////////////////////////////////////////////////
 	
-		'/api/frontend/<action>' 
-			=> [ [ 'frontend.jsent' => 'frontend' ], ['action' => '(status)'] ],
+		'/api/demo/<action>' 
+			=> [ [ 'demo.jsent' => 'demo' ], ['action' => '(data)'] ],
 	
 	);

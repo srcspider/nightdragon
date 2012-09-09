@@ -31,13 +31,14 @@
 				(					
 					Allow::relays
 						(
-							'frontend',
-							'about'
+							'demo',
+							'about',
+							'thor'
 						),
 				
 					Allow::relays
 						(
-							'frontend.jsent'
+							'demo.jsent'
 						),
 				),
 		

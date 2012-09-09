@@ -17,7 +17,17 @@
 		// any style associated
 		'targets' => array
 			(
-				'frontend' => array
+			
+			//// Demo //////////////////////////////////////////////////////////
+			
+				'demo' => array
+					(
+						// twitter bootstrap
+						'+lib/twitter/bootstrap',
+						'+lib/twitter/responsive',
+					),
+			
+				'thor' => array
 					(
 						// twitter bootstrap
 						'+lib/twitter/bootstrap',

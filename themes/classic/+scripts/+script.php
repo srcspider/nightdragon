@@ -19,7 +19,16 @@
 		// mapping targets to files
 		'targets' => array
 			(
-				'frontend' => array
+			
+			
+			//// Demo //////////////////////////////////////////////////////////
+			
+				'demo' => array
+					(
+						// load common
+					),
+			
+				'thor' => array
 					(
 						// load common
 					),
