@@ -44,6 +44,10 @@
 			
 				'ref' => array # should be called only via mockup/
 					(
+						// chosen
+						'+lib/jquery/chosen/jquery.chosen',
+						'+lib/jquery/chosen/init',
+					
 						// syntax highlighter
 						'+vendor/SyntaxHighlighter/shCore',
 						'+vendor/SyntaxHighlighter/scripts/shBrushPhp',

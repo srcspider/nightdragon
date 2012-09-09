@@ -5,4 +5,4 @@
 
 // HowTo: order honeypot -n 'mockup'
 
-class Context_About extends \mockup\Context_About { /** @return \mockup\Context_About */ static function instance() { return parent::instance(); } }
+class Context_Ref extends \mockup\Context_Ref { /** @return \mockup\Context_Ref */ static function instance() { return parent::instance(); } }
