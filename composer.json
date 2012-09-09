@@ -14,17 +14,17 @@
 		"behat/mink": "1.4@stable",
 		"behat/mink-zombie-driver": "*",
 		"behat/mink-sahi-driver": "*",
-		"ibidem/cfs": "*",
-		"ibidem/types": "*",
-		"ibidem/base": "*",
-		"ibidem/theme": "*",
-		"ibidem/cache": "*",
-		"ibidem/access": "*",
-		"ibidem/backend": "*",
-		"ibidem/legacy": "*",
-		"ibidem/schematics" : "*",
-		"ibidem/database" : "*",
-		"ibidem/html" : "*"
+		"mjolnir/cfs": "*",
+		"mjolnir/types": "*",
+		"mjolnir/base": "*",
+		"mjolnir/theme": "*",
+		"mjolnir/cache": "*",
+		"mjolnir/access": "*",
+		"mjolnir/backend": "*",
+		"mjolnir/legacy": "*",
+		"mjolnir/schematics" : "*",
+		"mjolnir/database" : "*",
+		"mjolnir/html" : "*"
 	},
 
 	"config": {
@@ -33,168 +33,168 @@
 	},
 
 	"repositories": {
-		"reference/ibidem/cfs": {
+		"reference/mjolnir/cfs": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/cfs",
+				"name": "mjolnir/cfs",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-cfs.git",
+					"url": "git://github.com/ibidem/mjolnir-cfs.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\cfs": "../.."}
+					"psr-0": {"mjolnir\\cfs": "../.."}
 				}
 			}
 		},
-		"reference/ibidem/types": {
+		"reference/mjolnir/types": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/types",
+				"name": "mjolnir/types",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-types.git",
+					"url": "git://github.com/ibidem/mjolnir-types.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\types": "../.."}
+					"psr-0": {"mjolnir\\types": "../.."}
 				}
 			}
 		},
-		"reference/ibidem/base": {
+		"reference/mjolnir/base": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/base",
+				"name": "mjolnir/base",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-base.git",
+					"url": "git://github.com/ibidem/mjolnir-base.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\base": "../.."}
+					"psr-0": {"mjolnir\\base": "../.."}
 				}
 			}
 		},
-		"reference/ibidem/theme": {
+		"reference/mjolnir/theme": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/theme",
+				"name": "mjolnir/theme",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-theme.git",
+					"url": "git://github.com/ibidem/mjolnir-theme.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\theme": "../.."}
+					"psr-0": {"mjolnir\\theme": "../.."}
 				}
 			}
 		},
-		"reference/ibidem/cache": {
+		"reference/mjolnir/cache": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/cache",
+				"name": "mjolnir/cache",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-cache.git",
+					"url": "git://github.com/ibidem/mjolnir-cache.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\cache": "../.."}
+					"psr-0": {"mjolnir\\cache": "../.."}
 				}
 			}
 		},
-		"reference/ibidem/access": {
+		"reference/mjolnir/access": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/access",
+				"name": "mjolnir/access",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-access.git",
+					"url": "git://github.com/ibidem/mjolnir-access.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\access": "../.."}
+					"psr-0": {"mjolnir\\access": "../.."}
 				}
 			}
 		},
-		"reference/ibidem/backend": {
+		"reference/mjolnir/backend": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/backend",
+				"name": "mjolnir/backend",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-backend.git",
+					"url": "git://github.com/ibidem/mjolnir-backend.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\backend": "../.."}
+					"psr-0": {"mjolnir\\backend": "../.."}
 				}
 			}
 		},
-		"reference/ibidem/legacy": {
+		"reference/mjolnir/legacy": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/legacy",
+				"name": "mjolnir/legacy",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-legacy.git",
+					"url": "git://github.com/ibidem/mjolnir-legacy.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\legacy": "../.."}
+					"psr-0": {"mjolnir\\legacy": "../.."}
 				}
 			}
 		},
-		"reference/ibidem/schematics": {
+		"reference/mjolnir/schematics": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/schematics",
+				"name": "mjolnir/schematics",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-schematics.git",
+					"url": "git://github.com/ibidem/mjolnir-schematics.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\schematics": "../.."}
+					"psr-0": {"mjolnir\\schematics": "../.."}
 				}
 			}
 		},
-		"reference/ibidem/html": {
+		"reference/mjolnir/html": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/html",
+				"name": "mjolnir/html",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-html.git",
+					"url": "git://github.com/ibidem/mjolnir-html.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\html": "../.."}
+					"psr-0": {"mjolnir\\html": "../.."}
 				}
 			}
 		},
-		"reference/ibidem/database": {
+		"reference/mjolnir/database": {
 			"type": "package",
 			"package": {
-				"name": "ibidem/database",
+				"name": "mjolnir/database",
 				"version": "0.0",
 				"source": {
-					"url": "git://github.com/srcspider/ibidem-database.git",
+					"url": "git://github.com/ibidem/mjolnir-database.git",
 					"type": "git",
 					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
-					"psr-0": {"ibidem\\database": "../.."}
+					"psr-0": {"mjolnir\\database": "../.."}
 				}
 			}
 		}

@@ -158,7 +158,7 @@ class with underscores converted to semicolons and all lowercase, eg.
 `Task_Do_Homework` => `do:homework`.
 
 In your configuration you will need to specify flags, the types of the flags,
-description for the task, etc. See the configuration in the ibidem/base module
+description for the task, etc. See the configuration in the mjolnir/base module
 for examples.
 
 You configuration will be translated to the command line help page and your 
@@ -208,7 +208,7 @@ The Backend file itself is merely a generic controller/context.
 
 Most backends are collections (users, configurations, etc). By extending 
 `\app\Backend_Collection` you'll get a lot of the necessary functionality out of
-the box. See the `ibidem/access` module for examples of creating backends.
+the box. See the `mjolnir/access` module for examples of creating backends.
 
 When creating a backend don't forget to include a protocol object in the 
 `+admin` group to allow access to it.
@@ -233,7 +233,7 @@ Let's say you're defining a backend, it might look something like this
 		'+admin' => array
 			(
 				\app\Protocol::instance()
-					->relays(['\ibidem\backend'])
+					->relays(['\mjolnir\backend'])
 					->attributes
 						(
 							[

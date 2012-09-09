@@ -9,7 +9,7 @@ $ds = DIRECTORY_SEPARATOR;
 // set the full path to the docroot
 \define('DOCROOT', \realpath(\dirname(__FILE__)).$ds);
 
-$cfspath = DOCROOT.'vendor'.$ds.'ibidem'.$ds.'cfs'.$ds.'+App'.$ds;
+$cfspath = DOCROOT.'vendor'.$ds.'mjolnir'.$ds.'cfs'.$ds.'+App'.$ds;
 
 // we load the default environment; if you want custom APPPATH, MODPATH, PLGPATH
 // simply define them before this statement, they will not be redefined.
@@ -72,7 +72,7 @@ $base_config = \app\CFS::config('ibidem/base');
 \define('SYSPATH', true); # kohana3 file-safeguard requirement
 
 // setup the bridges
-\ibidem\cfs\Kohana3_Bridge::bridges
+\mjolnir\cfs\Kohana3_Bridge::bridges
 	(
 		array
 		(
@@ -85,10 +85,10 @@ $base_config = \app\CFS::config('ibidem/base');
 	);
 
 // include the paths in the CFS (note: this is not the same as adding modules)
-CFS::add_backpaths(\ibidem\cfs\Kohana3_Bridge::paths());
+CFS::add_backpaths(\mjolnir\cfs\Kohana3_Bridge::paths());
 
 // register the autoloader
-\spl_autoload_register( array('\ibidem\cfs\Kohana3_Bridge', 'load_class') );
+\spl_autoload_register( array('\mjolnir\cfs\Kohana3_Bridge', 'load_class') );
 */
 
 

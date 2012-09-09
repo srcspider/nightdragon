@@ -1,6 +1,6 @@
 <?php return array
 	(
-		'\ibidem\theme\mockup'        => [ 'enabled' => true ],
-		'\ibidem\theme\mockup-errors' => [ 'enabled' => true ],
-		'\ibidem\theme\mockup-form'   => [ 'enabled' => true ],
+		'\mjolnir\theme\mockup'        => [ 'enabled' => true ],
+		'\mjolnir\theme\mockup-errors' => [ 'enabled' => true ],
+		'\mjolnir\theme\mockup-form'   => [ 'enabled' => true ],
 	);

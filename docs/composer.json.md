@@ -55,16 +55,16 @@ And don't forget to run it with `sahi.sh`
 Framework
 ---------
 
-	"ibidem/cfs"
-	"ibidem/types"
-	"ibidem/base"
-	"ibidem/theme"
-	"ibidem/cache"
-	"ibidem/access"
-	"ibidem/backend"
-	"ibidem/legacy"
-	"ibidem/schematics"
-	"ibidem/database" 
-	"ibidem/html"
+	"mjolnir/cfs"
+	"mjolnir/types"
+	"mjolnir/base"
+	"mjolnir/theme"
+	"mjolnir/cache"
+	"mjolnir/access"
+	"mjolnir/backend"
+	"mjolnir/legacy"
+	"mjolnir/schematics"
+	"mjolnir/database" 
+	"mjolnir/html"
 
 All of the above are framework files.

@@ -1,8 +1,8 @@
 <?php return array
 	(
 		// enable access relays
-		'\ibidem\access\channel'  => [ 'enabled' => true ],
-		'\ibidem\access\endpoint' => [ 'enabled' => true ],
-		'\ibidem\access\a12n'     => [ 'enabled' => true ],
-		'\ibidem\backend'         => [ 'enabled' => true ],
+		'\mjolnir\access\channel'  => [ 'enabled' => true ],
+		'\mjolnir\access\endpoint' => [ 'enabled' => true ],
+		'\mjolnir\access\a12n'     => [ 'enabled' => true ],
+		'\mjolnir\backend'         => [ 'enabled' => true ],
 	);

@@ -13,7 +13,7 @@ class Context_About extends \app\Instantiatable
 
 	function mockup_example()
 	{
-		return \app\URL::href('\ibidem\theme\mockup', ['target' => 'about']);
+		return \app\URL::href('\mjolnir\theme\mockup', ['target' => 'about']);
 	}
 	
 } # class

@@ -47,7 +47,7 @@ return array
 		// path on system to private files (password, etc), these act as any 
 		// typical file-only module
 		'private.files' => \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'..')
-			. DIRECTORY_SEPARATOR.'ibidem.private'.DIRECTORY_SEPARATOR,
+			. DIRECTORY_SEPARATOR.'mjolnir.private'.DIRECTORY_SEPARATOR,
 
 	
 		// the following points to the parent directory of this directory, so 
