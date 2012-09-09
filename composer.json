@@ -161,7 +161,7 @@
 				"source": {
 					"url": "git://github.com/srcspider/ibidem-schematics.git",
 					"type": "git",
-					"reference": "master"
+					"reference": "ibidem/php5.4"
 				},
 				"autoload": {
 					"psr-0": {"ibidem\\schematics": "../.."}
