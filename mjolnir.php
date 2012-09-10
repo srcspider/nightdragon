@@ -1,5 +1,6 @@
 <?php namespace app;
 
+\defined('EXT') or \define('EXT', '.php');
 
 # ---- Basic settings -------------------------------------------------------- #
 
@@ -22,14 +23,14 @@ if ( ! \file_exists($cfspath))
 			echo 'Missing system libraries. '.PHP_EOL;
 			echo 'Please install by running "install-vendor" in ['.$pubdir_config['system.dir'].']';
 		}
-		else #
+		else # user error
 		{
-			echo 'Ooops! Something went kaboom. Please try again in a moment.';
+			include PUBDIR.'outage'.EXT;
 		}
 	}
 	else # potentially console app
 	{
-		echo 'Missing system libraries. Terminating.';
+		echo 'Missing system libraries. Terminating.'.PHP_EOL;
 	}
 	exit(1);
 }
