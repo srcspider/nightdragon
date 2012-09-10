@@ -481,7 +481,7 @@ simply use the Pager class to get the job done.</p>
 	<li><p>They were created by the W3C</p></li>
 	<li><p>They help search engines navigate your site</p></li>
 	<li><p>They help people with screen readers</p></li>
-	<li><p>They're purpose is to logically structure your site</p></li>
+	<li><p>Their purpose is to logically structure your site</p></li>
 </ul>
 
 <p>The <b>sad truth</b>:</p>
@@ -494,17 +494,18 @@ simply use the Pager class to get the job done.</p>
 			is use <a href="http://www.w3.org/WAI/intro/aria.php">WAI-ARIA</a> landmark roles, such as
 			<code>navigation</code> as well as avoid useless garbage text. For example a typical error
 			in validation is the requirement for alt text on img tags. This is commonly misinterpreted
-			as "description of image" but it's really just that you should have and alt attribute, so
-			<code>alt=""</code> is actually perfectly fine,	and in the case of purely visual ques such as
-			avatars the correct way to write it, since	why would someone using a screen reader care to be
-			reminded of "Avatar of WhatsHisName" every other sentence.
+			as "mssing a verbose description of the image image", but it's really just that you should
+			have an alt attribute, so <code>alt=""</code> is actually perfectly fine, and in the case
+			of purely visual ques such as avatars the correct way to write it, since why would someone
+			using a screen reader care to be reminded of "Avatar of WhatsHisName" every other sentence.
 		</p>
 	</li>
 
 	<li>
 		<p>Their (original, intended) purpose is to replace <code>div</code> tags with an equivalent
-			id attribute. <small class="muted">(yes you've read that right)</small>
-		</p>
+			id attribute. <small class="muted">(yes you've read that right)</small></p>
+		<p>So <code>&lt;nav&gt;</code> is meant to be just syntax sugar for
+			<code>&lt;div id="nav"&gt;</code>, nothing more.</p>
 	</li>
 </ul>
 
