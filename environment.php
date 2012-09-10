@@ -9,24 +9,24 @@
 				MODPATH.'+mockup' => 'mockup',
 
 				// library legacy code
-				MJLPATH.'legacy' => 'mjolnir\legacy',
+//				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'legacy' => 'mjolnir\legacy',
 
 				// library modules
-				MJLPATH.'backend' => 'mjolnir\backend',
-				MJLPATH.'access' => 'mjolnir\access',
-				MJLPATH.'base' => 'mjolnir\base',
-				MJLPATH.'cache' => 'mjolnir\cache',
-				MJLPATH.'theme' => 'mjolnir\theme',
-				MJLPATH.'schematics' => 'mjolnir\schematics',
-				MJLPATH.'database' => 'mjolnir\database',
-				MJLPATH.'html' => 'mjolnir\html',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'backend' => 'mjolnir\backend',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'access' => 'mjolnir\access',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'base' => 'mjolnir\base',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'cache' => 'mjolnir\cache',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'theme' => 'mjolnir\theme',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'schematics' => 'mjolnir\schematics',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'database' => 'mjolnir\database',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'html' => 'mjolnir\html',
 			),
 
 		'namespaces' => array
 			(
 				// libraries accessed via explicit calls only
-				'mjolnir\types' => MJLPATH.'types',
-				'mjolnir\cfs' => MJLPATH.'cfs',
+				'mjolnir\types' => PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'types',
+				'mjolnir\cfs' => PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'cfs',
 			),
 
 		'themes' => array

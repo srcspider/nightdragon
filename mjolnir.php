@@ -23,8 +23,8 @@ $env_config = include 'environment'.EXT;
 // setup the modules
 CFS::modules($env_config['modules']);
 
-// allow application to store and overwrite config files, routes, etc; 
-// everything except classes. You should always define your classes in 
+// allow application to store and overwrite config files, routes, etc;
+// everything except classes. You should always define your classes in
 // appropriate modules in the MODPATH
 CFS::add_frontpaths([APPPATH]);
 
@@ -46,15 +46,15 @@ else # console or other
 	}
 }
 
-// you are not suppose to overwrite namespaces and abstracts; that's a misuse. 
+// you are not suppose to overwrite namespaces and abstracts; that's a misuse.
 // hence it makes no sense to search for them in \app\Class calls. Namespaces
 // should always be explicit
 CFS::add_namespaces($env_config['namespaces']);
 
 $base_config = \app\CFS::config('mjolnir/base');
-	
+
 // see: http://php.net/timezones
-\date_default_timezone_set($base_config['timezone']);	
+\date_default_timezone_set($base_config['timezone']);
 
 // see: http://php.net/setlocale
 \setlocale(LC_ALL, $base_config['locale.lang'].$base_config['charset']);
@@ -92,9 +92,6 @@ if (\file_exists(PLGPATH.$ds.'autoload'.EXT))
 	require PLGPATH.$ds.'autoload'.EXT;
 }
 
-
-\trait_exists('\app\Trait_Params');
-\trait_exists('\app\Document_Params');
 
 // done; cleaning up
 unset($ds, $cfspath);
