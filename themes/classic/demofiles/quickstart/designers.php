@@ -2,7 +2,7 @@
 	/** @var $context \app\Context_About */
 
 	namespace app;
-	
+
 	// shorthand directory separator
 	$ds = DIRECTORY_SEPARATOR;
 	// H is an utility for managing headers
@@ -29,23 +29,23 @@
 </ol>
 
 <p>
-	As far as the framework is concerned if you don't meet those assumtions you should stay the 
-	hell away from the code! Loose and shady code (in the theme files) will just result in more 
+	As far as the framework is concerned if you don't meet those assumtions you should stay the
+	hell away from the code! Loose and shady code (in the theme files) will just result in more
 	work later, <strong>a lot!</strong> more then if you didn't touch the code at all. Any code
 	that is written needs to be fully functional. To be clear: no html where generated code should
-	be, no mockups, no placeholders, etc within the themes. Everything you write needs 
+	be, no mockups, no placeholders, etc within the themes. Everything you write needs
 	to be <strong>final</strong>!
 </p>
 
 <p>
-	When you fail to meet this the programmer has to go in and throw out your unusable code, 
+	When you fail to meet this the programmer has to go in and throw out your unusable code,
 	then stick in the correct version to make it work. After he does all that, it's very likely
 	some things broke all over due to the change, so now you have to go in and fix things. So
 	the cost to do it is now 3 times what it would have been if your code didn't need to be
 	re-touched two times! Needless to say there's also a lot of pointless logistics involved
 	with this sort of mess, so it's in everyone's best interest to make sure it never happens,
-	or at least when it does happen that the programmer has to go in your code to fix/change 
-	something (function, paramters), you don't have to go in after him, and there's no 
+	or at least when it does happen that the programmer has to go in your code to fix/change
+	something (function, paramters), you don't have to go in after him, and there's no
 	"throwing out code" involved, just tweaking.
 </p>
 
@@ -61,7 +61,7 @@
 
 <p><small>Don't get what it does? You don't need to, just copy/paste it.</small></p>
 
-<p>If you need to write some code like functions etc to help you in the file you should place it 
+<p>If you need to write some code like functions etc to help you in the file you should place it
 there right after the namespace declaration. Example:</p>
 
 <pre class="<?= $php_highlighter ?>">
@@ -95,43 +95,43 @@ there right after the namespace declaration. Example:</p>
 
 <ol>
 	<li>
-		<code>$context</code> an object of the current context's class; you call methods from 
-		it to get everything on the page. Yes, <b>everything</b>. You should <b>not</b> be calling anything 
-		else to get data, unless it's something you obtained via <code>$context</code>, or in 
+		<code>$context</code> an object of the current context's class; you call methods from
+		it to get everything on the page. Yes, <b>everything</b>. You should <b>not</b> be calling anything
+		else to get data, unless it's something you obtained via <code>$context</code>, or in
 		some way obtained using context.
 	</li>
-	
+
 	<li>
-		<code>$theme</code> is the current theme. 99% of the time you use it for one 
-		thing only <code>&lt;?= $theme->partial('components/some_file')->render() ?&gt;</code> 
-		which, just as it reads, loads a partial into the current view, ie. something that 
+		<code>$theme</code> is the current theme. 99% of the time you use it for one
+		thing only <code>&lt;?= $theme->partial('components/some_file')->render() ?&gt;</code>
+		which, just as it reads, loads a partial into the current view, ie. something that
 		repeats or is a reusable piece of code.
 	</li>
 </ol>
 <p>And that's it.</p>
 <br/>
 <p>
-	Well not really, there are a few more, but they're rarely used, you can just ignore them if 
+	Well not really, there are a few more, but they're rarely used, you can just ignore them if
 	you don't understand them now...
 </p>
 <ul>
 	<li>
-		<code>$view</code> is a special variable that's only available when the file is a template. 
-		Basically <code>$view</code> refers here to the next file in a template chain. Which is to say if the 
-		current file is meant to act as a template that you use in your <code>+theme.php</code> 
-		file when declaring which files a target uses, then you write 
+		<code>$view</code> is a special variable that's only available when the file is a template.
+		Basically <code>$view</code> refers here to the next file in a template chain. Which is to say if the
+		current file is meant to act as a template that you use in your <code>+theme.php</code>
+		file when declaring which files a target uses, then you write
 		<code>&lt;?= $view->render() ?&gt;</code> where you want the file for which this file
-		acts like a template to go in. Lost you? just look at how the target 
+		acts like a template to go in. Lost you? just look at how the target
 		<code>frontend</code> is defined currently in the demo files and you'll get it. And yes,
 		you don't use view for anything else.
 	</li>
-	
+
 	<li>
 		<code>$control</code> gives you access to the current control object. In the typical MVC
-		structure this is of course the Controller that's handling the request, but it can be 
+		structure this is of course the Controller that's handling the request, but it can be
 		just about anything. You don't know, and shouldn't care. 99% of the time you just
-		use this for <code>$control->action('something')</code> which gives you the URLs for 
-		forms. It's very rare for you to use it for anything else, so you can just about forget 
+		use this for <code>$control->action('something')</code> which gives you the URLs for
+		forms. It's very rare for you to use it for anything else, so you can just about forget
 		about it.
 	</li>
 </ul>
@@ -146,23 +146,23 @@ there right after the namespace declaration. Example:</p>
 <?= \htmlspecialchars('<h1><a href="/something">Lorem Ipsum</a></h1>') ?>
 </pre>
 
-<p>Simple rule of thumb: <span class="text-info">the code is <u>not final</u>, therefore <u>it is wrong</u>.</span></p>
+<p>Simple rule of thumb: <span class="text-info">if the code is <u>not final</u>, <u>it is wrong</u>.</span></p>
 
 <p>
-	It's very easy to think	that just because "Lorem Ipsum" is an obvious placeholder (to you) 
+	It's very easy to think	that just because "Lorem Ipsum" is an obvious placeholder (to you)
 	it must be obvious to everyone else. But the truth is unless you're part of the <i>department
-	of redundancy department</i>, there is nobody assigned to 
-	"checking for placeholders", so what happens is the header gets image replaced and now bam! 
-	it's invisible and unless someone goes though your code with a fine-tooth comb (more wasted 
-	time) it's not going to get spotted until it's embarrassing. But lets go back and assume, 
-	for the sake of the example that there is no replacement there and it is indeed easily 
-	spotted. Who's going to tell that <code>/something</code> is a placeholder (assuming it 
-	works for everybody but doesn't in production). Well, nobody. This isn't just a problem 
-	with links, it can also easily happen on alt attributes and title attributes, etc. It can 
+	of redundancy department</i>, there is nobody assigned to
+	"checking for placeholders", so what happens is the header gets image replaced and now bam!
+	it's invisible and unless someone goes though your code with a fine-tooth comb (more wasted
+	time) it's not going to get spotted until it's embarrassing. But lets go back and assume,
+	for the sake of the example that there is no replacement there and it is indeed easily
+	spotted. Who's going to tell that <code>/something</code> is a placeholder (assuming it
+	works for everybody but doesn't in production). Well, nobody. This isn't just a problem
+	with links, it can also easily happen on alt attributes and title attributes, etc. It can
 	also happen easily on elements hidden via css, or that appear on only in certain conditions.
 </p>
 
-<p>Here's another <b>wrong version</b>, this one more likely if you're leaning on some programming 
+<p>Here's another <b>wrong version</b>, this one more likely if you're leaning on some programming
 	experience.</p>
 
 <pre class="<?= $php_highlighter ?>">
@@ -172,8 +172,8 @@ there right after the namespace declaration. Example:</p>
 <p>
 	The problem here is that you are making the unfounded assumtion the URL of the thing you want
 	accepts the parameters you think it does (in this case none). It is very often the case
-	that URL's change drastically (none the exception). In the theme files it's (very) good 
-	practice to stay independent of any application logic. All the theme should do is ask and 
+	that URL's change drastically (none the exception). In the theme files it's (very) good
+	practice to stay independent of any application logic. All the theme should do is ask and
 	process data, nothing more.
 </p>
 
@@ -182,7 +182,7 @@ there right after the namespace declaration. Example:</p>
 <?= \htmlspecialchars('<h1><a href="<?= $context->site_url() ?>"><?= $context->site_title() ?></a></h1>') ?>
 </pre>
 <p>
-	Translated to English the code reads as follows: "Create Heading 1 with an anchor (ie. hyperlink) in it that 
+	Translated to English the code reads as follows: "Create Heading 1 with an anchor (ie. hyperlink) in it that
 	points to <code>site_url</code> and has the text <code>site_title</code>.". Sill confused? Well it's time
 	to flex those google skills (ie. copy paste keywords from the above and you should get it... from googling).
 </p>
@@ -192,11 +192,11 @@ there right after the namespace declaration. Example:</p>
 </blockquote>
 
 <p>
-	It's simple. You <b>don't</b>! There is no need for them to exist prior to you using them. 
-	Actually it's better if they don't exist and are created as a result of them being used. 
-	It's far more productive for the programmers to implement things that <b>we know need to 
-	be there</b>, rather then things <b>we think need to be there</b>. So, as long as it 
-	doesn't involve getting html just write <code>$context->whatever_the_heck_you_need()</code> 
+	It's simple. You <b>don't</b>! There is no need for them to exist prior to you using them.
+	Actually it's better if they don't exist and are created as a result of them being used.
+	It's far more productive for the programmers to implement things that <b>we know need to
+	be there</b>, rather then things <b>we think need to be there</b>. So, as long as it
+	doesn't involve getting html just write <code>$context->whatever_the_heck_you_need()</code>
 	<small>(replace with relevant name)</small> whenever you're tempted to place a placeholder.
 </p>
 
@@ -215,22 +215,26 @@ our theme files. The theme files are <b>final</b>!</p>
 
 <? $mockup_example = $context->mockup_example() ?>
 <p>
-	So here comes the mockup feature to the rescue. To view a bogus version of any file, simply 
-	call it's target via <code>/mockup/</code>. So for example this very page is 
+	So here comes the mockup feature to the rescue. To view a bogus version of any file, simply
+	call it's target via <code>/mockup/</code>. So for example this very page is
 	<a href="<?= $mockup_example ?>"><?= $mockup_example ?></a>. You might notice that it looks
 	pretty much the same. That's because there is currently an implementation for the context
 	and by default the mockup will grab the real context if it can get it. A lot of the time
 	we don't want this however, so to force the system to ask for the actual fake version go
-	to your <code><?= PUBDIR.'config'.EXT ?></code> file and change 
+	to your <code><?= PUBDIR.'config'.EXT ?></code> file and change
 	<code>'mockup-ns' => 'app',</code> to <code>'mockup-ns' => 'mockup',</code>. To clarify
 	<code>app</code> refers to the universal top namespace and <code>mockup</code> is simply
 	the namespace used by the mockup module in the demo, if you used a different namespace
-	for your mockup module you would have had to insert that there instead.
+	for your mockup module you would have had to insert that there instead. <b>If you don't get it
+	it's fine!</b> just think of it as a switch where <code>app</code> means "get real data if you
+	can" and <code>mockup</code> means "always fake it".
 </p>
 
-<p>After changing you should notice now when accessing <?= $mockup_example ?> you get the 
-error <code>Fatal error: Class '\mockup\Context_About' not found [...]</code>. This is good!
-It means you're trying to access the mockup version (as you can tell by the name).</p>
+<p>After changing you should notice now when accessing
+<a href="<?= $mockup_example ?>"><?= $mockup_example ?></a> you get the error
+<code>Fatal error: Class '\mockup\Context_About' not found [...]</code>. This is good!
+It means you're trying to access the mockup version (as you can tell by the name); but the mockup
+doesn't exist yet.</p>
 
 <p>So here's how you create the mockup version:</p>
 
@@ -253,7 +257,7 @@ It means you're trying to access the mockup version (as you can tell by the name
 	</li>
 	<li>
 		<p>
-			Let's fix it. Go to your new mockup context located at 
+			Let's fix it. Go to your new mockup context located at
 			<code><?= DOCROOT.'modules'.$ds.'+mockup'.$ds.'Context'.$ds.'About'.EXT; ?></code>
 			and add the create a function that returns bogus data.
 		</p>
@@ -265,10 +269,10 @@ It means you're trying to access the mockup version (as you can tell by the name
 		<p>And here's an even more sophisticated example:</p>
 		<p>
 <pre class="brush: php">
-function mockup_example() 
-{ 
+function mockup_example()
+{
 	// create a bogus URL that points to the about mockup
-	return \app\Make::url('about'); 
+	return \app\Make::url('about');
 }</pre>
 		</p>
 	</li>
@@ -287,7 +291,7 @@ function mockup_example()
 </ol>
 
 <p>
-	If a design is missing handling for those states, it is not final! and thus will require 
+	If a design is missing handling for those states, it is not final! and thus will require
 	re-touching.
 </p>
 
@@ -333,7 +337,7 @@ function mockup_example()
 	</ul>
 <? else: # blank state ?>
 	<p class="alert alert-info">
-		Currently there are no entries. 
+		Currently there are no entries.
 		Be the first to add some by using the controls at the top.
 	</p>
 <? endif; ?>') ?>
@@ -358,7 +362,7 @@ one and the same.</small></p>
 			\'title\' => \app\Make::title(),
 			\'url\' => \app\Make::url(),
 		);
-		
+
 	return \app\Make::copies($entry);
 }') ?>
 </pre>
@@ -370,8 +374,8 @@ one and the same.</small></p>
 <?= \htmlspecialchars
 ('<form>
 	<div>
-		
-		First Name <input type="text" /> 
+
+		First Name <input type="text" />
 		Last Name <input type="text" />
 		Tel <input type="text" />
 		Password <input type="password" />
@@ -389,12 +393,12 @@ one and the same.</small></p>
 <?= \htmlspecialchars
 ('<?= $f = Form::i(\'twitter.general\', $control->act(\'signup\')) ?>
 	<fieldset>
-	
+
 		<?= $f->text(\'First Name\', \'given_name\') ?>
 		<?= $f->text(\'Last Name\', \'family_name\') ?>
 		<?= $f->text(\'Tel\', \'telephone\') ?>
 		<?= $f->password(\'Password\', \'password\') ?>
-		
+
 		<div class="form-actions">
 			<button class="btn btn-primary btn-large" type="submit" <?= $f->sign() ?>>
 				Request Membership
@@ -405,7 +409,7 @@ one and the same.</small></p>
 </pre>
 
 <p>
-	No mockup is required unless you call context (which we don't) to populate some element 
+	No mockup is required unless you call context (which we don't) to populate some element
 	in the form, such as a select. The form generates everything from labels to tabindex, form
 	attributes as well as managed all the useless cruft that comes with the form.
 </p>
@@ -425,20 +429,21 @@ one and the same.</small></p>
 </pre>
 <p>
 	And that's just in the non-error state and with everything on default. You can customize
-	all your forms from a single configuration changing the way all of them render. To do this
-	just create your own standard and use it in the place of <code>twitter.general</code>.
+	all your forms from a single configuration file, changing the way all of them render. To do this
+	just create your own "standard" (in a <code>mjolnir/forms</code> config) and use it in the
+	place of <code>twitter.general</code>.
 </p>
 
 <<?= $checklist ?>>Pagination</<?= $checklist ?>>
 
-<p>Surprisingly hard to make a good one. Thus, preferably (so as to handle all the edge cases) 
+<p>Surprisingly hard to make a good one. Thus, preferably (so as to handle all the edge cases)
 simply use the Pager class to get the job done.</p>
 <pre class="<?= $php_highlighter ?>">
 <?= \htmlspecialchars('<?= $context->pagination()->standard(\'twitter\')->render() ?>') ?></pre>
 <p>And here's how to make a quick mockups</p>
-<pre class="brush: php">function pagination() 
-{ 
-	return \app\Pager::instance()->totalentries(\rand(0, 1000); 
+<pre class="brush: php">function pagination()
+{
+	return \app\Pager::instance()->totalentries(\rand(0, 1000);
 }</pre></p>
 
 <p>If you want the pager not to show for 0 or 1 pages of data, simply do:</p>
@@ -463,7 +468,7 @@ simply use the Pager class to get the job done.</p>
 		</tr>
 		<tr>
 			<td>
-				I have a file <code>some_page.php</code>, but when I access 
+				I have a file <code>some_page.php</code>, but when I access
 				<code>mockup/some_page</code> to see the output it doesn't show!
 			</td>
 			<td>
@@ -483,23 +488,23 @@ simply use the Pager class to get the job done.</p>
 			<td>
 				By default the entire project is setup to ignore all compiled files. Makes life
 				easier for people working with source versioning. If you copy/clone/etc a project
-				make sure to re-run all the <code>+start.rb</code> files. This only applies for 
+				make sure to re-run all the <code>+start.rb</code> files. This only applies for
 				main themes, themes in modules do actually come with all the files compiled.
 			</td>
 		</tr>
 		<tr>
 			<td>Javascript doesn't work!</td>
 			<td>
-				Check for errors in the compiler window (that's the same one with the 
-				autocompiler, ie. the one from <code>+start.rb</code>). You can also check the 
-				console window in your browser for <code>[ERROR]</code> blocks. When something 
-				bad happens the theme system will output a javascript printing errors instead of 
-				the actual javascript. If you're using Chrome go into your dev tools options (hit inspect 
-				first) and enable source maps. You will then see all the javascript files in 
-				clear unminified form. You can now check to see where and why your javascript 
-				failed. If you don't see them and don't see a <code>[ERROR]</code> tag please 
-				check the file's URL for the error and drop it to the programmers; this case is 
-				very very rare if nonexistent but is always a posibility if sloppy code makes 
+				Check for errors in the compiler window (that's the same one with the
+				autocompiler, ie. the one from <code>+start.rb</code>). You can also check the
+				console window in your browser for <code>[ERROR]</code> blocks. When something
+				bad happens the theme system will output a javascript printing errors instead of
+				the actual javascript. If you're using Chrome go into your dev tools options (hit inspect
+				first) and enable source maps. You will then see all the javascript files in
+				clear unminified form. You can now check to see where and why your javascript
+				failed. If you don't see them and don't see a <code>[ERROR]</code> tag please
+				check the file's URL for the error and drop it to the programmers; this case is
+				very very rare if nonexistent but is always a posibility if sloppy code makes
 				it into the project.
 			</td>
 		</tr>
