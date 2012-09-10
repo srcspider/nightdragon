@@ -13,8 +13,7 @@
 
 	<p>Mjolnir is a flexible and unbiased, PHP framework focused on getting things done. It is designed
 	to interoperate with virtually every piece of PHP code you can find, as well as be as simple,
-	straight forward, and customizable as possible; practically everything within it can be overwritten
-	to meet your needs.</p>
+	straight forward, and customizable/overwritable as possible.</p>
 
 	<p>Currently Mjölnir is in alpha, going by our
 	<a href="https://github.com/ibidem/ibidem/blob/master/versioning.md">strict no-nonsense
