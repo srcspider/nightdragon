@@ -11,10 +11,26 @@ $ds = DIRECTORY_SEPARATOR;
 
 $cfspath = DOCROOT.'vendor'.$ds.'mjolnir'.$ds.'cfs'.$ds.'+App'.$ds;
 
-// fail gracefully on error
+// fail gracefully when libraries are missing
 if ( ! \file_exists($cfspath))
 {
-	echo 'Missing system libraries. Terminating.';
+	if (\defined('PUBDIR'))
+	{
+		$pubdir_config = include PUBDIR.'config'.EXT;
+		if ($pubdir_config['development'])
+		{
+			echo 'Missing system libraries. '.PHP_EOL;
+			echo 'Please install by running "install-vendor" in ['.$pubdir_config['system.dir'].']';
+		}
+		else #
+		{
+			echo 'Ooops! Something went kaboom. Please try again in a moment.';
+		}
+	}
+	else # potentially console app
+	{
+		echo 'Missing system libraries. Terminating.';
+	}
 	exit(1);
 }
 
