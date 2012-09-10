@@ -11,6 +11,13 @@ $ds = DIRECTORY_SEPARATOR;
 
 $cfspath = DOCROOT.'vendor'.$ds.'mjolnir'.$ds.'cfs'.$ds.'+App'.$ds;
 
+// fail gracefully on error
+if ( ! \file_exists($cfspath))
+{
+	echo 'Missing system libraries. Terminating.';
+	exit(1);
+}
+
 // we load the default environment; if you want custom APPPATH, MODPATH, PLGPATH
 // simply define them before this statement, they will not be redefined.
 require $cfspath.'default.mjolnir.php';
