@@ -4,17 +4,20 @@
 
 return array
 	(
-	
-		'/' 
+
+		'/'
 			=> [ 'demo' ],
-	
-		'/about' 
+
+		'/about'
 			=> [ 'about' ],
-	
-	
-	//// API ///////////////////////////////////////////////////////////////////
-	
-		'/api/demo/<action>' 
-			=> [ [ 'demo.jsent' => 'demo' ], ['action' => '(data)'] ],
-	
+
+		'/start'
+			=> [ 'start' ],
+
+
+	//// API (example) /////////////////////////////////////////////////////////
+
+		'/api/Demo/<action>'
+			=> [ [ 'demo.json' => 'demo' ], ['action' => '(entries)'] ],
+
 	);

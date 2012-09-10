@@ -13,12 +13,12 @@ trait Trait_Context_DemoBase
 	{
 		return \app\CFS::config('mjolnir/base')['site:title'];
 	}
-	
+
 	function site_url()
 	{
 		return \app\URL::href('demo');
 	}
-	
+
 	function navlist()
 	{
 		return array
@@ -26,6 +26,10 @@ trait Trait_Context_DemoBase
 				[
 					'title' => 'About Mjölnir',
 					'url' => \app\URL::href('about'),
+				],
+				[
+					'title' => 'Quick Start',
+					'url' => \app\URL::href('start'),
 				],
 			);
 	}

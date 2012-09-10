@@ -2,14 +2,16 @@
 
 /**
  * @package    demo
- * @category   Context
+ * @category   Controller
  * @author     Ibidem
  * @copyright  (c) 2012, Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-class Context_About extends \app\Instantiatable
+class Controller_Start extends \app\Controller_Web
 {
-	use \app\Trait_Context_DemoBase;
-
+	/**
+	 * @var string
+	 */
+	protected static $target = 'start';
 
 } # class

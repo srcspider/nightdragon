@@ -232,7 +232,7 @@ our theme files. The theme files are <b>final</b>!</p>
 
 <p>After changing you should notice now when accessing
 <a href="<?= $mockup_example ?>"><?= $mockup_example ?></a> you get the error
-<code>Fatal error: Class '\mockup\Context_About' not found [...]</code>. This is good!
+<code>Fatal error: Class '\mockup\Context_Start' not found [...]</code>. This is good!
 It means you're trying to access the mockup version (as you can tell by the name); but the mockup
 doesn't exist yet.</p>
 
@@ -252,7 +252,7 @@ doesn't exist yet.</p>
 	</li>
 	<li>
 		<p>You're now halfway there. If you now try to access <a href="<?= $mockup_example ?>">the mockup page</a> you should see the page, roughly.</p>
-		<p>Should you scroll down you will find a error <code>Fatal error: Call to undefined method mockup\Context_About::mockup_example() [...]</code></p>
+		<p>Should you scroll down you will find a error <code>Fatal error: Call to undefined method mockup\Context_Start::mockup_example() [...]</code></p>
 		<p>Basically it's telling us <code>mockup_example</code> doesn't exist in our new <code>Context_About</code> class. <small class="muted">(see last part of error)</small></p>
 	</li>
 	<li>
@@ -453,6 +453,63 @@ simply use the Pager class to get the job done.</p>
 	<?= $context->pagination()->render() ?>
 <? endif; ?>') ?></pre>
 
+<<?= $checklist ?>>HTML5 tags</<?= $checklist ?>>
+
+<p>
+	At the time of this writing HTML5 tags, ie. <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>
+	<code>&lt;nav&gt;</code>, etc, are completely useless and should be avoided!
+</p>
+
+
+
+<p>Here's an example of some basic markup:</p>
+
+<pre class="<?= $php_highlighter ?>">
+<?= \htmlspecialchars('<section>
+	<nav>
+		<ul>
+			...
+		</ul>
+	</nav>
+	<article>
+		...
+	</article>
+</section>') ?></pre>
+
+<p>What most people think:</p>
+<ul>
+	<li><p>They were created by the W3C</p></li>
+	<li><p>They help search engines navigate your site</p></li>
+	<li><p>They help people with screen readers</p></li>
+	<li><p>They're purpose is to logically structure your site</p></li>
+</ul>
+
+<p>The <b>sad truth</b>:</p>
+<ul>
+	<li><p>They were created by the HTML5 editor (before the HTML5 working group collaborated with W3C)</p></li>
+	<li><p>Search engines don't care! If you want to mark data for search engines refer to <a href="http://schema.org/">schema.org</a></p></li>
+	<li>
+		<p>Screen readers don't understand them. Proper use of h1 to h6 and other techniques is still
+			the best way to help screen readers. If you want to go the extra mile what you want to do
+			is use <a href="http://www.w3.org/WAI/intro/aria.php">WAI-ARIA</a> landmark roles, such as
+			<code>navigation</code> as well as avoid useless garbage text. For example a typical error
+			in validation is the requirement for alt text on img tags. This is commonly misinterpreted
+			as "description of image" but it's really just that you should have and alt attribute, so
+			<code>alt=""</code> is actually perfectly fine,	and in the case of purely visual ques such as
+			avatars the correct way to write it, since	why would someone using a screen reader care to be
+			reminded of "Avatar of WhatsHisName" every other sentence.
+		</p>
+	</li>
+
+	<li>
+		<p>Their (original, intended) purpose is to replace <code>div</code> tags with an equivalent
+			id attribute. <small class="muted">(yes you've read that right)</small>
+		</p>
+	</li>
+</ul>
+
+<p>For managing heading levels the <code>H</code> class can be used. See this very file, located at
+<code><?= __FILE__ ?></code>, for an example.</p>
 
 <<?= $sub ?>>Common Gotchas</<?= $sub ?>>
 

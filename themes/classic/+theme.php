@@ -1,51 +1,57 @@
 <?php return array
-	(	
+	(
 		// target-to-file mapping
 		'targets' => array
 			(
-			
+
 			//// Demo //////////////////////////////////////////////////////////
-			
+
 				'demo' => array
 					(
 						'components/base',
-						'demofiles/start' 
+						'demofiles/demo'
 					),
-			
+
 				'about' => array
 					(
 						'components/base',
-						'demofiles/about' 
+						'demofiles/about'
 					),
-			
+
+				'start' => array
+					(
+						'components/base',
+						'demofiles/start'
+					),
+
 			//// Style Reference ///////////////////////////////////////////////
-			
+
 				'ref' => array # should be called only via mockup/
 					(
 						'+mockup'
 					),
-			
+
 			//// Exceptions ////////////////////////////////////////////////////
-			
+
 				'exception-NotFound' => array
 					(
 						'components/errors/base',
-						'errors/not-found' 
+						'errors/not-found'
 					),
 				'exception-NotAllowed' => array
 					(
 						'components/errors/base',
-						'errors/not-allowed' 
+						'errors/not-allowed'
 					),
 				'exception-NotApplicable' => array
 					(
 						'components/errors/base',
-						'errors/not-applicable' 
+						'errors/not-applicable'
 					),
 				'exception-Unknown' => array
 					(
 						'components/errors/base',
-						'errors/unknown' 
+						'errors/unknown'
 					),
 			),
 	);

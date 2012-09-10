@@ -12,55 +12,60 @@
 				'base',
 				'unsorted'
 			),
-	
+
 		// mapping targets to files; if a target is not mapped it won't have
 		// any style associated
 		'targets' => array
 			(
-			
+
 			//// Demo //////////////////////////////////////////////////////////
-			
+
 				'demo' => array
 					(
 						// twitter bootstrap
 						'+lib/twitter/bootstrap',
 						'+lib/twitter/responsive',
 					),
-			
-				'thor' => array
-					(
-						// twitter bootstrap
-						'+lib/twitter/bootstrap',
-						'+lib/twitter/responsive',
-					),
-			
+
 				'about' => array
 					(
 						// twitter bootstrap
 						'+lib/twitter/bootstrap',
 						'+lib/twitter/responsive',
-					
+
 						// SyntaxHighlighter
 						'+vendor/SyntaxHighlighter/shCore',
 						'+vendor/SyntaxHighlighter/shCoreDefault',
 						'+vendor/SyntaxHighlighter/shThemeRDark',
 					),
-			
+
+				'start' => array
+					(
+						// twitter bootstrap
+						'+lib/twitter/bootstrap',
+						'+lib/twitter/responsive',
+
+						// SyntaxHighlighter
+						'+vendor/SyntaxHighlighter/shCore',
+						'+vendor/SyntaxHighlighter/shCoreDefault',
+						'+vendor/SyntaxHighlighter/shThemeRDark',
+					),
+
 			//// Style Reference ///////////////////////////////////////////////
-			
+
 				'ref' => array # should be called only via mockup/
 					(
 						// chosen
 						'+lib/jquery/jquery.chosen',
-					
+
 						// SyntaxHighlighter
 						'+vendor/SyntaxHighlighter/shCore',
 						'+vendor/SyntaxHighlighter/shThemeRDark',
-					
+
 						// twitter bootstrap
 						'+lib/twitter/bootstrap',
 						'+lib/twitter/responsive',
-				
+
 						// jquery ui
 						'+lib/jquery/ui/jquery.ui.accordion',
 						'+lib/jquery/ui/jquery.ui.autocomplete',
@@ -73,11 +78,11 @@
 						'+lib/jquery/ui/jquery.ui.selectable',
 						'+lib/jquery/ui/jquery.ui.slider',
 						'+lib/jquery/ui/jquery.ui.tabs',
-						'+lib/jquery/ui/jquery.ui.theme',					
+						'+lib/jquery/ui/jquery.ui.theme',
 					),
-			
+
 			//// Exceptions ////////////////////////////////////////////////////
-			
+
 				'exception-NotFound' => array
 					(
 						'errors/base'
