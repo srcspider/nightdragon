@@ -39,7 +39,7 @@ if (\defined('PUBDIR'))
 }
 else # console or other
 {
-	$base_config = include APPPATH.'config/ibidem/base'.EXT;
+	$base_config = include APPPATH.'config/mjolnir/base'.EXT;
 	if (\file_exists($base_config['private.files']))
 	{
 		\app\CFS::add_frontpaths([$base_config['private.files']]);
@@ -51,15 +51,7 @@ else # console or other
 // should always be explicit
 CFS::add_namespaces($env_config['namespaces']);
 
-// any additional helpers or settings for testing
-if (\getenv('IS_UNITTEST'))
-{
-	// adds test_redirect, test_redirects and test_reset to Instantitable class
-	// allowing instances to be redirected into mockups in tests
-	require $cfspath.'test.Instantiatable.php';
-}
-
-$base_config = \app\CFS::config('ibidem/base');
+$base_config = \app\CFS::config('mjolnir/base');
 	
 // see: http://php.net/timezones
 \date_default_timezone_set($base_config['timezone']);	
@@ -100,6 +92,9 @@ if (\file_exists(PLGPATH.$ds.'autoload'.EXT))
 	require PLGPATH.$ds.'autoload'.EXT;
 }
 
+
+\trait_exists('\app\Trait_Params');
+\trait_exists('\app\Document_Params');
 
 // done; cleaning up
 unset($ds, $cfspath);

@@ -11,7 +11,7 @@ trait Trait_Context_DemoBase
 {
 	function site_title()
 	{
-		return \app\CFS::config('ibidem/base')['site:title'];
+		return \app\CFS::config('mjolnir/base')['site:title'];
 	}
 	
 	function site_url()

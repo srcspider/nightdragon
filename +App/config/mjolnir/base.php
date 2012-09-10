@@ -16,6 +16,6 @@ else # PUBDIR not defined
 			// assume private files are just outside the project; customize
 			// this to actual path if not valid
 			'private.files' => \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'../../../..')
-				. DIRECTORY_SEPARATOR.'ibidem.private'.DIRECTORY_SEPARATOR,
+				. DIRECTORY_SEPARATOR.'mjolnir.private'.DIRECTORY_SEPARATOR,
 		);
 }
