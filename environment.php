@@ -6,7 +6,7 @@
 				MODPATH.'demo' => 'demo\core',
 
 				// development modules
-//				MODPATH.'+mockup' => 'mockup',
+				MODPATH.'+mockup' => 'mockup',
 
 				// library legacy code
 //				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'legacy' => 'mjolnir\legacy',
