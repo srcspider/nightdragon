@@ -7,6 +7,8 @@ require 'json'
 $basedir = nil;
 $config = nil;
 
+$compiler_options = ' --warning_level QUIET --third_party --compilation_level WHITESPACE_ONLY'
+
 def read_configuration()
 	json_config = `php -r "chdir('#{$basedir}'); echo json_encode(include '+script.php');"`;
 	$config = JSON.parse json_config
@@ -26,7 +28,7 @@ def read_configuration()
 end#def
 
 def regenerate(key, files)
-	`java -jar compiler.jar --compilation_level WHITESPACE_ONLY --js #{files.join(' ')} --js_output_file ./closure/#{key}.min.js --create_source_map ./closure/#{key}.min.js.map --source_map_format=V3`;
+	`java -jar compiler.jar #{$compiler_options} --js #{files.join(' ')} --js_output_file ./closure/#{key}.min.js --create_source_map ./closure/#{key}.min.js.map --source_map_format=V3`;
 end#def
 
 def process (r)
