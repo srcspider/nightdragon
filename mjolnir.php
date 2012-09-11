@@ -42,6 +42,11 @@ require $cfspath.'default.mjolnir.php';
 
 # ---- Modules --------------------------------------------------------------- #
 
+if (\defined('PUBDIR'))
+{
+	$pubdir_config = include PUBDIR.'config'.EXT;
+}
+
 $env_config = include 'environment'.EXT;
 
 // setup the modules
