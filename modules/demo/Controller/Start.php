@@ -9,6 +9,8 @@
  */
 class Controller_Start extends \app\Controller_Web
 {
+	use \app\Trait_Controller_DemoBase;
+	
 	/**
 	 * @var string
 	 */

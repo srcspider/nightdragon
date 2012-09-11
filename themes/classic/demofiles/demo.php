@@ -1,7 +1,8 @@
 <?
-	/** @var $context \app\Context_Start */
-
 	namespace app;
+
+	/* @var $context Context_Demo */
+	/* @var $theme ThemeView */
 
 	$ds = DIRECTORY_SEPARATOR;
 
@@ -78,7 +79,7 @@
 		<li><p>Yet another way is to use the method above to create your own template,
 			if you find yourself repeating creating repetative project structure over
 			and over. You then re-apply the methodology but for your own custom template.
-			The idea here is you might want a completely 
+			The idea here is you might want a completely
 			different project structure then the current default.
 			<small class="muted">(yes it's all customizable and in your hands)</small> Or
 			you might just have your own favorite tools (Doctrine? Vagrant?). Or maybe you
