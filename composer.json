@@ -1,11 +1,4 @@
 {
-	"name": "example/template",
-	"version": "0.0",
-	"description": "tempate",
-	"keywords": ["template"],
-	"type": "library",
-	"license": "BSD-2",
-
 	"minimum-stability": "dev",
 
 	"require": {
