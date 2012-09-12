@@ -11,15 +11,16 @@
 				// library legacy code
 //				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'legacy' => 'mjolnir\legacy',
 
-				// library modules
-				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'backend' => 'mjolnir\backend',
+				// mjolnir modules (almost all are optional)
 				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'access' => 'mjolnir\access',
 				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'base' => 'mjolnir\base',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'html' => 'mjolnir\html',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'database' => 'mjolnir\database',
 				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'cache' => 'mjolnir\cache',
 				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'theme' => 'mjolnir\theme',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'backend' => 'mjolnir\backend',
 				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'schematics' => 'mjolnir\schematics',
-				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'database' => 'mjolnir\database',
-				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'html' => 'mjolnir\html',
+				PLGPATH.'mjolnir'.DIRECTORY_SEPARATOR.'librarian' => 'mjolnir\librarian',
 			),
 
 		'namespaces' => array
