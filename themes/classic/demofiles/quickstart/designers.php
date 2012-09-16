@@ -1,6 +1,4 @@
 <?
-	/** @var $context \app\Context_About */
-
 	namespace app;
 
 	// shorthand directory separator
@@ -9,11 +7,17 @@
 	$h = H::current(); # header level
 	// we store the highlighter settings; we got variables, we use them ;)
 	$php_highlighter = 'brush: php; html-script: true;';
+	$mockup_ref = URL::href('\mjolnir\theme\mockup', ['target' => 'guide']);
 ?>
+
+<p>This is a mockup guide, if you are looking for a (mockup) reference see:
+<a href="<?= $mockup_ref ?>"><?= $mockup_ref ?></a></p>
 
 <<?= $h ?>>Quick-Start for Designers</<?= $h ?>>
 
 <p class="muted"><small>(worst case is assumed; please ignore the parts that do not apply to you)</small></p>
+
+
 
 <p>Mjölnir is designed for modern web apps so a few assumtions are made:</p>
 
