@@ -1,0 +1,5 @@
+indent-spaces: 4
+indent: auto
+wrap: 1000
+show-body-only: yes
+force-output: yes

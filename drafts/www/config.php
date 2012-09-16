@@ -42,12 +42,19 @@ return array
 		'development' => false,
 
 		// specifies the mockup namespace
-		'mockup-ns' => 'app',
+		'mockup-ns' => 'mockup',
 
 		// static mode: theme resource files will be written to disk source maps
 		// will not be available; you are free to rewrite headers if you really
 		// really want them with this mode enabled
 		'static-theme' => false,
+
+		// disables certain features
+		'disable' => array
+			(
+				// true = disabled, false = allowed
+				'closure-mode' => false,
+			),
 
 		// path on system to private files (password, etc), these act as any
 		// typical file-only module

@@ -1,0 +1,1 @@
+<pre class="brush: php; html-script: true;"><?= \htmlspecialchars($pubdir_404_contents) ?></pre>
