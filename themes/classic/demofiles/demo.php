@@ -72,8 +72,10 @@
 			technique, it works great since you can easily pull in template updates, as
 			well as maintain multiple such prototypes in the same project. You can go
 			further and rename the remote (<code>git remote rename origin mjolnir</code>)
-			and your own <code>origin</code> and then use it to push a clean master
-			to your own remote while keeping the template remote for updates.</p>
+			add your own <code>origin</code> (<code>git remote add origin
+			<span class="text-info">&lt;your-repo&gt;</span></code>) and then use
+			it to push a clean master to your own remote while keeping the
+			template remote for updates.</p>
 		</li>
 
 		<li><p>Yet another way is to use the method above to create your own template,
