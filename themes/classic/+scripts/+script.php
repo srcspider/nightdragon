@@ -142,6 +142,7 @@
 						'+lib/mjolnir/shadows/xlinker',
 						'+lib/mjolnir/shadows/saveme',
 						'+lib/mjolnir/shadows/xref',
+						'+lib/mjolnir/shadows/xsync',
 					),
 
 			//// Exceptions ////////////////////////////////////////////////////

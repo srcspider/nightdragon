@@ -20,7 +20,7 @@
 
 	<ul class="nav nav-tabs">
 		<li><a href="#jshadow-info-tab">About Shadows</a></li>
-		<? foreach (['ui', 'tabs', 'xlinker', 'saveme', 'xref'] as $shadow): ?>
+		<? foreach (['ui', 'tabs', 'xlinker', 'saveme', 'xref', 'xsync'] as $shadow): ?>
 			<li><a href="#<?= $shadow ?>-shadow-tab"><u><?= $shadow ?></u> shadow</a></li>
 		<? endforeach; ?>
 	</ul>
@@ -265,6 +265,106 @@
 		<?= \app\View::instance()->file_path($example)
 			->variable('control', $control)
 			->variable('examples', $examples)
+			->render() ?>
+
+	</div>
+	
+	<div id="xsync-shadow-tab">
+
+		<<?= $h2 ?>><u>xsync</u> shadow</<?= $h2 ?>>
+
+		<p>The cross-sync shadow allow's the autoloading of select fields in
+		succession (this can mean anything, not just ajax). To use it you first
+		define a scope via <code>data-xsync-scope</code>, then place 
+		<code>data-xsync</code> on the master with a jquery selector of the
+		slaves. Then, again on the master, you place 
+		<code>data-xsync-call</code> with the value of a valid javascript
+		callback function which accepts the field (ie. whatever jquery 
+		<code>.val()</code> returns, and is expected to return an empty array
+		on error, or an array with the values with which the slaves will be
+		populated.</p>
+		
+		<p>The format of the array is: 
+		<code>[ {'id': <span class="text-info">&lt;option-value&gt;</span>, 
+			'title': <span class="text-info">&lt;option-title&gt;</span>}, 
+			... ]</code></p>
+
+		<p><small class="muted">Example</small></p>
+
+		<?
+			$example = $current_dir.'examples/xsync'.EXT;
+			$file = \file_get_contents($example);
+		?>
+
+		<pre class="brush: php; html-script: true;"><?= \htmlspecialchars($file) ?></pre>
+
+		<p><small class="muted">Result</small></p>
+
+		<?
+			$examples = array
+				(
+					[
+						'id' => '-',
+						'title' => '&nbsp;',
+					],
+					[
+						'id' => '1',
+						'title' => 'xxx',
+					],
+					[
+						'id' => '2',
+						'title' => 'yyy',
+					],
+					[
+						'id' => '3',
+						'title' => 'zzz',
+					]
+				);
+		?>
+		
+		<script type="text/javascript">
+			
+			var xsync_type2 = [
+				{ 'id': '1', 'title': 'aaa', 'parent': ['1', '2'] },
+				{ 'id': '2', 'title': 'bbb', 'parent': ['1', '2'] },
+				{ 'id': '3', 'title': 'ccc', 'parent': ['3'] },
+				{ 'id': '4', 'title': 'ddd', 'parent': ['3'] },
+				{ 'id': '5', 'title': 'eee', 'parent': ['1'] }
+			];
+			
+			var xsync_type3 = [
+				{ 'id': '1', 'title': '111', 'parent': ['1', '2'] },
+				{ 'id': '2', 'title': '222', 'parent': ['1', '2'] },
+				{ 'id': '3', 'title': '333', 'parent': ['3'] },
+				{ 'id': '4', 'title': '444', 'parent': ['3', '4'] },
+				{ 'id': '5', 'title': '555', 'parent': ['3', '5'] }
+			];
+			
+			var xsync_type2_resolver = function (input) {
+				if (input != '' && input != '-') {
+					return xsync_type2;
+				}
+				else { // blank state
+					return [];
+				}
+			};
+			
+			var xsync_type3_resolver = function (input) {
+				if (input != '' && input != '-') {
+					return xsync_type3;
+				}
+				else { // blank state
+					return [];
+				}
+			};
+			
+		</script>
+		
+		<?= \app\View::instance()->file_path($example)
+			->variable('control', $control)
+			->variable('examples', $examples)
+			->variable('type2_resolver', 'xsync_type2_resolver')
+			->variable('type3_resolver', 'xsync_type3_resolver')
 			->render() ?>
 
 	</div>
