@@ -14,17 +14,23 @@ def read_configuration()
 	$config = JSON.parse json_config
 	if $config['common'] == nil
 		$config['common'] = [];
+	else # not nil
+		$config['common'] = $config['common'].find_all do |item| item !~ /(^[a-z]+:\/\/|^\/\/).*$/ end
 	end#def
 
 	# include common files
 	$config['targets'].each do |key, files|
+		files = files.find_all do |item| item !~ /(^[a-z]+:\/\/|^\/\/).*$/ end
 		$config['targets'][key] = $config['common'] + files;
 	end#each
 
 	# convert to paths
 	$config['targets'].each do |key, files|
+		files = files.find_all do |item| item !~ /(^[a-z]+:\/\/|^\/\/).*$/ end
 		files.collect! do |file| 'src/'+file+'.js'; end#collect
+		$config['targets'][key] = files
 	end#each
+	
 end#def
 
 def regenerate(key, files)
