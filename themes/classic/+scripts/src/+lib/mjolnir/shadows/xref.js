@@ -1,5 +1,5 @@
 /**
- * Shadow for managing modal to button cross-reference; among other things.
+ * Plugin for managing modal to button inter-connection.
  *
  * @version 1.0
  * @license https://github.com/ibidem/ibidem/blob/master/LICENSE.md (BSD-2)

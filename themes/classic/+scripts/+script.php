@@ -136,6 +136,7 @@
 						'+lib/twitter/bootstrap-typeahead',
 
 					// mjolnir
+						'+lib/mjolnir/jsend-1.0',
 						'+lib/mjolnir/jshadow-1.1',
 						'+lib/mjolnir/shadows/tabs',
 						'+lib/mjolnir/shadows/ui',
@@ -143,6 +144,8 @@
 						'+lib/mjolnir/shadows/saveme',
 						'+lib/mjolnir/shadows/xref',
 						'+lib/mjolnir/shadows/xsync',
+						'+lib/mjolnir/shadows/xload',
+						'+lib/mjolnir/shadows/xselect',
 					),
 
 			//// Exceptions ////////////////////////////////////////////////////

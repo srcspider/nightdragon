@@ -20,7 +20,7 @@
 
 	<ul class="nav nav-tabs">
 		<li><a href="#jshadow-info-tab">About Shadows</a></li>
-		<? foreach (['ui', 'tabs', 'xlinker', 'saveme', 'xref', 'xsync'] as $shadow): ?>
+		<? foreach (['ui', 'tabs', 'xlinker', 'saveme', 'xref', 'xsync', 'xload', 'xselect'] as $shadow): ?>
 			<li><a href="#<?= $shadow ?>-shadow-tab"><u><?= $shadow ?></u> shadow</a></li>
 		<? endforeach; ?>
 	</ul>
@@ -367,6 +367,106 @@
 			->variable('type3_resolver', 'xsync_type3_resolver')
 			->render() ?>
 
+	</div>
+	
+	<div id="xload-shadow-tab">
+
+		<<?= $h2 ?>><u>xload</u> shadow</<?= $h2 ?>>
+
+		<p>The xload shadow makes all links load the page though ajax.</p>
+
+		<p>You specify a scope via <code>data-xload-scope</code> and a 
+		destination (by default <code>#page</code> is assumed). The plugin
+		will do the rest. The destination will also be used as a filter for
+		the provided url.</p>
+
+		<p><small class="muted">Example</small></p>
+
+		<?
+			$example = $current_dir.'examples/xload'.EXT;
+			$file = \file_get_contents($example);
+		?>
+
+		<pre class="brush: php; html-script: true;"><?= \htmlspecialchars($file) ?></pre>
+
+	</div>
+	
+	<div id="xselect-shadow-tab">
+
+		<<?= $h2 ?>><u>xselect</u> shadow</<?= $h2 ?>>
+		
+		<p>The xselect shadow recieves a scope containing several selects, via
+		<code>data-xselect-scope</code>. All selects marked with 
+		<code>data-xselect-source</code> will be combined (as groups) in the 
+		select with <code>data-xselect-master</code>, as optgroups.</p>
+		
+		<p>The title of each group is determined by the value provided to 
+		<code>data-xselect-source</code></p>
+		
+		<p>When an item is selected in the master select all the associated 
+		source selects are updated. Selects in which the item does not belong 
+		to are reset to their first item. The select that contains the item
+		is set to that item.</p>
+		
+		<p>If the master select is not marked with <code>data-xselect-blank</code>
+		then it will not contain a blank option, otherwise a blank option will
+		be created with the value of <code>data-xselect-blank</code></p>
+
+		<p><small class="muted">Example</small></p>
+
+		<?
+			$example = $current_dir.'examples/xselect'.EXT;
+			$file = \file_get_contents($example);
+		?>
+
+		<pre class="brush: php; html-script: true;"><?= \htmlspecialchars($file) ?></pre>
+
+		<p><small class="muted">Result</small></p>
+		
+		<?
+			$apples = array
+				(
+					[
+						'id' => '-',
+						'title' => '&nbsp;',
+					],
+					[
+						'id' => '1',
+						'title' => 'apple1',
+					],
+					[
+						'id' => '2',
+						'title' => 'apple2',
+					],
+					[
+						'id' => '3',
+						'title' => 'apple3',
+					]
+				);
+			
+			$oranges = array
+				(
+					[
+						'id' => '-',
+						'title' => '&nbsp;',
+					],
+					[
+						'id' => '1',
+						'title' => 'orange1',
+					],
+					[
+						'id' => '2',
+						'title' => 'orange2',
+					],
+				);
+		?>
+		
+		<?= \app\View::instance()->file_path($example)
+			->variable('control', $control)
+			->variable('apples', $apples)
+			->variable('oranges', $oranges)
+			->render() ?>
+		
 	</div>
 
 </div>
