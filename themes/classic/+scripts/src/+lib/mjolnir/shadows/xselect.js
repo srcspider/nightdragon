@@ -65,7 +65,7 @@
 				// standardize value
 				blank = null;
 			}
-			console.log(groups);
+			
 			// inject groups
 			$.each(groups, function (groupname, group) {
 				markup += '<optgroup label="'+group.title+'">';
