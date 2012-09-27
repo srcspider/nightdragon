@@ -397,20 +397,17 @@
 		
 		<p>The xselect shadow recieves a scope containing several selects, via
 		<code>data-xselect-scope</code>. All selects marked with 
-		<code>data-xselect-source</code> will be combined (as groups) in the 
-		select with <code>data-xselect-master</code>, as optgroups.</p>
-		
-		<p>The title of each group is determined by the value provided to 
-		<code>data-xselect-source</code></p>
+		<code>data-xselect-source</code> will be combined into the select with 
+		<code>data-xselect-master</code>, as optgroups. The title of each group 
+		is determined by the value provided to <code>data-xselect-source</code></p>
 		
 		<p>When an item is selected in the master select all the associated 
 		source selects are updated. Selects in which the item does not belong 
-		to are reset to their first item. The select that contains the item
-		is set to that item.</p>
+		to are reset to their first item.</p>
 		
 		<p>If the master select is not marked with <code>data-xselect-blank</code>
 		then it will not contain a blank option, otherwise a blank option will
-		be created with the value of <code>data-xselect-blank</code></p>
+		be created with the value provided by <code>data-xselect-blank</code></p>
 
 		<p><small class="muted">Example</small></p>
 

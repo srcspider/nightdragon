@@ -76,6 +76,7 @@
 			});
 			
 			$master.html(markup);
+			$master.trigger('change');
 			
 			$master.on('change.mjolnir_xselect', function (event) {
 				var key = $master.val(),
@@ -88,6 +89,9 @@
 				});
 
 				slavecache[group].val(value);
+				
+				// trigger change
+				$slaves.trigger('change');
 			});
 			
 			// show master
