@@ -376,9 +376,19 @@
 		<p>The xload shadow makes all links load the page though ajax.</p>
 
 		<p>You specify a scope via <code>data-xload-scope</code> and a 
-		destination (by default <code>#page</code> is assumed). The plugin
-		will do the rest. The destination will also be used as a filter for
-		the provided url.</p>
+		destination (by default <code>page</code> is assumed). The destination 
+		has to be an id. The plugin will do the rest. The destination will also 
+		be used as a filter for the provided url.</p>
+		
+		<p>To exclude links (ie. keep them as normal links) suround them with a
+		<code>data-xload-exclude</code> block.</p>
+		
+		<p> In case the status code is not 200 or any other funny business is 
+		detected the plugin will automatically revert back to normal 
+		handling. Note that the status code which is checked is the last status
+		code, not a redirect status code. So a request passing though redirects
+		will only have a non-200 status code if the at the end of the chain the
+		page has a non-200 status.</p>
 
 		<p><small class="muted">Example</small></p>
 
