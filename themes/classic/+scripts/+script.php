@@ -146,6 +146,7 @@
 						'+lib/mjolnir/shadows/xsync',
 						'+lib/mjolnir/shadows/xload',
 						'+lib/mjolnir/shadows/xselect',
+						'+lib/mjolnir/shadows/backselect',
 					),
 
 			//// Exceptions ////////////////////////////////////////////////////

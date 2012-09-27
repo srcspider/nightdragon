@@ -20,8 +20,8 @@
 
 	<ul class="nav nav-tabs">
 		<li><a href="#jshadow-info-tab">About Shadows</a></li>
-		<? foreach (['ui', 'tabs', 'xlinker', 'saveme', 'xref', 'xsync', 'xload', 'xselect'] as $shadow): ?>
-			<li><a href="#<?= $shadow ?>-shadow-tab"><u><?= $shadow ?></u> shadow</a></li>
+		<? foreach (['ui', 'tabs', 'xlinker', 'saveme', 'xref', 'xsync', 'xload', 'xselect', 'backselect'] as $shadow): ?>
+			<li><a href="#<?= $shadow ?>-shadow-tab"><?= $shadow ?></a></li>
 		<? endforeach; ?>
 	</ul>
 
@@ -462,6 +462,93 @@
 			->variable('control', $control)
 			->variable('apples', $apples)
 			->variable('oranges', $oranges)
+			->render() ?>
+		
+	</div>
+	
+	<div id="backselect-shadow-tab">
+
+		<<?= $h2 ?>><u>backselect</u> shadow</<?= $h2 ?>>
+		
+		<p>The backselect shadow is used to display a option when a select field
+		is blank. For example: <i>given a task, a user might be able to select 
+		from a list of users, or he might have the ability to simply write some 
+		name in a field</i>. The backselect would give the option of a text 
+		field when the select is blank.</p>
+		
+		<p>When the select field does get a value the option is blanked out.</p>
+		
+		<p>The plugin accepts multiple sources and will only display the extra
+		option when all sources are blank. A source is determined as blank
+		when it is equal to it's blank value, suplied via the 
+		<code>data-backselect-source</code> parameter.</p>
+		
+		<p>You may also have multiple back options by specifying multiple 
+		<code>data-backselect</code>s in the same context. The paramter can
+		be set on the input itself or on a div.</p>		
+		
+		<p>The plugin assumes the back option is always a text, textarea, select 
+		input and accepts blank string as a reset. A different default can be
+		suplied by specifying a <code>data-backselect-blank</code> on the 
+		fields in question.</p>
+		
+		<p><small class="muted">Example</small></p>
+
+		<?
+			$example = $current_dir.'examples/backselect'.EXT;
+			$file = \file_get_contents($example);
+		?>
+
+		<pre class="brush: php; html-script: true;"><?= \htmlspecialchars($file) ?></pre>
+
+		<p><small class="muted">Result</small></p>
+		
+		<?
+			$people = array
+				(
+					[
+						'id' => '1',
+						'title' => 'Alice',
+					],
+					[
+						'id' => '2',
+						'title' => 'Bob',
+					],
+					[
+						'id' => '3',
+						'title' => 'Eve',
+					],
+					[
+						'id' => '-', 
+						'title' => '&nbsp;'
+					]
+				);
+			
+			$employees = array
+				(
+					[
+						'id' => '1',
+						'title' => 'Henry',
+					],
+					[
+						'id' => '2',
+						'title' => 'Anna',
+					],
+					[
+						'id' => '3',
+						'title' => 'Marie',
+					],
+					[
+						'id' => '-', 
+						'title' => '&nbsp;'
+					]
+				);
+		?>
+		
+		<?= \app\View::instance()->file_path($example)
+			->variable('control', $control)
+			->variable('people', $people)
+			->variable('employees', $employees)
 			->render() ?>
 		
 	</div>
