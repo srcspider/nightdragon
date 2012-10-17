@@ -715,7 +715,9 @@
 			<?= $gen ?>
 
 			<p>The first things we can do is set the location of the error, by
-			specifing <code>:errors</code> in the template.</p>
+			specifing <code>:errors</code> in the template. If <code>:errors</code>
+			is ommited, the field will default to <code>:errors</code> being right
+			after the <code>:field</code>, so watch out!</p>
 
 			<p><small class="muted">Example</small></p>
 
