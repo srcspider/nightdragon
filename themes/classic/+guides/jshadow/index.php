@@ -20,7 +20,7 @@
 
 	<ul class="nav nav-tabs">
 		<li><a href="#jshadow-info-tab">About Shadows</a></li>
-		<? foreach (['ui', 'tabs', 'xlinker', 'saveme', 'xref', 'xsync', 'xload', 'xselect', 'backselect'] as $shadow): ?>
+		<? foreach (['ui', 'tabs', 'xlinker', 'saveme', 'xref', 'xsync', 'xload', 'xselect', 'backselect', 'equation'] as $shadow): ?>
 			<li><a href="#<?= $shadow ?>-shadow-tab"><?= $shadow ?></a></li>
 		<? endforeach; ?>
 	</ul>
@@ -559,6 +559,48 @@
 			->variable('control', $control)
 			->variable('people', $people)
 			->variable('employees', $employees)
+			->render() ?>
+		
+	</div>
+	
+	<div id="equation-shadow-tab">
+
+		<<?= $h2 ?>><u>equation</u> shadow</<?= $h2 ?>>
+		
+		<p>The <code>equation</code> shadow helps you maintain fields that are 
+		meant to act as references/totals of other fields or external 
+		dependencies, ie. writing a check for X reduces my total balance in
+		that account to Y; where the current balance is retrieved dynamically.</p>
+		
+		<p>To start first specify a context via <code>data-equation-context</code>,
+		then on the fields you wish to act as the result of a equation place 
+		<code>data-equation</code>. In the equation you may specify any valid
+		javascript. Your equation will automaticaly get populated with the 
+		values from input fields in the context (as long as you use them in
+		the equation itself). To use a field from the context simply add a 
+		<code>$</code> in front of the field name: 
+		<code>$<span class="text-info">&lt;field_name&gt;</span></code>.</p>
+		
+		<p><small class="muted">Example</small></p>
+
+		<script type="text/javascript">
+			var my = {};
+			my.times_six = function (number) {
+				return number * 6;
+			}
+		</script>
+		
+		<?
+			$example = $current_dir.'examples/equation'.EXT;
+			$file = \file_get_contents($example);
+		?>
+
+		<pre class="brush: php; html-script: true;"><?= \htmlspecialchars($file) ?></pre>
+
+		<p><small class="muted">Result</small></p>
+		
+		<?= \app\View::instance()->file_path($example)
+			->variable('control', $control)
 			->render() ?>
 		
 	</div>

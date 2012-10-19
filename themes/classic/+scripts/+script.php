@@ -147,6 +147,7 @@
 						'+lib/mjolnir/shadows/xload',
 						'+lib/mjolnir/shadows/xselect',
 						'+lib/mjolnir/shadows/backselect',
+						'+lib/mjolnir/shadows/equation',
 					),
 
 			//// Exceptions ////////////////////////////////////////////////////
