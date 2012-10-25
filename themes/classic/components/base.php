@@ -26,7 +26,7 @@
 		// The following includes a script on the page. The script will be
 		// included imeditly after the theme scripts.
 
-		$theme->script('http://lol.js');
+#		$theme->script('http://lol.js');
 	?>
 
 	<div class="navbar navbar-inverse navbar-fixed-top">

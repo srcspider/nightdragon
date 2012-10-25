@@ -6,6 +6,13 @@
 # want to customize your projects structure, you can just forget this file even
 # exists.
 #
+# Please do not change the name of this file since it's used for auto-detection
+# when dynamically initializing the framework.
+#
+
+// define a version for our application; we can use this in various useful
+// places such as cache busting; declaring it here avoids repetition
+\defined('APPVERSION') or \define('APPVERSION', '1.0');
 
 // gurantee EXT is defined
 \defined('EXT') or \define('EXT', '.php');
@@ -24,7 +31,8 @@ if ( ! \file_exists($cfspath_files))
 		if ($pubdir_config['development'])
 		{
 			echo 'Missing system libraries. '.PHP_EOL;
-			echo 'Please install by running "install-vendor" in ['.$pubdir_config['system.dir'].']';
+			echo 'Please install by running "install-vendor" in '
+				. '['.$pubdir_config['system.dir'].']';
 		}
 		else # user error
 		{
@@ -40,7 +48,9 @@ if ( ! \file_exists($cfspath_files))
 
 // we load the default environment; if you want custom APPPATH, MODPATH, PLGPATH
 // simply define them before this statement, they will not be redefined.
-require $cfspath_files.'default.mjolnir.php';
+require $cfspath_files.'functions/mjolnir/logging'.EXT;
+require $cfspath_files.'functions/mjolnir/errors'.EXT;
+require $cfspath_files.'default.mjolnir'.EXT;
 
 #
 # See [mjolnir/cfs/+App/bridges] for bridge declaration help

@@ -1,6 +1,7 @@
-<?php return array
+<?php \defined('APPVERSION') or \define('APPVERSION', '1.0');
+return array
 	(
-		'version' => '1.0', # used in cache busting; update as necesary
+		'version' => APPVERSION, # used in cache busting; update as necesary
 
 		// set the style.root to '' (empty string) when writing (entirely) just
 		// plain old css files; and not compiling sass scripts, etc
