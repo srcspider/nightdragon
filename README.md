@@ -51,7 +51,7 @@ Apache with .htaccess support is so easy to setup.
 
 -
 
-More documentation is provided in the demo application and docs/ section.
+More documentation is provided in the demo application and `docs/` directory.
 
 Running Tests
 =============
