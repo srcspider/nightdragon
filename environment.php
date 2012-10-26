@@ -19,7 +19,6 @@
 				PLGPATH.'mjolnir/cache' => 'mjolnir\cache',
 				PLGPATH.'mjolnir/theme' => 'mjolnir\theme',
 				PLGPATH.'mjolnir/backend' => 'mjolnir\backend',
-				PLGPATH.'mjolnir/schematics' => 'mjolnir\schematics',
 				PLGPATH.'mjolnir/cfs' => 'mjolnir\cfs',
 				PLGPATH.'mjolnir/librarian' => 'mjolnir\librarian',
 				PLGPATH.'mjolnir/testing' => 'mjolnir\testing',
