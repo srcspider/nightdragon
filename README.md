@@ -1,12 +1,22 @@
 Installing dependencies...
 
 <pre>
-install-vendor
+vendor-install
 </pre>
 
 Alternatively, simply open install-vendor and use it as a guide.
 
 (On windows use git bash and have php in your path.)
+
+-
+
+Updating dependencies...
+
+<pre>
+vendor-update
+</pre>
+
+This is directly tied to your `composer.json` file.
 
 -
 
