@@ -68,8 +68,8 @@
 
 			// examples
 			A12n::guest() => [ '+common' ],
-			'member'      => [ '+common', '+member' ],
-			'admin'       => [ '+common', '+member', '+admin' ],
+			'member'      => [ A12n::guest(), '+common', '+member' ],
+			'admin'       => [ A12n::guest(), '+common', '+member', '+admin' ],
 		),
 
 	'roles' => array # roles in system
