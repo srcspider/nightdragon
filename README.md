@@ -30,7 +30,7 @@ a subdirectory there in. Also copy your server specific files located in
 `drafts/www.<server>` (eg. `drafts/www.apache`).
 
 We'll assume the path to your public directory (or subdirectory if it's the
-case) is PUBPATH here on.
+case) is `PUBPATH` from here on.
 
 You will also need to do some basic configuration before things will work:
 
