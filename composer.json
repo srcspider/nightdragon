@@ -17,7 +17,8 @@
 		"mjolnir/legacy": "*",
 		"mjolnir/schematics" : "*",
 		"mjolnir/database" : "*",
-		"mjolnir/html" : "*"
+		"mjolnir/html" : "*",
+		"mjolnir/testing" : "*"
 	},
 
 	"config": {
@@ -34,7 +35,7 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-cfs.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\cfs": "../.."}
@@ -49,7 +50,7 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-types.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\types": "../.."}
@@ -64,7 +65,7 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-base.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\base": "../.."}
@@ -79,7 +80,7 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-theme.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\theme": "../.."}
@@ -94,7 +95,7 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-cache.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\cache": "../.."}
@@ -109,7 +110,7 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-access.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\access": "../.."}
@@ -124,7 +125,7 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-backend.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\backend": "../.."}
@@ -139,7 +140,7 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-legacy.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\legacy": "../.."}
@@ -154,7 +155,7 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-schematics.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\schematics": "../.."}
@@ -169,7 +170,7 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-html.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\html": "../.."}
@@ -184,10 +185,25 @@
 				"source": {
 					"url": "git://github.com/ibidem/mjolnir-database.git",
 					"type": "git",
-					"reference": "mjolnir/php5.4"
+					"reference": "wip/v1.0"
 				},
 				"autoload": {
 					"psr-0": {"mjolnir\\database": "../.."}
+				}
+			}
+		},
+		"reference/mjolnir/testing": {
+			"type": "package",
+			"package": {
+				"name": "mjolnir/testing",
+				"version": "0.0",
+				"source": {
+					"url": "git://github.com/ibidem/mjolnir-testing.git",
+					"type": "git",
+					"reference": "wip/v1.0"
+				},
+				"autoload": {
+					"psr-0": {"mjolnir\\testing": "../.."}
 				}
 			}
 		}

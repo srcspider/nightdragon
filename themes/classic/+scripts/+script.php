@@ -1,4 +1,4 @@
-<?php \defined('APPVERSION') or \define('APPVERSION', '1.0');
+<?php \defined('APPVERSION') or \define('APPVERSION', '0.0');
 return array
 	(
 		'version' => APPVERSION, # used in cache busting; update as necesary
