@@ -1,16 +1,6 @@
 #!/bin/sh
-echo ' '
-echo ' ---------------------------- '
-echo ' Cleaning up composer junk '
-echo ' ---------------------------- '
-echo ' '
 rm -rf vendor/
 rm -v composer.lock
-echo ''
-echo ' ---------------------------- '
-echo ' Running composer '
-echo ' ---------------------------- '
-echo ' '
 curl -s http://getcomposer.org/installer | php
 php composer.phar self-update
 php composer.phar install
