@@ -1,9 +1,9 @@
 /**
- * equation
+ * equation shadow
  *
  * Produce calculated fields in form (or form-like structure).
- * 
- * @version 1.0
+ *
+ * @version 1.1
  * @license https://github.com/ibidem/ibidem/blob/master/LICENSE.md (BSD-2)
  */
 ;(function ($) {
@@ -28,13 +28,13 @@
 				var $equation = $(this),
 					formula = $equation.attr('data-equation'),
 					context_variables = null;
-				
+
 				// detect all form field variables
 				context_variables = formula.match(new RegExp('\\$[a-zA-Z0-9_]+', 'gi'));
-				
-				// create update function 
+
+				// create update function
 				var update = function () {
-					var field_value, _eval;
+					var field_value;
 					// populate variables in context
 					for (var i = 0; i < context_variables.length; ++i) {
 						field_value = $('[name="'+context_variables[i].replace('$', '')+'"]', $wrapper).val();
@@ -43,17 +43,19 @@
 						}
 						eval('var '+context_variables[i]+'='+field_value+';');
 					}
-					
+
 					eval('var __return = '+formula+';');
 					return __return;
 				};
-				
+
 				$('input', $wrapper).on('input', function () {
-					console.log(update());
 					$equation.val(update());
 				});
-				
-			})
+
+
+			});
+
+			$('input', $wrapper).one().trigger('input');
 		}
 
 	});

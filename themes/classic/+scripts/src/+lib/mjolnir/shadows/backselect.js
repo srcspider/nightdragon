@@ -1,7 +1,7 @@
 /**
  * Shows an extra option when select field is blank.
  *
- * @version 1.0
+ * @version 1.1
  * @license https://github.com/ibidem/ibidem/blob/master/LICENSE.md (BSD-2)
  */
 ;(function ($) {
@@ -33,7 +33,16 @@
 				var blankstate = true;
 				$sources.each(function () {
 					var $source = $(this);
-					if ($source.attr(source_attr) !== $source.val()) {
+					
+					if ($source.is('[type="checkbox"]'))
+					{
+						if (Boolean($source.attr(source_attr)) !== $source.is(':checked'))
+						{
+							blankstate = false;
+							return false; // break loop
+						}
+					}
+					else if ($source.attr(source_attr) !== $source.val()) {
 						blankstate = false;
 						return false; // break loop
 					}

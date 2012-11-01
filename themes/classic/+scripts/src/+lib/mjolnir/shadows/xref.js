@@ -29,7 +29,7 @@
 		'init': function (conf, wrapper, self) {
 
 			var $targets = $.jshadow.children(conf, wrapper, self, conf['api-target']),
-				$references = $.jshadow.children(conf, wrapper, self, conf['api-ref']);
+				$references = $(conf['api-ref']);
 
 			$targets.each(function () {
 				var $target = $(this);

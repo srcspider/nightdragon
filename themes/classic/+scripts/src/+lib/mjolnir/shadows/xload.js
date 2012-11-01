@@ -3,7 +3,7 @@
  *
  * Load pages with out going though a page load.
  *
- * @version 1.1
+ * @version 1.2
  * @license https://github.com/ibidem/ibidem/blob/master/LICENSE.md (BSD-2)
  */
 ;(function ($) {
@@ -21,6 +21,14 @@
 			'api-target': 'a[href]',
 			'api-canceler': '[data-xload-exclude]',
 			'destination': 'page'
+		},
+		
+		'init': function () {
+			window.onpopstate = function (e) {
+				if (e.state !== null) {
+					window.location = e.state.href;
+				}
+			};
 		},
 
 		'binding': function (conf, wrapper, definition) {
@@ -44,14 +52,36 @@
 		},
 
 		'action': function (event, conf, wrapper, self) {
-			var $target, href;
-			
-			event.preventDefault();
+			var $target, href, 
+				$main_loading_plane = $('#main-loading-plane');
 			
 			$target = $(this);
 			href = $target.attr('href');
 			
+			// ignore in-page urls
+			if (href.match(/^#.*/gi)) {
+				return;
+			}
+			
+			if ($('#page').attr('data-xload') === 'off') {
+				return;
+			}
+			
+			event.preventDefault();
+			
+			// begin loading
+			$.xhrPool.abortAll();
+			if ($main_loading_plane.attr('data-loading') !== 'true') {
+				$main_loading_plane.showLoading();
+				$main_loading_plane.attr('data-loading', 'true');
+			}
+			
 			$('#'+conf.destination).load(href + ' #' + conf.destination + ' > *', function (response, status, xhr) {
+				if (status == 'error') {
+					console.log('Error: ' + xhr.status + ' ' + xhr.statusText);
+					return;
+				}
+				
 				// check for error states
 				if (xhr.status != 200) {
 					// hard redirect
@@ -65,8 +95,12 @@
 				}
 				
 				// reatach events
-				history.pushState(null, '', href);
+				history.pushState({'href': href}, '', href);
 				$('#'+conf.destination).jshadow();
+				
+				// hide loading
+				$main_loading_plane.hideLoading();
+				$main_loading_plane.attr('data-loading', 'false');
 			});
 		}
 

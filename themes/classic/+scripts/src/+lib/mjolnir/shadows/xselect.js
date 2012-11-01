@@ -1,7 +1,7 @@
 /**
  * Plugin for merging selects into optgroup'ed select.
  *
- * @version 1.0
+ * @version 1.1
  * @license https://github.com/ibidem/ibidem/blob/master/LICENSE.md (BSD-2)
  */
 ;(function ($) {
@@ -68,11 +68,13 @@
 			
 			// inject groups
 			$.each(groups, function (groupname, group) {
-				markup += '<optgroup label="'+group.title+'">';
-				$.each(group.options, function (idx, option) {
-					markup += '<option value="'+groupname+'--'+option.key+'">'+option.title+'</option>';
-				});
-				markup += '</optgroup>';
+				if (group.options.length > 0) {
+					markup += '<optgroup label="'+group.title+'">';
+					$.each(group.options, function (idx, option) {
+						markup += '<option value="'+groupname+'--'+option.key+'">'+option.title+'</option>';
+					});
+					markup += '</optgroup>';
+				}
 			});
 			
 			$master.html(markup);
@@ -92,6 +94,18 @@
 				
 				// trigger change
 				$slaves.trigger('change');
+			});
+			
+			// check for pre-selected values
+			$slaves.each(function () {
+				var $slave = $(this),
+					value = null;
+					
+				if ((value = $slave.val()) !== blank) {
+					$('[selected]', $master).removeAttr('selected');
+					$('[value="'+$slave.attr('name')+'--'+value+'"]', $master).attr('selected', 'selected');
+					return false;
+				}
 			});
 			
 			// show master
