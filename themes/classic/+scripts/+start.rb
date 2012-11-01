@@ -2,80 +2,13 @@
 
 require 'rubygems'
 require 'fssm'
-require 'json'
 
-$basedir = nil;
-$config = nil;
+require_relative '+compile.rb'
 
-$compiler_options = ' --process_jquery_primitives --warning_level QUIET --third_party --compilation_level WHITESPACE_ONLY'
-
-def read_configuration()
-	json_config = `php -r "chdir('#{$basedir}'); echo json_encode(include '+script.php');"`;
-	$config = JSON.parse json_config
-	if $config['common'] == nil
-		$config['common'] = [];
-	else # not nil
-		$config['common'] = $config['common'].find_all do |item| item !~ /(^[a-z]+:\/\/|^\/\/).*$/ end
-	end#def
-
-	# include common files
-	$config['targets'].each do |key, files|
-		files = files.find_all do |item| item !~ /(^[a-z]+:\/\/|^\/\/).*$/ end
-		$config['targets'][key] = $config['common'] + files;
-	end#each
-
-	# convert to paths
-	$config['targets'].each do |key, files|
-		files = files.find_all do |item| item !~ /(^[a-z]+:\/\/|^\/\/).*$/ end
-		files.collect! do |file| 'src/'+file+'.js'; end#collect
-		$config['targets'][key] = files
-	end#each
-	
-end#def
-
-def regenerate(key, files)
-	puts " compiling #{key}"
-	`java -jar compiler.jar #{$compiler_options} --js #{files.join(' ')} --js_output_file ./closure/#{key}.min.js --create_source_map ./closure/#{key}.min.js.map --source_map_format=V3`;
-end#def
-
-def process (r)
-
-	if r.eql? '+script.php'
-		puts ' >>> recompiling all...'
-		# reload $configuration
-		read_configuration();
-		# regenerate all
-		$config['targets'].each do |key, files|
-			regenerate(key, files)
-		end#each
-	end
-
-	# search configuration for file
-	$config['targets'].each do |key, files|
-		files.each do |file|
-			if file.eql? r
-				puts " >>> recompiling [#{key}]"
-				# regenerate the closure
-				regenerate(key, files);
-			end#if
-		end#each
-	end#each
-
-end#def
-
-# ---------------------------------------------------------------------------- #
-
-$basedir = File.expand_path(File.dirname(__FILE__));
-Dir.chdir $basedir
 path = File.expand_path(File.dirname(__FILE__)+'/src');
+
 puts " Monitoring [#{path}] for changes."
 puts " ----------------------------------------------------------------------- "
-read_configuration();
-$config['targets'].each do |key, files|
-	regenerate(key, files)
-end#each
-puts " >>> all files regenarated "
-
 FSSM.monitor($basedir) do
 
 	update do |b, r|
@@ -94,6 +27,7 @@ FSSM.monitor($basedir) do
 
 		# puts " >>> removed: #{r}"
 		# process(r);
+		
 	end#do
 
 end#FSSM
