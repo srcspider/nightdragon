@@ -51,8 +51,6 @@
 				$('input', $wrapper).on('input', function () {
 					$equation.val(update());
 				});
-
-
 			});
 
 			$('input', $wrapper).one().trigger('input');
