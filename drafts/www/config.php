@@ -71,5 +71,5 @@ return array
 		// pointing to your project's root somewhere outside the public web
 		// document's root, so that your files may be safe from prying eyes
 		'system.dir' => \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'..')
-							.DIRECTORY_SEPARATOR,
+			. DIRECTORY_SEPARATOR,
 	);
