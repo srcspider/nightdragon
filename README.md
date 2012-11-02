@@ -109,4 +109,4 @@ anywhere, but make sure to point `phpunit.xml` to that location.
 
 -
 
-See: `+App/help/README.md` for more information
+See `+App/help/README.md` for more information
