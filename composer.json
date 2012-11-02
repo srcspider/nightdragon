@@ -1,30 +1,29 @@
 {
+	
 	"minimum-stability": "dev",
 
-	"require": {
-		"php": ">=5.4.4",
-				
-		"behat/behat": "2.4.*@stable",
-		"behat/mink": "1.4@stable",
-		"behat/mink-zombie-driver": "*",
-		"behat/mink-sahi-driver": "*",
-		
-		"mjolnir/cfs": "dev-wip/v1.0",
-		"mjolnir/base": "dev-wip/v1.0",
-		"mjolnir/html": "dev-wip/v1.0",
-		"mjolnir/access": "dev-wip/v1.0",
-		"mjolnir/cache": "dev-wip/v1.0",
-		"mjolnir/database": "dev-wip/v1.0",
-		"mjolnir/backend": "dev-wip/v1.0",
-		"mjolnir/theme": "dev-wip/v1.0",
-		"mjolnir/types": "dev-wip/v1.0",
-		"mjolnir/librarian": "dev-wip/v1.0",
-		"mjolnir/legacy": "dev-wip/v1.0",
-		"mjolnir/testing": "dev-wip/v1.0"
+	"config": {
+		"vendor-dir" : "vendor",
+		"bin-dir"    : "bin"
 	},
 
-	"config": {
-		"vendor-dir": "vendor",
-		"bin-dir": "vendor/binary"
+	"require": {
+
+		"php" : ">=5.4.4",
+
+		"mjolnir/cfs"       : "dev-wip/v1.0",
+		"mjolnir/base"      : "dev-wip/v1.0",
+		"mjolnir/html"      : "dev-wip/v1.0",
+		"mjolnir/access"    : "dev-wip/v1.0",
+		"mjolnir/cache"     : "dev-wip/v1.0",
+		"mjolnir/database"  : "dev-wip/v1.0",
+		"mjolnir/backend"   : "dev-wip/v1.0",
+		"mjolnir/theme"     : "dev-wip/v1.0",
+		"mjolnir/types"     : "dev-wip/v1.0",
+		"mjolnir/librarian" : "dev-wip/v1.0",
+		"mjolnir/legacy"    : "dev-wip/v1.0",
+		"mjolnir/testing"   : "dev-wip/v1.0"
+
 	}
+
 }

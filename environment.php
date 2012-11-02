@@ -9,19 +9,19 @@
 				MODPATH.'+mockup' => 'mockup',
 
 				// library legacy code
-//				PLGPATH.'mjolnir/legacy' => 'mjolnir\legacy',
+#				PLGPATH.'mjolnir/legacy'    => 'mjolnir\legacy',
 
 				// mjolnir modules
-				PLGPATH.'mjolnir/access' => 'mjolnir\access',
-				PLGPATH.'mjolnir/base' => 'mjolnir\base',
-				PLGPATH.'mjolnir/html' => 'mjolnir\html',
-				PLGPATH.'mjolnir/database' => 'mjolnir\database',
-				PLGPATH.'mjolnir/cache' => 'mjolnir\cache',
-				PLGPATH.'mjolnir/theme' => 'mjolnir\theme',
-				PLGPATH.'mjolnir/backend' => 'mjolnir\backend',
-				PLGPATH.'mjolnir/cfs' => 'mjolnir\cfs',
+				PLGPATH.'mjolnir/access'    => 'mjolnir\access',
+				PLGPATH.'mjolnir/base'      => 'mjolnir\base',
+				PLGPATH.'mjolnir/html'      => 'mjolnir\html',
+				PLGPATH.'mjolnir/database'  => 'mjolnir\database',
+				PLGPATH.'mjolnir/cache'     => 'mjolnir\cache',
+				PLGPATH.'mjolnir/theme'     => 'mjolnir\theme',
+				PLGPATH.'mjolnir/backend'   => 'mjolnir\backend',
+				PLGPATH.'mjolnir/cfs'       => 'mjolnir\cfs',
 				PLGPATH.'mjolnir/librarian' => 'mjolnir\librarian',
-				PLGPATH.'mjolnir/testing' => 'mjolnir\testing',
+				PLGPATH.'mjolnir/testing'   => 'mjolnir\testing',
 			),
 
 		'namespaces' => array
