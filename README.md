@@ -1,22 +1,38 @@
+*Windows Users*, please use `git bash` and have php in your path.
+
+<b>Getting the files...</b>
+
+	git clone https://github.com/ibidem/mjolnir-template-app.git yourprojectname
+	cd yourprojectname/
+	git remote rename origin mjolnir
+	chmod -R +x bin/
+
+The template repo only contains the mj/template branch; we recomend keeping a
+clean copy in your project so you may pull updates from it and merge into your 
+own main branches (ie. master, etc). You should add another remote named origin
+to your repo and use mjolnir only for pull changes (github's repo creation 
+process provides the commands).
+
+Note the use of the https version. When on a server this variant is the most 
+convenient to use.
+
+-
+
 <b>Installing dependencies...</b>
 
-<pre>
-bin/vendor/install
-</pre>
+	bin/vendor/install
 
-Alternatively, simply open install-vendor and use it as a guide.
-
-(On windows use git bash and have php in your path.)
+Alternatively, simply open `bin/vendor/install` and use it as a guide.
 
 -
 
 <b>Updating dependencies...</b>
 
-<pre>
-bin/vendor/update
-</pre>
+	bin/vendor/update
 
-This is directly tied to your `composer.json` file.
+This is directly tied to your `composer.json` file. You can always update your
+composer file and re-run this command. For packages go 
+to: https://packagist.org/ 
 
 -
 
