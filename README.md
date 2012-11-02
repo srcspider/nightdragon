@@ -1,4 +1,4 @@
-Installing dependencies...
+<b>Installing dependencies...</b>
 
 <pre>
 bin/vendor/install
@@ -10,7 +10,7 @@ Alternatively, simply open install-vendor and use it as a guide.
 
 -
 
-Updating dependencies...
+<b>Updating dependencies...</b>
 
 <pre>
 bin/vendor/update
@@ -19,6 +19,9 @@ bin/vendor/update
 This is directly tied to your `composer.json` file.
 
 -
+
+Getting up and running
+======================
 
 The `+App/drafts/www/` directory is where all the files that need to be
 in your public directory are located. Various settings such as configuration
