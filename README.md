@@ -62,16 +62,17 @@ Errors
 ======
 
 Mjolnir is extremely log centric. While the framework does try to output more 
-developer friendly errors and will also issue stack traces when in development
-mode, logs are the primary means by which you should be looking for errors.
+developer friendly errors and issue stack traces when in development mode, logs 
+are the primary means by which you should be looking for errors.
 
-The recomended way is to have a second window up running something like 
+The recomended way is to have a second window up running, ie. 
 `tail -f short.log`. If you don't have a second monitor it's not a problem, you
-hopefully don't have too look at it too often. You will find `short.log` in 
-`+App/logs`. As per it's name it is a 1-line description of the error. The 
-master log(s) on the other hand will contain a stack trace in addition to the 
-message, as well as be sorted by date (note: ALL log entries can be found in the
-main log, other master logs are only used for filtering purposes).
+shouldn't have too look at it too often (not constantly anyway). You will find 
+`short.log` in `+App/logs`. As per it's name it is a 1-line description of the 
+error. The master log(s) on the other hand will contain a stack trace in 
+addition to the message, as well as be sorted by date (note: ALL log entries 
+can be found in the main log, other master logs are only used for filtering 
+purposes).
 
 Several reasons for relying on logs over verbose client side messages:
 
