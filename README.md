@@ -75,11 +75,10 @@ main log, other master logs are only used for filtering purposes).
 
 Several reasons for relying on logs over verbose client side messages:
 
-1. Errors reporting directly to the user are always pretty nasty so the 
+1. Errors reported directly to the user are always pretty nasty so the 
 framework tries its best to redirect the user to some apropriate looking 
-page; this in turn has the side effect of making hard to see errors	even 
-though output. (mitigating this requires a lot of excess code and given the
-next issues doesn't solve all that much)
+page; this in turn has the side effect of making errors hard to see. (mitigating
+this requires a lot of excess code)
 
 2. When errors occur inside the tags themselves the results are usually 
 one of the following: the entire page will get mangled (especially with 
