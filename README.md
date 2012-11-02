@@ -1,7 +1,7 @@
 Installing dependencies...
 
 <pre>
-vendor-install
+bin/vendor/install
 </pre>
 
 Alternatively, simply open install-vendor and use it as a guide.
@@ -13,21 +13,25 @@ Alternatively, simply open install-vendor and use it as a guide.
 Updating dependencies...
 
 <pre>
-vendor-update
+bin/vendor/update
 </pre>
 
 This is directly tied to your `composer.json` file.
 
 -
 
-The `drafts/www` directory is where all the files that need to be
+The `+App/drafts/www/` directory is where all the files that need to be
 in your public directory are located. Various settings such as configuration
-files for things like sphinx, etc should also go in `drafts/`. You will find
-server specific files in `drafts/www.<server>`
+files for things like sphinx, etc should also go in `+App/drafts/`. You will 
+find server specific files in `+App/drafts/www.<server>`. The framework has
+the convention for modules of keeping any public directory dependencies
+along with other configuration/dependencies into their own `+App/drafts/'
+directory. It is recomended however that you duplicate their files into
+your project's '+App/drafts/' directory.
 
-To get going copy the contents of `drafts/www` to your public directory, or
-a subdirectory there in. Also copy your server specific files located in
-`drafts/www.<server>` (eg. `drafts/www.apache`).
+To get going copy the contents of `+App/drafts/www` to your public directory, 
+or a subdirectory there in. Also copy your server specific files located in
+`drafts/www.<server>` (eg. `+App/drafts/www.apache`).
 
 We'll assume the path to your public directory (or subdirectory if it's the
 case) is `PUBPATH` from here on.
@@ -47,11 +51,12 @@ If you're using a directory instead of the domain root, you will also need to
 set the correct rewrite base in the `.htaccess` file (as an example) as well 
 as the `path` in the `PUBPATH/config.php` file. You should try to avoid using 
 `.htaccess` files but for simplicity this is the default for testing since 
-Apache with .htaccess support is so easy to setup.
+Apache with `.htaccess` support is so easy to setup.
 
 -
 
-More documentation is provided in the demo application and `docs/` directory.
+More documentation is provided in the demo application and `+App/help/` 
+directory.
 
 Running Tests
 =============
@@ -64,7 +69,7 @@ It is recommended you write mostly behaviour tests.
 in your system (it is recomended you place them in `+App/features`). Then run:
 
 <pre>
-php order behat --ansi --expand
+bin/order behat --ansi --expand
 </pre>
 
 The framework will scan and run the behat command on the `behat.yaml`. Note that
@@ -99,4 +104,4 @@ phpunit -c phpunit.xml
 Tests are located in each module's <code>+App/tests</code>. You may place them
 anywhere, but make sure to point `phpunit.xml` to that location.
 
-See: docs/README.md for more information
+See: `+App/help/README.md for more information
