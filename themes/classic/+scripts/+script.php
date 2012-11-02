@@ -12,6 +12,10 @@ return array
 		'common' => array
 			(
 				'+lib/jquery/jquery-1.8.1',
+			
+			// error reporting
+				'+lib/stacktrace',
+				'+lib/onerror',
 			),
 
 		// enables closure compiler mode
