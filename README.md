@@ -96,9 +96,9 @@ keep a tab on everything at once.
 
 Mjolnir provides a means of capturing "client" errors. This is enabled by
 default. The demo application comes with support for javascript errors; so for 
-basic webapp based on the demo your `short.log` will show EVERYTHING. You can 
-take this further and issue reports from other dependencies you use as well, be
-they client or server side.
+basic webapp based on the demo your `short.log` will show <b>everything</b>. You
+can take this further and issue reports from other dependencies you use as well, 
+be they client or server side.
 
 -
 
