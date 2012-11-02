@@ -75,24 +75,24 @@ main log, other master logs are only used for filtering purposes).
 
 Several reasons for relying on logs over verbose client side messages:
 
-	1. Errors reporting directly to the user are always pretty nasty so the 
-	framework tries its best to redirect the user to some apropriate looking 
-	page; this in turn has the side effect of making hard to see errors	even 
-	though output. (mitigating this requires a lot of excess code and given the
-	next issues doesn't solve all that much)
+1. Errors reporting directly to the user are always pretty nasty so the 
+framework tries its best to redirect the user to some apropriate looking 
+page; this in turn has the side effect of making hard to see errors	even 
+though output. (mitigating this requires a lot of excess code and given the
+next issues doesn't solve all that much)
 
-	2. When errors occur inside the tags themselves the results are usually 
-	one of the following: the entire page will get mangled (especially with 
-	xdebug running), the style will go haywire, or in the worst case scenario 
-	the error code is interpreted as valid code and it is invisible inside the 
-	code. Logs have no such problem; the output is always clean and to the point.
+2. When errors occur inside the tags themselves the results are usually 
+one of the following: the entire page will get mangled (especially with 
+xdebug running), the style will go haywire, or in the worst case scenario 
+the error code is interpreted as valid code and it is invisible inside the 
+code. Logs have no such problem; the output is always clean and to the point.
 
-	3. Unless you decide you want to be fancy and base64 all your dependencies 
-	a typical webpage is a combination of multiple resources coming togheter. It
-	is very easy and very common for errors to popup in said resources with no 
-	imediatly visible effect on the page. Searching for errors in all your files
-	until you find the culprit is also a pain. By simply viewing the log you can
-	keep a tab on everything at once.
+3. Unless you decide you want to be fancy and base64 all your dependencies 
+a typical webpage is a combination of multiple resources coming togheter. It
+is very easy and very common for errors to popup in said resources with no 
+imediatly visible effect on the page. Searching for errors in all your files
+until you find the culprit is also a pain. By simply viewing the log you can
+keep a tab on everything at once.
 
 Mjolnir provides a means of capturing "client" errors. This is enabled by
 default. The demo application comes with support for javascript errors; so for 
