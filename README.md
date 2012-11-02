@@ -10,8 +10,8 @@
 The template repo only contains the mj/template branch; we recomend keeping a
 clean copy in your project so you may pull updates from it and merge into your 
 own main branches (ie. master, etc). You should add another remote named origin
-to your repo and use mjolnir only for pull changes (github's repo creation 
-process provides the commands).
+to your repo and use mjolnir only for pulling template changes. Github's repo 
+creation process provides the commands.
 
 Note the use of the https version. When on a server this variant is the most 
 convenient to use.
