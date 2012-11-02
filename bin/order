@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php namespace app;
 
-require_once 'mjolnir.php';
+require_once '../mjolnir.php';
 
 \app\Mjolnir::overlord();
