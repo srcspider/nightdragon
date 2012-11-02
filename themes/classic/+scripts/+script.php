@@ -1,4 +1,31 @@
-<?php \defined('APPVERSION') or \define('APPVERSION', '0.0');
+<?php namespace app;
+
+\defined('APPVERSION') or \define('APPVERSION', '0.0');
+
+// error reporting may duplicate the definition
+if ( ! \function_exists('\app\index'))
+{
+	// we use an in-file function so ruby can process the file
+	function index()
+	{
+		$args = \func_get_args();
+
+		$result = [];
+		foreach ($args as $array)
+		{
+			foreach ($array as $item)
+			{
+				if ( ! \in_array($item, $result))
+				{
+					$result[] = $item;
+				}
+			}
+		}
+
+		return $result;
+	}
+}
+
 return array
 	(
 		'version' => APPVERSION, # used in cache busting; update as necesary
@@ -12,7 +39,7 @@ return array
 		'common' => array
 			(
 				'+lib/jquery/jquery-1.8.1',
-			
+
 			// error reporting
 				'+lib/stacktrace',
 				'+lib/onerror',
@@ -20,6 +47,15 @@ return array
 
 		// enables closure compiler mode
 		'closure-mode' => true,
+
+		// enables single [complete-script] for all pages;
+		'complete-mode' => false,
+
+		// script to use in complete-mode
+		'complete-script' => index
+			(
+				// empty
+			),
 
 		// mapping targets to files
 		'targets' => array

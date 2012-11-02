@@ -18,7 +18,7 @@
 \defined('EXT') or \define('EXT', '.php');
 
 // set the full path to the docroot
-\define('DOCROOT', \realpath(\dirname(__FILE__)).'/');
+\define('DOCROOT', \realpath(\dirname(__FILE__)).DIRECTORY_SEPARATOR);
 
 $cfspath_files = DOCROOT.'vendor/mjolnir/cfs/+App/';
 

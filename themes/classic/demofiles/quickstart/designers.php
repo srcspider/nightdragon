@@ -247,12 +247,11 @@ doesn't exist yet.</p>
 		<p>Open a console <small class="muted">(we recomend <b>git bash</b>)</small> and navigate to <code><?= DOCROOT ?></code> (ie. the project root)</p>
 	</li>
 	<li>
-		<p>Within the project root you have access to the <code>order</code> utility; feel free to type <code>order</code> to access help</p>
-		<p><small><span class="label label-info">Troubleshooting</span> if the command fails try <code>./order</code> or <code>php order</code>, should these fail too it means you are missing php on the system path </small></p>
+		<p>Within the project root you have access to the <code>bin/order</code> utility; feel free to type <code>bin/order</code> to access help</p>
 	</li>
 	<li>
 		<p>Now ask the system to create the class for you by typing <code>order make:class --class <span class="text-info">&lt;missing-class&gt</span></code></p>
-		<p>For our missing class this would be: <code>order make:class --class '\mockup\Context_About'</code> <small class="muted">(as per the error)</small></p>
+		<p>For our missing class this would be: <code>bin/order make:class --class '\mockup\Context_About'</code> <small class="muted">(as per the error)</small></p>
 	</li>
 	<li>
 		<p>You're now halfway there. If you now try to access <a href="<?= $mockup_example ?>">the mockup page</a> you should see the page, roughly.</p>
@@ -572,4 +571,3 @@ simply use the Pager class to get the job done.</p>
 		</tr>
 	</tbody>
 </table>
-
