@@ -10,12 +10,29 @@ if (\defined('PUBDIR'))
 }
 else # PUBDIR not defined
 {
-	// probably cli or something else
-	return array
-		(
-			// assume private files are just outside the project; customize
-			// this to actual path if not valid
-			'private.files' => \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'../../../..')
-				. DIRECTORY_SEPARATOR.'mjolnir.private'.DIRECTORY_SEPARATOR,
-		);
+	$rootpath = \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'../../..');
+
+	if (\file_exists($rootpath.'/privatefiles'))
+	{
+		$privatepath = \trim(\file_get_contents($rootpath.'/privatefiles'), "\n\r ");
+
+		// use specified private path
+		return array
+			(
+				// assume private files are just outside the project; customize
+				// this to actual path if not valid
+				'private.files' => \realpath($privatepath),
+			);
+	}
+	else # privatefiles
+	{
+		// probably cli or something else
+		return array
+			(
+				// assume private files are just outside the project; customize
+				// this to actual path if not valid
+				'private.files' => \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'../../../..')
+					. DIRECTORY_SEPARATOR.'mjolnir.private'.DIRECTORY_SEPARATOR,
+			);
+	}
 }
