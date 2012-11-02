@@ -58,8 +58,49 @@ Apache with `.htaccess` support is so easy to setup.
 
 -
 
-More documentation is provided in the demo application and `+App/help/` 
-directory.
+Errors
+======
+
+Mjolnir is extremely log centric. While the framework does try to output more 
+developer friendly errors and will also issue stack traces when in development
+mode, logs are the primary means by which you should be looking for errors.
+
+The recomended way is to have a second window up running something like 
+`tail -f short.log`. If you don't have a second monitor it's not a problem, you
+hopefully don't have too look at it too often. You will find `short.log` in 
+`+App/logs`. As per it's name it is a 1-line description of the error. The 
+master log(s) on the other hand will contain a stack trace in addition to the 
+message, as well as be sorted by date (note: ALL log entries can be found in the
+main log, other master logs are only used for filtering purposes).
+
+Several reasons for relying on logs over verbose client side messages:
+
+	1. Errors reporting directly to the user are always pretty nasty so the 
+	framework tries its best to redirect the user to some apropriate looking 
+	page; this in turn has the side effect of making hard to see errors	even 
+	though output. (mitigating this requires a lot of excess code and given the
+	next issues doesn't solve all that much)
+
+	2. When errors occur inside the tags themselves the results are usually 
+	one of the following: the entire page will get mangled (especially with 
+	xdebug running), the style will go haywire, or in the worst case scenario 
+	the error code is interpreted as valid code and it is invisible inside the 
+	code. Logs have no such problem; the output is always clean and to the point.
+
+	3. Unless you decide you want to be fancy and base64 all your dependencies 
+	a typical webpage is a combination of multiple resources coming togheter. It
+	is very easy and very common for errors to popup in said resources with no 
+	imediatly visible effect on the page. Searching for errors in all your files
+	until you find the culprit is also a pain. By simply viewing the log you can
+	keep a tab on everything at once.
+
+Mjolnir provides a means of capturing "client" errors. This is enabled by
+default. The demo application comes with support for javascript errors; so for 
+basic webapp based on the demo your `short.log` will show EVERYTHING. You can 
+take this further and issue reports from other dependencies you use as well, be
+they client or server side.
+
+-
 
 Running Tests
 =============
