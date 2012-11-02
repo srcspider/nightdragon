@@ -31,8 +31,8 @@ Alternatively, simply open `bin/vendor/install` and use it as a guide.
 	bin/vendor/update
 
 This is directly tied to your `composer.json` file. You can always update your
-composer file and re-run this command. For packages go 
-to: https://packagist.org/ 
+composer file and re-run this command. You can also re-run the command to check
+for updates. For packages go to: https://packagist.org/
 
 -
 
