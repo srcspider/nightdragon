@@ -6,6 +6,7 @@
 	cd yourprojectname/
 	git remote rename origin mjolnir
 	chmod -R +x bin/
+	chmod 755 +App/logs/
 
 The template repo only contains the mj/template branch; we recomend keeping a
 clean copy in your project so you may pull updates from it and merge into your 
