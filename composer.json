@@ -21,7 +21,6 @@
 		"mjolnir/types"     : "dev-wip/v1.0",
 		"mjolnir/librarian" : "dev-wip/v1.0",
 		"mjolnir/legacy"    : "dev-wip/v1.0",
-		"mjolnir/testing"   : "dev-wip/v1.0"
 
 	}
 }
