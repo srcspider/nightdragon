@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php namespace app;
 
-require_once \realpath(__DIR__).'/../mjolnir.php';
+require_once \realpath(__DIR__).'/mjolnir.php';
 
 \app\Mjolnir::overlord();

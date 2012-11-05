@@ -6,6 +6,7 @@
 	cd yourprojectname/
 	git remote rename origin mjolnir
 	chmod -R +x exec/
+	chmod -R +x order
 	chmod 755 +App/logs/
 
 The template repo only contains the mj/template branch; we recomend keeping a
@@ -129,20 +130,16 @@ It is recommended you write mostly behaviour tests.
 <b>To run behaviour tests</b> you simply need to have a `behat.yaml` somewhere
 in your system (it is recomended you place them in `+App/features`). Then run:
 
-<pre>
-exec/order behat --ansi --expand
-</pre>
+	./order behat --ansi --expand
 
 The framework will scan and run the behat command on the `behat.yaml`. Note that
 all paths in your `behat.yaml` are relative to the directory where the file is
 located. Here is the minimum `behat.yaml` file for the tests to run:
 
-<pre>
-default:
-  paths:
-    features:   '.'
-    bootstrap:  './bootstrap'
-</pre>
+	default:
+	  paths:
+	    features:   '.'
+	    bootstrap:  './bootstrap'
 
 The framework will only scan registered modules for `behat.yaml`s.
 
@@ -158,9 +155,7 @@ file. You must create the file to suit your needs. Any class that works with
 the `Instantiatable` class will allow you to replace it with a mock if you
 include the test version of `Instantiatable` from the cfs module.
 
-<pre>
-phpunit -c phpunit.xml
-</pre>
+	phpunit -c phpunit.xml
 
 Tests are located in each module's <code>+App/tests</code>. You may place them
 anywhere, but make sure to point `phpunit.xml` to that location.
