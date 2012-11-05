@@ -19,6 +19,9 @@ else # PUBDIR not defined
 		// use specified private path
 		return array
 			(
+				// outputing errors to console is fine
+				'development' => true,
+
 				// assume private files are just outside the project; customize
 				// this to actual path if not valid
 				'private.files' => \realpath($privatepath),
@@ -29,6 +32,9 @@ else # PUBDIR not defined
 		// probably cli or something else
 		return array
 			(
+				// outputing errors to console is fine
+				'development' => true,
+
 				// assume private files are just outside the project; customize
 				// this to actual path if not valid
 				'private.files' => \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'../../../..')
