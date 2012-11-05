@@ -5,7 +5,7 @@
 	git clone https://github.com/ibidem/mjolnir-template-app.git yourprojectname
 	cd yourprojectname/
 	git remote rename origin mjolnir
-	chmod -R +x bin/
+	chmod -R +x exec/
 	chmod 755 +App/logs/
 
 The template repo only contains the mj/template branch; we recomend keeping a
@@ -21,15 +21,15 @@ convenient to use.
 
 <b>Installing dependencies...</b>
 
-	bin/vendor/install
+	exec/vendor/install
 
-Alternatively, simply open `bin/vendor/install` and use it as a guide.
+Alternatively, simply open `exec/vendor/install` and use it as a guide.
 
 -
 
 <b>Updating dependencies...</b>
 
-	bin/vendor/update
+	exec/vendor/update
 
 This is directly tied to your `composer.json` file. You can always update your
 composer file and re-run this command. You can also re-run the command to check
@@ -130,7 +130,7 @@ It is recommended you write mostly behaviour tests.
 in your system (it is recomended you place them in `+App/features`). Then run:
 
 <pre>
-bin/order behat --ansi --expand
+exec/order behat --ansi --expand
 </pre>
 
 The framework will scan and run the behat command on the `behat.yaml`. Note that
