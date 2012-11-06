@@ -34,11 +34,17 @@ return array
 		// plain old js files; and not compiling coffee scripts, etc
 		'script.root' => 'src'.DIRECTORY_SEPARATOR,
 
+		// preload is a list of URLs to be loaded before any other script
+		'preload' => array
+			(
+				// empty
+			),
+	
 		// will be included in all explicity targets; if a target needs to be
 		// script free then simply ommit it in the targets declaration bellow
 		'common' => array
 			(
-				'+lib/jquery/jquery-1.8.1',
+				'+lib/jquery/jquery-1.8.2',
 
 			// error reporting
 				'+lib/stacktrace',
