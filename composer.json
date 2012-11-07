@@ -20,7 +20,7 @@
 		"mjolnir/theme"     : "dev-wip/v1.0",
 		"mjolnir/types"     : "dev-wip/v1.0",
 		"mjolnir/librarian" : "dev-wip/v1.0",
-		"mjolnir/legacy"    : "dev-wip/v1.0",
+		"mjolnir/legacy"    : "dev-wip/v1.0"
 
 	}
 }
