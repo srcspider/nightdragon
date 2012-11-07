@@ -8,6 +8,10 @@ vendor/*
 composer.phar
 composer.lock
 
+# manual files
+manual.html
+manual.pdf
+
 ##
 ## Collection of junk files
 ##
