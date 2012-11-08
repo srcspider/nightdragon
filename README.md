@@ -74,6 +74,15 @@ as the `path` in the `PUBPATH/config.php` file. You should try to avoid using
 `.htaccess` files but for simplicity this is the default for testing since 
 Apache with `.htaccess` support is so easy to setup.
 
+Documentation
+=============
+
+For documentation run:
+
+	./order librarian -m
+
+A `manual.html` and `manual.pdf` file will be created in your project root.
+
 -
 
 Errors
