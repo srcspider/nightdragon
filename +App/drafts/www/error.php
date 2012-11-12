@@ -4,7 +4,15 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>500 // Server Error</title>
+		
+		<?
+			// get domain info
+			$config = include __DIR__.'/config.php';
+			$base_url = '//'.$config['domain'].$config['path'];
+		?>
 
+		<link rel="shortcut icon" href="<?= $base_url ?>favicon.ico" type="image/x-icon">
+		
 <style>
 	#page {
 		background: #fff; color: #222;
