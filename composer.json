@@ -10,17 +10,17 @@
 
 		"php" : ">=5.4.4",
 
-		"mjolnir/cfs"       : "dev-wip/v1.0",
-		"mjolnir/base"      : "dev-wip/v1.0",
-		"mjolnir/html"      : "dev-wip/v1.0",
-		"mjolnir/access"    : "dev-wip/v1.0",
-		"mjolnir/cache"     : "dev-wip/v1.0",
-		"mjolnir/database"  : "dev-wip/v1.0",
-		"mjolnir/backend"   : "dev-wip/v1.0",
-		"mjolnir/theme"     : "dev-wip/v1.0",
-		"mjolnir/types"     : "dev-wip/v1.0",
-		"mjolnir/librarian" : "dev-wip/v1.0",
-		"mjolnir/legacy"    : "dev-wip/v1.0"
+		"mjolnir/cfs"       : "1.0.x-dev",
+		"mjolnir/base"      : "1.0.x-dev",
+		"mjolnir/html"      : "1.0.x-dev",
+		"mjolnir/access"    : "1.0.x-dev",
+		"mjolnir/cache"     : "1.0.x-dev",
+		"mjolnir/database"  : "1.0.x-dev",
+		"mjolnir/backend"   : "1.0.x-dev",
+		"mjolnir/theme"     : "1.0.x-dev",
+		"mjolnir/types"     : "1.0.x-dev",
+		"mjolnir/librarian" : "1.0.x-dev",
+		"mjolnir/legacy"    : "1.0.x-dev"
 
 	}
 }
