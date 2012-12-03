@@ -31,6 +31,14 @@ return array
 				// allows you to bypass the block
 				'passcode' => 'thereisnocowlevel',
 			),
+	
+		// additional information required by various processes
+		'system.info' => array
+			(
+				// this email will be used when sending various system generated
+				// emails; for the purpose of feedback and troubleshooting info
+				'contact.email' => 'contact@your.domain.tld',
+			),
 
 		// language
 		'lang' => 'en-us',
