@@ -23,7 +23,7 @@ return array
 		// page for customized maintainence message and view
 		'maintanence' => array
 			(
-				'enabled' => true,
+				'enabled' => false,
 
 				// specify a retry so crawlers don't miss-mark the site
 				'retry-after' => null, # format: Sat, 8 Oct 2011 18:27:00 GMT
@@ -31,7 +31,7 @@ return array
 				// allows you to bypass the block
 				'passcode' => 'thereisnocowlevel',
 			),
-	
+
 		// additional information required by various processes
 		'system.info' => array
 			(
