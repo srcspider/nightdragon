@@ -89,7 +89,7 @@ You will need to do some basic configuration before things will work:
  you want to store your configuration overwrites
  (ie. where you moved `mjolnir.private` to). Your private files are where all
  your secret keys should be located <br>
- [!!] Do not store keys on git or any other version control!
+ **Do NOT store keys on git or any other version control!**
 
  * create a `DOCROOT/.private` file; the following command will work on all
  systems: `echo "path/to/private/files" > .private`, obviously replace the path
@@ -104,8 +104,8 @@ If you're using the site for testing or development,
  project knows which site it's serving; the following command will work on all
  systems: `echo "http://mysite.url" > .testsite`. The reason for this is that
  with the setup, a single project may serve many public sites, and a public
- site may switch between many projects, so there's bond between them, hence why
- you need to specify one
+ site may switch between many projects, so there's no bond between them, hence
+ why you need to specify one for your tests to know where to go
 
 If you're using a directory instead of the domain root, you will also need to
 set the correct rewrite base in the `.htaccess` file (as an example) as well
