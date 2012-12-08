@@ -39,12 +39,12 @@ return array
 			(
 				// empty
 			),
-	
+
 		// will be included in all explicity targets; if a target needs to be
 		// script free then simply ommit it in the targets declaration bellow
 		'common' => array
 			(
-				'+lib/jquery/jquery-1.8.2',
+				'+lib/jquery/jquery-1.8.3',
 
 			// error reporting
 				'+lib/stacktrace',
