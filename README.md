@@ -152,7 +152,7 @@ A few tips for setting up in a production environment,
 
  * note that you never change the `private.path` in your public directories (for
  neither the test or master site). If properly setup, your private files (all
- keys, database configuration, etc) is safely tucked away from your project
+ keys, database configuration, etc) are safely tucked away from your project
  files and public files, there's never a need to touch them when upgrading,
  unless it's to add new private files. Another way to look at it is, you never
  have to re-configure anything when upgrading.
