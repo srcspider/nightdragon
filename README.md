@@ -256,8 +256,8 @@ To run it, just type in `./order behat --feature Demo`. It is configured to use
 Goutte, so it requires no extra dependencies. To test things like javascript
 dependent pages you will need to run it though selenium2 driver; required
 project files are already included, you just need the server. To get it go to
-http://seleniumhq.org/download/ (you want the download under "Selenium Server"),
-once you have the jar file run it by typing `java -jar your/server/file`. You
+http://seleniumhq.org/download/ (you want the download under "Selenium Server").
+Once you have the jar file run it by typing `java -jar your/server/file`. You
 can now modify the tests to run though Selenium2 instead of Goutte by adding a
 `@javascript` tag after the `@navigation` tag, like so:
 
@@ -278,7 +278,7 @@ the tests are accurate.
 
 For more info on behat see: http://behat.org/ <br>
 For information on Goutte and other drivers see: http://mink.behat.org/ <br>
-There is [a cheatsheet on both](http://blog.lepine.pro/wp-content/uploads/2012/03/behat-cheat-sheet-en.pdf)
+[A cheatsheet on both](http://blog.lepine.pro/wp-content/uploads/2012/03/behat-cheat-sheet-en.pdf) is available.
 
 
 -
