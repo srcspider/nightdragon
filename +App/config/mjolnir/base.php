@@ -12,9 +12,9 @@ else # PUBDIR not defined
 {
 	$rootpath = \realpath(\realpath(__DIR__).DIRECTORY_SEPARATOR.'../../..');
 
-	if (\file_exists($rootpath.'/privatefiles'))
+	if (\file_exists($rootpath.'/.private'))
 	{
-		$privatepath = \trim(\file_get_contents($rootpath.'/privatefiles'), "\n\r ");
+		$privatepath = \trim(\file_get_contents($rootpath.'/.private'), "\n\r ");
 
 		// use specified private path
 		return array
