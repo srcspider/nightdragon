@@ -3,7 +3,7 @@
 
 	"config": {
 		"vendor-dir" : "vendor",
-		"bin-dir"    : "exec"
+		"bin-dir"    : "bin"
 	},
 
 	"require": {
@@ -20,7 +20,13 @@
 		"mjolnir/theme"     : "1.0.x-dev",
 		"mjolnir/types"     : "1.0.x-dev",
 		"mjolnir/librarian" : "1.0.x-dev",
-		"mjolnir/legacy"    : "1.0.x-dev"
+		"mjolnir/legacy"    : "1.0.x-dev",
+
+		"ext-xml": "*",
+		"behat/behat": "2.4@stable",
+        "behat/mink-extension": "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-selenium2-driver": "*"
 
 	}
 }

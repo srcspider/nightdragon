@@ -6,4 +6,5 @@
 !order
 !vendor/install
 !vendor/update
+!vendor/status
 !README.md
