@@ -148,7 +148,7 @@ A few tips for setting up in a production environment,
  verify again nothing broke (you can bypass maintenance via the maintenance
  password). If it's all clear turn off maintenance, go to your test site, set
  it's project files to your old master, and in it's `DOCROOT` run
- `echo echo "path/to/test/private/files" > .private`.
+ `echo "path/to/test/private/files" > .private`.
 
  * note that you never change the `private.path` in your public directories (for
  neither the test or master site). If properly setup, your private files (all
