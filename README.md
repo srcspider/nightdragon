@@ -62,8 +62,8 @@ find server specific files in `+App/drafts/www.<server>` or just
 `+App/drafts/<server>` if they are not meant to go into your public directory.
 The framework has the convention for modules of keeping any public directory
 dependencies along with other configuration/dependencies into their own
-`+App/drafts/' directory. It is recommended however that you duplicate their
-files into your project's '+App/drafts/' directory.
+`+App/drafts/` directory. It is recommended however that you duplicate their
+files into your project's `+App/drafts/` directory.
 
 To get going copy the contents of `+App/drafts/www` to your public directory,
 or a subdirectory there in. Also copy your server specific files located in
