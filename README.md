@@ -117,9 +117,9 @@ Eventually you will also want to...
 
  * customize `404.php`, `downtime.php`, `error.php` and `outage.php` to share
  the same look and feel as the rest of your site; the system will always try to
- use the equivalent from your themes but occasionally if an irrecoverable error
- will occur one of these files will be used to ensure the user doesn't get
- a confusing technical page.
+ use the equivalent from your themes but when an irrecoverable error occurs one
+ of these files will be used to ensure the user doesn't get a confusing
+ technical page.
 
  * replace `favicon.ico` with your own
 
