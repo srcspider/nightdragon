@@ -6,7 +6,7 @@
  * @version 1.2
  * @license https://github.com/ibidem/ibidem/blob/master/LICENSE.md (BSD-2)
  */
-;(function ($) {
+;(function ($, undefined) {
 
 	// enable stict mode
 	"use strict";
@@ -55,6 +55,10 @@
 			var $target, href, 
 				$main_loading_plane = $('#main-loading-plane');
 			
+			if (mj === undefined || mj.browser.ie == true) {
+				return;
+			}
+			
 			$target = $(this);
 			href = $target.attr('href');
 			
@@ -93,14 +97,15 @@
 					window.location = href;
 					return;
 				}
-				
-				// reatach events
-				history.pushState({'href': href}, '', href);
-				$('#'+conf.destination).jshadow();
-				
+
 				// hide loading
 				$main_loading_plane.hideLoading();
 				$main_loading_plane.attr('data-loading', 'false');
+				
+				$('#'+conf.destination).jshadow();
+				
+				// reatach events
+				history.pushState({'href': href}, '', href);
 			});
 		}
 

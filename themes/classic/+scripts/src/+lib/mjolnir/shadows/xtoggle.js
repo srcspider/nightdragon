@@ -1,5 +1,5 @@
 /**
- * Plugin for managing modal to button inter-connection.
+ * Plugin for managing toggle states.
  *
  * @version 1.0
  * @license https://github.com/ibidem/ibidem/blob/master/LICENSE.md (BSD-2)
@@ -11,13 +11,12 @@
 
 	$.jshadow({
 
-		'name': 'xref',
+		'name': 'xtoggle',
 
-		'wrapper': '[data-xref-scope]',
+		'wrapper': '[data-xtoggle-scope]',
 
 		'defaults': {
-			'api-target': '[data-xref-target]',
-			'api-ref': '[data-xref]'
+			'api-target': '[data-xtoggle]'
 		},
 
 		'routines': {
@@ -28,16 +27,12 @@
 
 		'init': function (conf, wrapper, self) {
 
-			var $targets = $.jshadow.children(conf, wrapper, self, conf['api-target']),
-				$references = $(conf['api-ref']);
+			var $targets = $.jshadow.children(conf, wrapper, self, conf['api-target']);
 
 			$targets.each(function () {
 				var $target = $(this);
-				$target.on('click.mjolnir_xref', function (event) {
-					$references.off('click.mjolnir_xref_activate');
-					$references.on('click.mjolnir_xref_activate', function () {
-						$target.closest('form').submit();
-					});
+				$target.on('change.mjolnir_xtoggle', function () {
+					$($target.attr('data-xtoggle')).toggle();
 				});
 			});
 

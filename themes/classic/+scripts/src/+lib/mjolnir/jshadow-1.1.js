@@ -118,7 +118,6 @@ if (typeof console === 'undefined') {
 			$.fn[definition.name] = function (options) {
 			
 				var settings = $.extend(true, {}, definition.defaults, options);
-
 				$(this).each(function () {
 
 					// create a copy of the settings
@@ -178,7 +177,7 @@ if (typeof console === 'undefined') {
 		$(this).each(function () {
 			var self = $(this);
 			$.each(register, function (i, def) {
-				var selected = self.find(def.wrapper).not('[data-api="off"], [data-api-'+def.name+'="off"]')[def.name]();
+				self.find(def.wrapper).not('[data-api="off"], [data-api-'+def.name+'="off"]')[def.name]();
 			});
 		});
 	};
@@ -198,7 +197,7 @@ if (typeof console === 'undefined') {
 			selection = selection.add(wrapper.find('[data-'+def.name+'-ns="'+conf.ns+'"]'));
 		}
 
-		return selection;	
+		return selection;
 	};
 
 	/**

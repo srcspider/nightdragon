@@ -69,8 +69,7 @@
 							$slaves.trigger('change');
 						}
 					}
-					else
-					{
+					else { // error
 						console.log('xsync: invalid list recieved');
 					}
 				});
