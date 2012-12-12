@@ -6,7 +6,7 @@ require 'json'
 $basedir = nil;
 $config = nil;
 
-$compiler_options = ' --process_jquery_primitives --warning_level QUIET --third_party --compilation_level WHITESPACE_ONLY'
+$compiler_options = ' --language_in ECMASCRIPT5_STRICT --process_jquery_primitives --warning_level QUIET --third_party --compilation_level WHITESPACE_ONLY'
 
 def read_configuration()
 	json_config = `php -r "chdir('#{$basedir}'); echo json_encode(include '+script.php');"`;
