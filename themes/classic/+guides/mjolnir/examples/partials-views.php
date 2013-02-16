@@ -1,1 +1,0 @@
-<?= \app\View::instance('mjolnir/access/signin')->render() ?>

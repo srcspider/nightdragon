@@ -2,17 +2,41 @@
 
 /**
  * @package    demo
- * @category   Library
- * @author     Ibidem
- * @copyright  (c) 2012, Ibidem Team
+ * @category   Demo
+ * @author     Ibidem Team
+ * @copyright  (c) 2013, Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 trait Trait_Controller_DemoBase
 {
-	function before()
+	// ------------------------------------------------------------------------
+	// Actions
+
+	/**
+	 * @return \mjolnir\types\Renderable
+	 */
+	function public_index()
 	{
-		parent::before();
-		\app\GlobalEvent::fire('webpage:title', 'Mjölnir Demo');
+		return \app\ThemeView::fortarget(static::singular())
+			->pass('control', $this)
+			->pass('errors', []);
+	}
+
+	// ------------------------------------------------------------------------
+	// Helpers
+
+	/**
+	 * @return string
+	 */
+	function action($action)
+	{
+		return \app\URL::href
+			(
+				static::singular().'.public',
+				[
+					'action' => $action
+				]
+			);
 	}
 
 } # trait

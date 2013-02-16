@@ -1,23 +1,13 @@
-<?php namespace app;
-
-// these are shorthand relay declarations
-
-return array
+<?php return array
 	(
 
 		'/'
-			=> [ 'demo' ],
+			=> [ 'home.public' ],
 
-		'/about'
-			=> [ 'about' ],
+		'/dashboard'
+			=> [ 'dashboard.public' ],
 
-		'/start'
-			=> [ 'start' ],
-
-
-	//// API (example) /////////////////////////////////////////////////////////
-
-		'/api/Demo/<action>'
-			=> [ [ 'demo.json' => 'demo' ], ['action' => '(entries)'] ],
+		'/login(/<action>)'
+			=> [ 'login.public', [ 'action' => '(signin|signout|pwdreset)' ] ],
 
 	);

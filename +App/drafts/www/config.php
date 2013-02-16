@@ -14,16 +14,28 @@ if ( ! \defined('PUBDIR'))
 
 return array
 	(
+		// turns on/off development mode
+		'development' => false,
+
 		// required information
 		'domain' => 'your.domain.tld',
 		'path' => '/', # must end and start with a /
+
+		// defaults
+		'protocol' => 'http://', # eg. //, http://, https://
+		'timezone' => 'Europe/London',
+		'charset' => 'UTF8',
+		'lang' => 'en-US',
+
+		// turns on/off caching globally
+		'caching' => true,
 
 		// turn on maintainence mode when performing long running modifications
 		// in a live environment; you can customize the placeholder downtime.php
 		// page for customized maintainence message and view
 		'maintanence' => array
 			(
-				'enabled' => false,
+				'enabled' => true,
 
 				// specify a retry so crawlers don't miss-mark the site
 				'retry-after' => null, # format: Sat, 8 Oct 2011 18:27:00 GMT
@@ -40,15 +52,6 @@ return array
 				'contact.email' => 'contact@your.domain.tld',
 			),
 
-		// language
-		'lang' => 'en-us',
-
-		// turns on/off caching globally
-		'caching' => true,
-
-		// turns on/off development mode
-		'development' => false,
-
 		// specifies the mockup namespace
 		'mockup-ns' => 'mockup',
 
@@ -56,13 +59,6 @@ return array
 		// will not be available; you are free to rewrite headers if you really
 		// really want them with this mode enabled
 		'static-theme' => false,
-
-		// disables certain features
-		'disable' => array
-			(
-				// true = disabled, false = allowed
-				'closure-mode' => false,
-			),
 
 		// path on system to private files (password, etc), these act as any
 		// typical file-only module

@@ -5,29 +5,36 @@
 				// project modules
 				MODPATH.'demo' => 'demo\core',
 
-				// development modules
-				MODPATH.'+mockup' => 'mockup',
+			// ---- Plugins ---------------------------------------------------
 
-				// library legacy code
-#				PLGPATH.'mjolnir/legacy'    => 'mjolnir\legacy',
+				// no plugins
+
+			// ---- Libraries -------------------------------------------------
+
+				// legacy code support
+#				VDRPATH.'mjolnir/legacy'     => 'mjolnir\legacy',
+
+				// profiling
+				VDRPATH.'mjolnir/profile'    => 'mjolnir\profile',
 
 				// mjolnir modules
-				PLGPATH.'mjolnir/access'    => 'mjolnir\access',
-				PLGPATH.'mjolnir/base'      => 'mjolnir\base',
-				PLGPATH.'mjolnir/html'      => 'mjolnir\html',
-				PLGPATH.'mjolnir/database'  => 'mjolnir\database',
-				PLGPATH.'mjolnir/cache'     => 'mjolnir\cache',
-				PLGPATH.'mjolnir/theme'     => 'mjolnir\theme',
-				PLGPATH.'mjolnir/backend'   => 'mjolnir\backend',
-				PLGPATH.'mjolnir/cfs'       => 'mjolnir\cfs',
-				PLGPATH.'mjolnir/librarian' => 'mjolnir\librarian',
-				PLGPATH.'mjolnir/testing'   => 'mjolnir\testing',
+				VDRPATH.'mjolnir/access'     => 'mjolnir\access',
+				VDRPATH.'mjolnir/base'       => 'mjolnir\base',
+				VDRPATH.'mjolnir/foundation' => 'mjolnir\foundation',
+				VDRPATH.'mjolnir/html'       => 'mjolnir\html',
+				VDRPATH.'mjolnir/database'   => 'mjolnir\database',
+				VDRPATH.'mjolnir/cache'      => 'mjolnir\cache',
+				VDRPATH.'mjolnir/theme'      => 'mjolnir\theme',
+				VDRPATH.'mjolnir/backend'    => 'mjolnir\backend',
+				VDRPATH.'mjolnir/cfs'        => 'mjolnir\cfs',
+				VDRPATH.'mjolnir/types'      => 'mjolnir\types',
+				VDRPATH.'mjolnir/librarian'  => 'mjolnir\librarian',
+				VDRPATH.'mjolnir/testing'    => 'mjolnir\testing',
 			),
 
 		'namespaces' => array
 			(
-				// libraries accessed via explicit calls only
-				'mjolnir\types' => PLGPATH.'mjolnir/types',
+				// empty
 			),
 
 		'themes' => array
@@ -36,7 +43,7 @@
 				// in which case there's no need for them to appear here. If you
 				// need to package configuration files such as language files
 				// you can also create as a file path
-				'classic' => DOCROOT.'themes/classic',
+				'demo-theme' => DOCROOT.'themes/the-demo/',
 			),
 
 	); # config

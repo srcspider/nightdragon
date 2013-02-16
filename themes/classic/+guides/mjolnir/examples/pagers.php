@@ -1,1 +1,0 @@
-<?= $pager->standard('twitter')->render() ?>

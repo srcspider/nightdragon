@@ -41,7 +41,7 @@ if ( ! \file_exists($cfspath_files))
 	}
 	else # potentially console app
 	{
-		echo 'Missing system libraries. Terminating.'.PHP_EOL;
+		echo 'Missing system libraries. Try bin/vendor/install'.PHP_EOL;
 	}
 	exit(1);
 }
@@ -51,6 +51,8 @@ if ( ! \file_exists($cfspath_files))
 require $cfspath_files.'functions/mjolnir/logging'.EXT;
 require $cfspath_files.'functions/mjolnir/errors'.EXT;
 require $cfspath_files.'default.mjolnir'.EXT;
+
+\app\CFS::cache(\app\Stash_File::instance());
 
 #
 # See [mjolnir/cfs/+App/bridges] for bridge declaration help

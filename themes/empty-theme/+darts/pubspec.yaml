@@ -1,0 +1,11 @@
+name: Your-Project-Name
+description: Your-Project-Description
+
+version: 0.1.0
+author: Your-Name <Your@Email.tld>
+homepage: https://Some-URL.tld
+
+dependencies:
+  browser: any
+  js: { hosted: js }
+  vector_math: any

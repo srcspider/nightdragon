@@ -19,11 +19,6 @@
 			 * create basic protocols for common access requirements.
 			 */
 
-			A12n::guest() => array
-				(
-					// empty
-				),
-
 			// +roles by convention are template roles, there should never be
 			// a user in the system which useses these roles directly
 
@@ -31,24 +26,19 @@
 				(
 					Allow::relays
 						(
-							'demo',
-							'about',
-							'start'
-						),
-
-					Allow::relays
-						(
-							'demo.json'
-						),
+							'home.public',
+							'login.public'
+						)
+						->all_parameters(),
 				),
 
-			'+admin' => array
+			'+member' => array
 				(
-					Allow::backend
+					Allow::relays
 						(
-							// empty
-						),
-
+							'dashboard.public'
+						)
+						->all_parameters(),
 				),
 		),
 
@@ -67,9 +57,9 @@
 			 */
 
 			// examples
-			A12n::guest() => [ '+common' ],
-			'member'      => [ A12n::guest(), '+common', '+member' ],
-			'admin'       => [ A12n::guest(), '+common', '+member', '+admin' ],
+			Auth::Guest => [ '+common' ],
+			'member'    => [ '+common', '+member' ],
+			'admin'     => [ '+common', '+member', '+admin' ],
 		),
 
 	'roles' => array # roles in system
