@@ -2,7 +2,7 @@
 [
 
 'demo:dashboard/foreword' => <<<'EOS'
-   The dashboard is a private section only accessible to members.
+   This demo "dashboard" page is a private section only accessible to signed in users.
 EOS
 
 ];
