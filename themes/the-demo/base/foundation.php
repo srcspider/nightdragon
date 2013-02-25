@@ -43,6 +43,6 @@
 
 	<hr/>
 
-	<?= $view # template entry-point ?>
+	<?= $entrypoint->render() ?>
 
 </div>
