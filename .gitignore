@@ -2,8 +2,8 @@
 +App/logs/*
 +App/cache/*
 +App/tmp/*
-.private
-.testsite
+privatefiles
+testsite
 
 # Composer junk
 vendor/*
