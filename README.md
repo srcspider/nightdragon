@@ -55,19 +55,19 @@ indicate if you have made modification in them.
 Getting up and running
 ======================
 
-The `+App/drafts/www/` directory is where all the files that need to be
+The `drafts/www/` directory is where all the files that need to be
 in your public directory are located. Various settings such as configuration
-files for things like sphinx, etc should also go in `+App/drafts/`. You will
-find server specific files in `+App/drafts/www.<server>` or just
-`+App/drafts/<server>` if they are not meant to go into your public directory.
+files for things like sphinx, etc should also go in `drafts/`. You will
+find server specific files in `drafts/www.<server>` or just
+`drafts/<server>` if they are not meant to go into your public directory.
 The framework has the convention for modules of keeping any public directory
 dependencies along with other configuration/dependencies into their own
-`+App/drafts/` directory. It is recommended however that you duplicate their
-files into your project's `+App/drafts/` directory.
+`drafts/` directory. It is recommended however that you duplicate their
+files into your project's `drafts/` directory.
 
-To get going copy the contents of `+App/drafts/www` to your public directory,
+To get going copy the contents of `drafts/www` to your public directory,
 or a subdirectory there in. Also copy your server specific files located in
-`drafts/www.<server>` (eg. `+App/drafts/www.apache`). Copy any other non-www
+`drafts/www.<server>` (eg. `drafts/www.apache`). Copy any other non-www
 server files as needed.
 
 We'll assume the path to your public directory (or subdirectory if it's the
@@ -169,7 +169,7 @@ Documentation
 
 For documentation run:
 
-	./order librarian -m
+	./order librarian --manual
 
 A `manual.html` and `manual.pdf` file will be created in your project root.
 
@@ -279,8 +279,3 @@ the tests are accurate.
 For more info on behat see: http://behat.org/ <br>
 For information on Goutte and other drivers see: http://mink.behat.org/ <br>
 [A cheatsheet on both](http://blog.lepine.pro/wp-content/uploads/2012/03/behat-cheat-sheet-en.pdf) is available.
-
-
--
-
-See `+App/help/README.md` for some more information
