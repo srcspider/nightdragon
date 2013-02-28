@@ -151,6 +151,34 @@ development on the files you may want to use the appropriate polling script
 (typically this takes the form of a `start.rb` file) to benefit from debug 
 information such as source maps, etc.*
 
+### Step 1.4: Installing the database (optional)
+
+**DO NOT PERFORM IF THE DATABASE ISNT EMPTY**
+
+To set up your database run this command:
+
+	./order db:install
+
+This will *destroy* any copies of the components it needs to install (by this
+we're referring to tables not entire databases), initialize and load in a copy
+of the database structure with all channels updated to the latest version.
+
+If you recieve an error on database access **DO NOT** go and insert your 
+password / username in the project configuration. Not only is this wrong but 
+likely won't work since the values in your private files will overwrite them.
+
+Troubleshooting Checklist:
+
+ 1. did you create the database
+ 2. did you specify the correct path to your private files in the file 
+ `privatefiles` on the root of your project
+ 3. did you insert the correct user / password in the database configuration in
+ your private files
+ 4. are your dependencies installed correctly (see previous steps)
+ 5. are your permissions set up correctly
+
+If you've gone though all that and still can't figure it out, debug it.
+
 ### Step 2: Setting up the private files
 
 The private files are for the most part the configuration files containing your
@@ -189,6 +217,8 @@ A quick checklist:
  * insert an appropriate domain name, ie. `www.exmple.com`, or `example.com`
  * set up an apropriate path base, ie. `/` for root, `/some/path/` for folder 
  based sites
+ * set the site's development mode to on if you're doing development (by default
+ development mode is off)
  * set up caching (by default caching is turned on)
 
  * set the `private.files` value to the appropriate path to your private files,
