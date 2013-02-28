@@ -31,7 +31,7 @@ if ( ! \file_exists($cfspath_files))
 		if ($pubdir_config['development'])
 		{
 			echo 'Missing system libraries. '.PHP_EOL;
-			echo 'Please install by running "install-vendor" in '
+			echo 'Please install by running "bin/vendor/install" in '
 				. '['.$pubdir_config['system.dir'].']';
 		}
 		else # user error
