@@ -1,281 +1,232 @@
-*Windows Users*, please use `git bash` and have php in your path.
+Install Guide
+=============
 
-<b>Getting the files...</b>
+## Requirements
 
-	git clone https://github.com/ibidem/mjolnir-template-app.git yourprojectname
-	cd yourprojectname/
-	git remote rename origin mjolnir
+ * **console version** of [git](http://git-scm.com/), you can use the [github install guide](https://help.github.com/articles/set-up-git); reference: [git docs](http://git-scm.com/documentation), or [git ref](http://gitref.org/)
+ * **if you own private repositories**: SSH access to the repos ([SSH guide for github](https://help.github.com/articles/generating-ssh-keys))
+ * a working \*nix compatible console (on windows use `git bash` that comes with git)
+ * a working server (LAMP/WAMP/MAMP are fine for development), a server setup should contain
+   - PHP (on windows it's easier to install a separate version for console use)
+   - a web server (Apache, nginx, etc)
+   - optionally a database (by default support for MySQL is available)
 
-In some cases you may have to change permissions
+## Steps
 
-	chmod -R +x bin/
+To get everything up and running requires a 3 step process.
+ 
+ 1. setting up the project files
+ 2. setting up the private files
+ 3. setting up the public files
+
+From here on we will consider your https or git protocol repository url as 
+`REPO` and your project code name as `PROJECT`. These are placeholders, please
+replace them in the example code bellow with your actual repo url and project 
+code name.
+
+As an example, for the Mjolnir demo project `REPO` is 
+`git@github.com:ibidem/mjolnir-template-app.git` (for SSH access) or 
+`https://github.com/ibidem/mjolnir-template-app.git` (for normal HTTPS). And
+`PORJECT` can be `demo` or `mjolnir-template-app`, etc.
+
+Any other ALLCAPTICALS words bellow are also placeholders and you should not 
+take them literally.
+
+### Step 1: Setting up the project files
+
+First we need to retrieve a local copy of the project files...  (ie. `git clone`)
+
+	cd /path/to/your/working/directory-or-partition/
+	git clone REPO PROJECT
+	cd PROJECT/
+
+### Step 1.1: Setting up file permissions (situational)
+
+You should make sure all your files contain appropriate permissions 
+(use `ls -l` to check).
+
+The files **should be already setup correctly**, but in case they aren't you can use
+the following commands to ensure the files have appropriate access levels.
+
 	chmod +x order
-	chmod 750 +App/logs/
-	chmod 750 +App/cache/
-	chmod 750 +App/tmp
+	chmod -R +x bin/
+	chmod 750 etc/logs/
+	chmod 750 etc/cache/
+	chmod 750 etc/tmp
 
-Replace 750 with whatever is appropriate for your server setup.
+It's also recommended you set up a appropriate user to manage the project. 
+Assuming your user is the same as PROJECT and your group is SERVGROUP you would
+do configure the project files with the following commands after switching to
+a user with administrative access (`root` on *nix systems):
 
-The template repo only contains the `mj/template` branch. You should add another
-remote named `origin` to your repo and use `mjolnir` only for pulling template
-changes. Github's repo creation process provides the commands.
+	chown -R PROJECT .
+	chgrp -R SERVGROUP .
 
-Note the use of the https version. When on a server this variant is the most
-convenient to use.
+This setup allows your server to access the files and via your account you can
+perform maintenance with out any risk of damaging other files on the server.
 
--
+Make sure your user has SSH setup correctly to access to appropriate 
+repositories. In the case of Github, this implies you have an account (any
+free account will do), and the owner of the repository has either added you as a 
+collaborator or to a team with appropriate access.
 
-<b>Installing dependencies...</b>
+### Step 1.2: Installing PHP dependencies
+
+Most project dependencies are external, so you will have pull them in.
+
+In your project root run:
 
 	bin/vendor/install
-
-Alternatively, simply open `bin/vendor/install` and use it as a guide.
-
--
-
-<b>Updating dependencies...</b>
-
-	bin/vendor/update
-
-This is directly tied to your `composer.json` file. You can always update your
-composer file and re-run this command. You can also re-run the command to check
-for updates. For packages go to: https://packagist.org/
-
--
-
-<b>Verifying dependencies</b>
+	
+The command will install PHP dependencies using Composer. After the install 
+process has completed you should run:
 
 	bin/vendor/status
 
-This will display the installed packages, versions, description as well as
-indicate if you have made modification in them.
+This will display information on all installed dependencies (version and 
+description). Please confirm no inappropriate versions were installed for your 
+use case (ie. unauthorized experimental development releases in production).
 
--
+Once you've confirmed the integrity of the installed PHP dependencies run:
 
-Getting up and running
-======================
+	./order
 
-The `drafts/www/` directory is where all the files that need to be
-in your public directory are located. Various settings such as configuration
-files for things like sphinx, etc should also go in `drafts/`. You will
-find server specific files in `drafts/www.<server>` or just
-`drafts/<server>` if they are not meant to go into your public directory.
-The framework has the convention for modules of keeping any public directory
-dependencies along with other configuration/dependencies into their own
-`drafts/` directory. It is recommended however that you duplicate their
-files into your project's `drafts/` directory.
+You should see a help list of commands. If you aren't seeing this something has
+gone horribly wrong when installing your dependencies. Please review the 
+previous steps. 
 
-To get going copy the contents of `drafts/www` to your public directory,
-or a subdirectory there in. Also copy your server specific files located in
-`drafts/www.<server>` (eg. `drafts/www.apache`). Copy any other non-www
-server files as needed.
+If all is well up to this point run:
 
-We'll assume the path to your public directory (or subdirectory if it's the
-case) is `PUBPATH` from here on.
+	./order status
 
-You will need to do some basic configuration before things will work:
+This will run dependency checks specified by project modules. If all 
+dependencies are satisfied you should get a "passed" rating, this is appropriate
+for production, if the rating is "failed" the module is missing some key 
+functionality but it is still able to function with out them (more or less), if
+the rating is "error" the module is missing a critical requirement, you will 
+need to check your server setup and configuration to ensure the requirement is
+satisfied or otherwise the system will run in an unstable state.
 
- * set the domain in the new `PUBPATH/config.php` file; also review the server
- files for configuration settings such as rewrite base
+In production you should always aim for all "passed", in development you may
+get away with some components on "failed" depending on what you're working on.
 
- * in `PUBPATH/config.php` set `system.dir` to point to the root of the
- project (ie. where this file, and all the other project files are located);
- we'll refer to the root of the project as `DOCROOT` from here on
+At this point you may also confirm you've gotten an appropriate version of the
+application by running:
 
- * copy `mjolnir.private` to a centralized location; the more restricted the
- better. Feel free to rename it to `your_project.private` or as you see fit.
+	./order versions
 
- * in `PUBPATH/config.php` set `private.files` to point to the directory where
- you want to store your configuration overwrites
- (ie. where you moved `mjolnir.private` to). Your private files are where all
- your secret keys should be located <br>
- **Do NOT store keys on git or any other version control!**
+The command will output versioning information from all registered modules.
 
- * create a `DOCROOT/.private` file; the following command will work on all
- systems: `echo "path/to/private/files" > .private`, obviously replace the path
- with your own
+You may also run:
 
- * run `./order compile` to compile all the style files, and any other resources
- that require compilation
+	./order cleanup
 
-If you're using the site for testing or development,
+The command will perform a cleanup on various application controlled system 
+files.
 
- * create a `DOCROOT/.testsite` file pointing to the URL of the site, so the
- project knows which site it's serving; the following command will work on all
- systems: `echo "http://mysite.url" > .testsite`. The reason for this is that
- with the setup, a single project may serve many public sites, and a public
- site may switch between many projects, so there's no bond between them, hence
- why you need to specify one for your tests to know where to go
+### Step 1.3: Installing style dependencies
 
-If you're using a directory instead of the domain root, you will also need to
-set the correct rewrite base in the `.htaccess` file (as an example) as well
-as the `path` in the `PUBPATH/config.php` file. You should try to avoid using
-`.htaccess` files but for simplicity this is the default for testing since
-Apache with `.htaccess` support is very easy to setup.
+First we need to install all the dependencies:
 
-Eventually you will also want to...
+	./order bower --install
 
- * customize `404.php`, `downtime.php`, `error.php` and `outage.php` to share
- the same look and feel as the rest of your site; the system will always try to
- use the equivalent from your themes but when an irrecoverable error occurs one
- of these files will be used to ensure the user doesn't get a confusing
- technical page.
+This will pull in dependencies such as jquery, plugins, style libraries such as
+bootstrap and other dependencies specified by themes on the system. Each theme
+will require it's own copy of the dependencies so you may see multiple instances
+of the same dependency during the install; this is perfectly normal.
 
- * replace `favicon.ico` with your own
+After the dependencies have been installed (almost always these will be 
+installed in source format for development purposes) most of them will require
+some form of compilation before we can use them. *To obtain a production ready
+version of the files* run:
 
- * enable `static-theme` so all your style files (css, javascript, etc) are
- served directly by the server and not though PHP; when enabled don't forget to
- change `APPVERSION` whenever you do upgrades; otherwise you will always be
- serving the old files
+	./order compile
 
-A few tips for setting up in a production environment,
+The process may occasionally stall for up to a minute if is require to download
+some appropriate compiler.
 
- * always have (at least) two project clones; one is always the master and one
- one is always your (pre-production) test site, both on the same server, and
- running on independent databases. You would then swap between them when
- upgrading, to minimize downtime. We'll refer to one as "master" and the other
- as "test" here after...
+*Note: the `./order compile` is for generating production files. If you are doing
+development on the files you may want to use the appropriate polling script 
+(typically this takes the form of a `start.rb` file) to benefit from debug 
+information such as source maps, etc.*
 
- * make sure to have a backup always ready, be it database backup, project
- files, etc.
+### Step 2: Setting up the private files
 
- * easiest and safest way to upgrade is to `git pull` your changes into the
- project files of the test site, run your `./order db:upgrade` to perform any
- database manipulation and when you verify nothing is broken (preferably though
- some automated tests) you go into the `PUBPATH/config.php` of your current
- master, turn maintenance on, switch the `project.files` to your old test, run
- `echo "path/to/master/private/files" > .private` perform `./order db:upgrade`,
- verify again nothing broke (you can bypass maintenance via the maintenance
- password). If it's all clear turn off maintenance, go to your test site, set
- it's project files to your old master, and in it's `DOCROOT` run
- `echo "path/to/test/private/files" > .private`.
+The private files are for the most part the configuration files containing your
+secret keys. **It is imperative that you do NOT place ANY security information 
+in your project files!**
 
- * note that you never change the `private.path` in your public directories (for
- neither the test or master site). If properly setup, your private files (all
- keys, database configuration, etc) are safely tucked away from your project
- files and public files, there's never a need to touch them when upgrading,
- unless it's to add new private files. Another way to look at it is, you never
- have to re-configure anything when upgrading.
+To setup the files first copy the draft version of the files to a secure 
+location preferably where only the root user and server has access, and then
+create a file `privatefiles` on the project root where you specify this path
+so the system knows where to find them:
 
- * an alternative to the above is to just have multiple versions,
- ie. `git clone ... your_project.v3.2` and so on. You simply point them to the
- same private files.
+	cp -R drafts/project.private /secure/path/PROJECT.private/
+	echo "/secure/path/PROJECT.private/" > privatefiles
 
-*The setup may be far more sophisticated and automated. The above is only a very
-basic easy to use example of doing things.*
+Of course at this point you would `cd /secure/path/PROJECT.private/` and start
+filling in the keys. The files should NEVER contain anything more then security
+information such as public / private keys, users, passwords, database names, 
+etc.
 
-Documentation
-=============
+### Step 2: Setting up the public files
 
-For documentation run:
+For web projects at this point you would want to setup your public files which
+are accessible for your users. We will consider `/path/to/www` to point to your
+publicly accessible files via the web server. If you are running the project in
+a folder consider that folder to be `www`.
+
+	cd /path/to/www
+	cp -R /path/to/PROJECT/drafts/www .
+
+You should now have a `config.php` file on the project root. This is the domain
+configuration. You may have multiple domains using the same project files, the
+`config.php` files on their root specify their settings.
+
+A quick checklist:
+	
+ * insert an appropriate domain name, ie. `www.exmple.com`, or `example.com`
+ * set up an apropriate path base, ie. `/` for root, `/some/path/` for folder 
+ based sites
+ * set up caching (by default caching is turned on)
+
+ * set the `private.files` value to the appropriate path to your private files,
+ ie. `/secure/path/PROJECT.private/` in the examples above
+ * set the `system.dir` to the appropriate system directory (ie. where you 
+ cloned your project)
+
+When you are ready disable maintenance to open your site to the public (by 
+default maintanence is on). The option is `maintancen` in your `config.php` 
+file.
+
+### Step 2.1: Setting up the server specific files
+
+Some servers may require additional files besides the base files required by 
+your project's PHP code. Assuming your server is apache as an example, you would
+have to copy the extra files like this
+
+	cp -R /path/to/PROJECT/drafts/www.apache .
+
+And you would of course also need to inspect the copies configuration files and
+change accordingly (for the `www.apache` version you will only need to change
+the `RewriteBase` in the main `.htaccess` file if you're not on the domain 
+root).
+
+*Please inspect your project's `drafts` folder for any additional dependencies, 
+such as node server files, etc. You will have to follow the instruction provided
+by each since convering them is outside the scope of this document.*
+
+## Congratulations on completing the setup
+
+You should at this point have an working project. Regardless if you're doing
+prototyping, development or are here to alter/enhance the project for you should
+refer to the manual (sections for starting up to working on an existing project
+are available).
+
+Sections of the manual are maintained by each module. And modules may insert 
+their own manual entries (this includes project specific modules). To generate
+the latest copy run the following:
 
 	./order librarian --manual
 
-A `manual.html` and `manual.pdf` file will be created in your project root.
-
--
-
-Errors
-======
-
-Mjolnir is extremely log centric. While the framework does try to output more
-developer friendly errors and issue stack traces when in development mode, logs
-are the primary means by which you should be looking for errors.
-
-The recommended way is to have a second window up running, ie.
-`tail -f +App/logs/short.log`. If you don't have a second monitor it's not a
-problem, you shouldn't have too look at it too often (not constantly anyway).
-You will find `short.log` in `+App/logs`. As per it's name it is a 1-line
-description of the error. Feel free to discard it, detailed error reports are
-saved in your master log. The master log(s) will contain a stack trace in
-addition to the message, additional informations, as well as be sorted by date
-(all log entries can be found in the main log, other master logs are only
-used for filtering purposes).
-
-Several reasons for relying on logs over verbose client side messages:
-
-1. Errors reported directly to the user are always pretty nasty so the
-framework tries its best to redirect the user to some appropriate looking
-page; this in turn has the side effect of making errors hard to see. (mitigating
-this requires a lot of excess code)
-
-2. When errors occur inside the tags themselves the results are usually
-one of the following: the entire page will get mangled (especially with
-xdebug running), the style will go haywire, or in the worst case scenario
-the error code is interpreted as valid code and it is invisible inside the
-code. Logs have no such problem; the output is always clean and to the point.
-
-3. Unless you decide you want to be fancy and base64 all your dependencies
-a typical webpage is a combination of multiple resources coming togheter. It
-is very easy and very common for errors to popup in said resources with no
-immediate effect on the page. Searching for errors in all your files
-until you find the culprit is also a pain. By simply viewing the log you can
-keep a tab on everything at once.
-
-Mjolnir provides a means of capturing "client" errors. This is enabled by
-default. The demo application comes with support for javascript errors; so for
-basic webapp based on the demo your `short.log` will show <b>everything</b>. You
-can take this further and issue reports from other dependencies you use as well,
-"client" here refers to anything that's not the application itself.
-
--
-
-Running Tests
-=============
-
-It is recommended you write mostly behaviour tests. Though you can easily
-integrate plain old phpunit and run unit tests.
-
-<b>To run behaviour tests</b> you simply need to have a `behat.yaml` somewhere
-in your system (it is recommended you place them in `+App/features`). Then run:
-
-	./order behat --ansi
-
-The framework will scan and run the behat command on the `behat.yaml`. Note that
-all paths in your `behat.yaml` are relative to the directory where the file is
-located. Here is the minimum `behat.yaml` file for the tests to run:
-
-	default:
-	  paths:
-	    features:   '.'
-	    bootstrap:  './bootstrap'
-
-The framework will only scan registered modules for `behat.yaml`s.
-
-You may also immediately follow the `./order behat` command with
-`--feature "something"` to filter out all feature (directories) to only the ones
-that match the pattern.
-
-Any other parameters you provide will be passed directly to behat. See behat
-documentation at: http://docs.behat.org/
-
-If you wish to run the behat command normally, simply use `bin/behat`.
-
-The Demo has a very basic example at `DOCROOT/modules/demo/+App/features/Demo`.
-To run it, just type in `./order behat --feature Demo`. It is configured to use
-Goutte, so it requires no extra dependencies. To test things like javascript
-dependent pages you will need to run it though selenium2 driver; required
-project files are already included, you just need the server. To get it go to
-http://seleniumhq.org/download/ (you want the download under "Selenium Server").
-Once you have the jar file run it by typing `java -jar your/server/file`. You
-can now modify the tests to run though Selenium2 instead of Goutte by adding a
-`@javascript` tag after the `@navigation` tag, like so:
-
-	@navigation @javascript
-	Feature: navigate site
-
-Of course you could just add it to only individual scenarios if you wanted.
-
-If you ever encounter issues when writing tests in behat, inject the step
-`show last response` or `print last response` to get what the driver was seeing
-when it failed (or succeeded unexpectedly).
-
-You don't need neither Goutte nor Selenium (nor equivalent) for tests related to
-your classes; they are only for testing things like accessing web pages, filling
-in forms, pressing buttons, etc. You should use Goutte if you can, but in the
-case of forms you may wish to always use Selenium (or equivalent) to guarantee
-the tests are accurate.
-
-For more info on behat see: http://behat.org/ <br>
-For information on Goutte and other drivers see: http://mink.behat.org/ <br>
-[A cheatsheet on both](http://blog.lepine.pro/wp-content/uploads/2012/03/behat-cheat-sheet-en.pdf) is available.
+A html (and pdf) version will be generated on the project root.
