@@ -245,7 +245,7 @@ root).
 
 *Please inspect your project's `drafts` folder for any additional dependencies, 
 such as node server files, etc. You will have to follow the instruction provided
-by each since convering them is outside the scope of this document.*
+by each since covering them is outside the scope of this document.*
 
 ## Congratulations on completing the setup
 
