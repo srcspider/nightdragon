@@ -46,7 +46,7 @@ if ( ! \file_exists($cfspath_files))
 	exit(1);
 }
 
-// we load the default environment; if you want custom APPPATH, MODPATH, PLGPATH
+// we load the default environment; if you want custom ETCPATH, MODPATH, PLGPATH
 // simply define them before this statement, they will not be redefined.
 require $cfspath_files.'functions/mjolnir/logging'.EXT;
 require $cfspath_files.'functions/mjolnir/errors'.EXT;
