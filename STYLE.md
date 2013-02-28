@@ -19,21 +19,21 @@ they are only used in one place.
 syntax (ie. `foreach (...): endforeach;`, etc); they should also declare the
 `app` namespace at the top of the file and use short tags.
 
-* When testing equality prefer === and !== over == and != since the long version
-also tests type and avoid funky errors. Of course if you want to test 1 == '1' 
-then by all means use ==
+* When testing equality prefer `===` and `!==` over `==` and `!=` since the long
+version also tests type and avoid funky errors. Of course if you want to test 
+`1 == '1'` then by all means use `==`
 
 * The ! (not) operator should always have spaces before and after the operator 
 to highlight it, for example: <code>if ( ! self::is_secure_connection())</code>
 
-* The & (reference) operator should never have a space after it. The reason for 
-this is to allow for all uses (not just the times when it's used in function 
+* The `&` (reference) operator should never have a space after it. The reason 
+for this is to allow for all uses (not just the times when it's used in function 
 parameters) to share the same syntax: `function example(&param1)`, 
-`$x = &somefunction();`
+`$x = &somefunction();`, `$x = &$y;`
 
-* If you have an empty method, array, or anything else, for whatever reason, add 
-a comment `// empty` or similar message in it's body to explicitly specify the
-code was not left empty on accident.
+* If you have an empty method, array, or anything else, add a comment `// empty`
+or similar message in it's body to explicitly specify the code was not left 
+empty on accident.
 
 * Don't use the public access modifier; it is unnecessary, verbose and makes the
 distinction between function and non-function as well as between static and 
@@ -45,7 +45,7 @@ with  out its use. The problem with `private` is that only the people extending
 your class are actually qualified to tell you which attributes should be 
 `private`, so what happens is that every use of `private` (outside of extreme 
 cases of  everything being private) simply makes the options to the extending 
-class a lot more limited, so it hurts class hierarchies (a lot).
+class a lot more limited, so it hurts class hierarchies.
 
 * When a method returns the current object, the `@return` doc comment should 
 read: `@return \app\Your_Class_Here $this` (or equivalent using the interface 
