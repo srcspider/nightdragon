@@ -27,7 +27,8 @@ code name.
 As an example, for the Mjolnir demo project `REPO` is 
 `git@github.com:ibidem/mjolnir-template-app.git` (for SSH access) or 
 `https://github.com/ibidem/mjolnir-template-app.git` (for normal HTTPS). And
-`PORJECT` can be `demo` or `mjolnir-template-app`, etc.
+`PORJECT` can be `demo` or `mjolnir-template-app`, etc. On github you should
+see the project repository urls on the project page.
 
 Any other ALLCAPTICALS words bellow are also placeholders and you should not 
 take them literally.
@@ -169,7 +170,7 @@ filling in the keys. The files should NEVER contain anything more then security
 information such as public / private keys, users, passwords, database names, 
 etc.
 
-### Step 2: Setting up the public files
+### Step 3: Setting up the public files
 
 For web projects at this point you would want to setup your public files which
 are accessible for your users. We will consider `/path/to/www` to point to your
@@ -199,7 +200,7 @@ When you are ready disable maintenance to open your site to the public (by
 default maintanence is on). The option is `maintancen` in your `config.php` 
 file.
 
-### Step 2.1: Setting up the server specific files
+### Step 3.1: Setting up the server specific files
 
 Some servers may require additional files besides the base files required by 
 your project's PHP code. Assuming your server is apache as an example, you would
@@ -219,9 +220,9 @@ by each since convering them is outside the scope of this document.*
 ## Congratulations on completing the setup
 
 You should at this point have an working project. Regardless if you're doing
-prototyping, development or are here to alter/enhance the project for you should
-refer to the manual (sections for starting up to working on an existing project
-are available).
+prototyping, development or are here to alter/enhance the project, you should
+refer to the manual; sections for starting up, to working on an existing project
+are available.
 
 Sections of the manual are maintained by each module. And modules may insert 
 their own manual entries (this includes project specific modules). To generate
