@@ -5,8 +5,56 @@
 
 // HowTo: order honeypot -n 'demo\core'
 
-class Controller_Dashboard extends \demo\core\Controller_Dashboard { /** @return \demo\core\Controller_Dashboard */ static function instance() { return parent::instance(); } }
-class Controller_Home extends \demo\core\Controller_Home { /** @return \demo\core\Controller_Home */ static function instance() { return parent::instance(); } }
-class Controller_Login extends \demo\core\Controller_Login { /** @return \demo\core\Controller_Login */ static function instance() { return parent::instance(); } }
-class Schematic_Mjolnir_Access_Demo extends \demo\core\Schematic_Mjolnir_Access_Demo { /** @return \demo\core\Schematic_Mjolnir_Access_Demo */ static function instance() { return parent::instance(); } }
+
+/**
+ * @method \app\Controller_Dashboard channel_is($channel)
+ * @method \app\Channel channel()
+ * @method \app\Controller_Dashboard add_preprocessor($name, $processor)
+ * @method \app\Controller_Dashboard add_postprocessor($name, $processor)
+ * @method \app\Controller_Dashboard preprocess()
+ * @method \app\Controller_Dashboard postprocess()
+ */
+class Controller_Dashboard extends \demo\core\Controller_Dashboard
+{
+	/** @return \app\Controller_Dashboard */
+	static function instance() { return parent::instance(); }
+}
+
+/**
+ * @method \app\Controller_Home channel_is($channel)
+ * @method \app\Channel channel()
+ * @method \app\Controller_Home add_preprocessor($name, $processor)
+ * @method \app\Controller_Home add_postprocessor($name, $processor)
+ * @method \app\Controller_Home preprocess()
+ * @method \app\Controller_Home postprocess()
+ */
+class Controller_Home extends \demo\core\Controller_Home
+{
+	/** @return \app\Controller_Home */
+	static function instance() { return parent::instance(); }
+}
+
+/**
+ * @method \app\Controller_Login channel_is($channel)
+ * @method \app\Channel channel()
+ * @method \app\Controller_Login add_preprocessor($name, $processor)
+ * @method \app\Controller_Login add_postprocessor($name, $processor)
+ * @method \app\Controller_Login preprocess()
+ * @method \app\Controller_Login postprocess()
+ * @method \app\Renderable action_signin()
+ * @method \app\Renderable public_signin()
+ * @method \app\Renderable public_signout()
+ * @method \app\Renderable signin_view($errors = null)
+ */
+class Controller_Login extends \demo\core\Controller_Login
+{
+	/** @return \app\Controller_Login */
+	static function instance() { return parent::instance(); }
+}
+
+class Schematic_Mjolnir_Access_Demo extends \demo\core\Schematic_Mjolnir_Access_Demo
+{
+	/** @return \app\Schematic_Mjolnir_Access_Demo */
+	static function instance() { return parent::instance(); }
+}
 trait Trait_Controller_DemoBase { use \demo\core\Trait_Controller_DemoBase; }
