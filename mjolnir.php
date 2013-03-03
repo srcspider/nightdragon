@@ -53,6 +53,7 @@ require $cfspath_files.'functions/mjolnir/errors'.EXT;
 require $cfspath_files.'default.mjolnir'.EXT;
 
 \app\CFS::cache(\app\Stash_File::instance());
+\mjolnir\log_settings(\app\CFS::config('mjolnir/base')['logging']);
 
 #
 # See [mjolnir/cfs/+App/bridges] for bridge declaration help
