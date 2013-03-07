@@ -4,6 +4,7 @@ etc/cache/*
 etc/tmp/*
 privatefiles
 testsite
+reload
 
 # Composer junk
 vendor/*
