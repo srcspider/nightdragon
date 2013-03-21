@@ -8,7 +8,7 @@
 
 	"require": {
 
-		"php" : "=5.4.10",
+		"php" : ">=5.4.10",
 
 		"mjolnir/cfs"        : "dev-liquid/1.0",
 		"mjolnir/base"       : "dev-liquid/1.0",

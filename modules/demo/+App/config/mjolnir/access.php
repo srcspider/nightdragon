@@ -29,7 +29,7 @@
 							'home.public',
 							'login.public'
 						)
-						->all_parameters(),
+						->unrestricted(),
 				),
 
 			'+member' => array
@@ -38,7 +38,7 @@
 						(
 							'dashboard.public'
 						)
-						->all_parameters(),
+						->unrestricted(),
 				),
 		),
 

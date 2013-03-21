@@ -5,6 +5,7 @@ etc/tmp/*
 privatefiles
 testsite
 reload
+pubdirs
 
 # Composer junk
 vendor/*
