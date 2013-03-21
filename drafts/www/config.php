@@ -36,7 +36,7 @@ return array
 				// turning duplication will cause the logging system to relog
 				// re-occuring errors based on their main exception message hash
 				// with the option off only the first occurance will be recorded
-				'duplication' => false,
+				'duplication' => false, # [!!] does not apply to the short.log
 
 				// the logging system will replicate all errors based on their
 				// level key. So "Notice" errors will get replicated into Notice
