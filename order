@@ -1,6 +1,15 @@
 #!/usr/bin/env php
 <?php namespace app;
 
+if (\strtolower(\substr(PHP_OS, 0, 3)) !== 'win')
+{
+	\passthru('clear');
+}
+else # windows
+{
+	\system("command /C cls");
+}
+
 require_once \realpath(__DIR__).'/mjolnir.php';
 
 \app\Mjolnir::overlord();
