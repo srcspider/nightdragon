@@ -85,7 +85,7 @@
 		// turn on maintainence mode when performing long running modifications
 		// in a live environment; you can customize the placeholder
 		// err/downtime.php page for a customized maintainence message and view
-		'maintanence' => array
+		'maintenance' => array
 			(
 				'enabled' => false,
 

@@ -1,17 +1,20 @@
 <?php namespace app;
 
 	// load the configuration
-	$system_config = include '../config.php';
+	$wwwconfig = include '../config.php';
 
 	# Handle Request
 	# -------------------------------------------------------------------------
 
-	// DO NOT use this constant for anything more then crude error checking. It
-	// is not equivalent to Env::key('www.path') under all circumstances
-	defined('MJOLNIR_STARTDIR') or \define('MJOLNIR_STARTDIR', \realpath(\dirname(__FILE__).'/../').'/');
+	// this variable acts as a global and is passed down to help initialized
+	$wwwpath = \realpath(__DIR__.'/../').'/';
 
-	// require core files
-	require_once $system_config['system.dir'].'mjolnir.php';
+	// require core files; the include is intentional since we're passing,
+	// wwwconfig and wwwpath to the underlying code
+	include $wwwconfig['sys.path'].'etc/mjolnir'.EXT;
 
-	// run as theme file request
-	Mjolnir::resource($system_config);
+	// set environment path
+	Env::ensure('www.path', $wwwpath);
+
+	// run as a web http based application
+	Mjolnir::resource($wwwconfig, $wwwpath);

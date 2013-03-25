@@ -11,6 +11,8 @@
 # to the main index.php file.
 #
 
-location / {
-	try_files $uri $uri/ /index.php;
+location /some_folder/ {
+	try_files $uri $uri/ /some_folder/index.php;
 }
+
+# remove "some_folder" if you're on the root of the domain
