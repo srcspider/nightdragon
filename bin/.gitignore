@@ -1,10 +1,8 @@
 # ignore everything
 *
 
-# except these files
+# ...except these files
 !.gitignore
-!order
 !vendor/install
 !vendor/update
 !vendor/status
-!README.md

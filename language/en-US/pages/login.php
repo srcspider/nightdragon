@@ -1,17 +1,17 @@
 <?php return
 [
 
-'demo:login/singin' => 'Sign In',
-'demo:login/signout' => 'Sign Out',
+'singin' => 'Sign In',
+'signout' => 'Sign Out',
 
-'demo:login/signed-in-as' => function ($in)
+'signed-in-as' => function ($in)
 {
 	return "Signed in as {$in['name']}.";
 },
 
-'demo:login/username' => 'Username or Email',
-'demo:login/password' => 'Password',
-'demo:login/submit' => 'Sign In',
-'demo:login/rememberme' => 'Remember Me',
+'username' => 'Username or Email',
+'password' => 'Password',
+'submit' => 'Sign In',
+'rememberme' => 'Remember Me',
 
 ];

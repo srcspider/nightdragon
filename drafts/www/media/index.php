@@ -1,17 +1,17 @@
-<?php
+<?php namespace app;
 
-if (PHP_VERSION_ID < 50400)
-{
-	header("HTTP/1.0 500 Internal Server Error");
-	echo 'Required PHP version not satisfied.';
-	exit(1);
-}
+	// load the configuration
+	$system_config = include '../config.php';
 
-// load the configuration
-$system_config = include '../config.php';
+	# Handle Request
+	# -------------------------------------------------------------------------
 
-// require core files
-require_once $system_config['system.dir'].'mjolnir.php';
+	// DO NOT use this constant for anything more then crude error checking. It
+	// is not equivalent to Env::key('www.path') under all circumstances
+	defined('MJOLNIR_STARTDIR') or \define('MJOLNIR_STARTDIR', \realpath(\dirname(__FILE__).'/../').'/');
 
-// run as theme file request
-\app\Mjolnir::resource($system_config);
+	// require core files
+	require_once $system_config['system.dir'].'mjolnir.php';
+
+	// run as theme file request
+	Mjolnir::resource($system_config);

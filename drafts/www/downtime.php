@@ -1,8 +1,8 @@
 <?
 	\header('HTTP/1.1 503 Service Temporarily Unavailable');
-	
+
 	$system_config = include 'config.php';
-	
+
 	if ($system_config['maintanence']['retry-after'] !== null)
 	{
 		\header('Retry-After: '.$system_config['maintanence']['retry-after']);
@@ -12,16 +12,16 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<title>503 // Maintanence</title>
-		
+		<title>503 // Maintenance</title>
+
 		<?
 			// get domain info
-			$config = include __DIR__.'/config.php';
+			$config = include 'config.php';
 			$base_url = '//'.$config['domain'].$config['path'];
 		?>
 
 		<link rel="shortcut icon" href="<?= $base_url ?>favicon.ico" type="image/x-icon">
-		
+
 <style>
 	#page {
 		background: #fff; color: #222;
@@ -32,7 +32,7 @@
 		box-shadow: #000000 2px 3px 10px;
 		width: 700px;
 	}
-	
+
 	h1 {
 		font-size: 350%;
 		color: #999;
@@ -47,26 +47,26 @@
 		font-style: italic;
 		margin-right: 50px;
 	}
-	
+
 	body {
 		background: #bbb;
 		padding-top: 150px;
 	}
 </style>
-		
+
 	</head>
-	
+
 	<body>
-		
+
 		<div id="page">
 			<h1>503</h1>
 			<div>
-				<h2>Maintanence</h2>
+				<h2>Maintenance</h2>
 				<p>Site is undergoing scheduled maintenance.</p>
 				<p><i>We'll be back shortly!</i></p>
 			</div>
 		</div>
-		
+
 	</body>
-	
+
 </html>

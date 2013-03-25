@@ -1,31 +1,70 @@
-# Ignore temporary/contextual files
+# Ignore project specific files
+# -----------------------------
 etc/logs/*
 etc/cache/*
 etc/tmp/*
-privatefiles
-testsite
-reload
-pubdirs
 
-# Composer junk
+
+# Ignore context specific files
+# -----------------------------
+.key.path
+.www.path
+.www.url
+
+# Ignore development helpers
+# -----------------------------
+reload
+
+
+# Ignore composer files
+# -----------------------------
 vendor/*
 composer.phar
 composer.lock
 
-# manual files
+# Ignore generated manual files
+# -----------------------------
 manual.html
 manual.pdf
 
-##
-## Collection of junk files
-##
 
-# eclipse junk
+# Ignore Eclipse project files
+# -----------------------------
 .settings/
 .project
 .buildpath
 
-# Numerous always-ignore extensions
+
+# Ignore Netbeans project files
+# -----------------------------
+nbproject
+
+
+# Ignore editor and OS files
+# -----------------------------
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+
+
+# Ignore Dreamweaver files
+# -----------------------------
+_notes
+dwsync.xml
+
+
+# Ignore Komodo files
+# -----------------------------
+*.komodoproject
+.komodotools
+
+
+# Ignore misc temporary files
+# -----------------------------
 *.diff
 *.err
 *.orig
@@ -36,28 +75,12 @@ manual.pdf
 *.vi
 *~
 *.sass-cache
-
-# OS or Editor folders
-.DS_Store
-Thumbs.db
-.cache
-.project
-.settings
-.tmproj
-*.esproj
-nbproject
 *.sublime-project
 *.sublime-workspace
 
-# Dreamweaver added files
-_notes
-dwsync.xml
 
-# Komodo
-*.komodoproject
-.komodotools
-
-# Folders to ignore
+# Ignore misc & vcs directories
+# -----------------------------
 .hg
 .svn
 .CVS
@@ -65,6 +88,8 @@ intermediate
 publish
 .idea
 
-# build script local files
+
+# Ignore build files
+# -----------------------------
 build/buildinfo.properties
 build/config/buildinfo.properties

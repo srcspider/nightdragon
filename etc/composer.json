@@ -1,0 +1,34 @@
+{
+	"minimum-stability": "dev",
+
+	"config": {
+		"vendor-dir" : "../vendor",
+		"bin-dir"    : "../bin"
+	},
+
+	"require": {
+
+		"php" : ">=5.4.10",
+
+		"mjolnir/cfs"        : "dev-liquid/2.0",
+		"mjolnir/base"       : "dev-liquid/2.0",
+		"mjolnir/foundation" : "dev-liquid/2.0",
+		"mjolnir/html"       : "dev-liquid/2.0",
+		"mjolnir/access"     : "dev-liquid/2.0",
+		"mjolnir/cache"      : "dev-liquid/2.0",
+		"mjolnir/database"   : "dev-liquid/2.0",
+		"mjolnir/backend"    : "dev-liquid/2.0",
+		"mjolnir/theme"      : "dev-liquid/2.0",
+		"mjolnir/types"      : "dev-liquid/2.0",
+		"mjolnir/librarian"  : "dev-liquid/2.0",
+		"mjolnir/legacy"     : "dev-liquid/2.0",
+		"mjolnir/profile"    : "dev-liquid/2.0",
+
+		"ext-xml": "*",
+		"behat/behat": "2.4@stable",
+        "behat/mink-extension": "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-selenium2-driver": "*"
+
+	}
+}

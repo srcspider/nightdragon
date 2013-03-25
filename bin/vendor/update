@@ -1,3 +1,12 @@
 #!/bin/sh
-php composer.phar self-update
-php composer.phar update
+echo
+echo " Step 1: Updating composer "
+echo "----------------------------------------"
+php bin/composer.phar self-update --working-dir=etc
+php bin/composer.phar --version --working-dir=etc
+
+echo
+echo
+echo " Step 2: Updating dependencies "
+echo "----------------------------------------"
+php bin/composer.phar update --working-dir=etc
