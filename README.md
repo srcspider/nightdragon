@@ -265,8 +265,10 @@ would have to copy the extra files like this
 	cp -ruT drafts/www.apache /path/to/public/files
 
 Make sure to add the `T` flag, otherwise the directory `www.apache` will be 
-copied insite the public files directory instead of the files inside it 
-overwriting the files inside the public directory.
+copied inside the public files directory instead of the files inside it 
+overwriting the files inside the public directory. **On windows** if you're 
+using *git bash* you `cp` won't have the `T` flag, so you'll have to copy the 
+files manually.
 
 	* You would of course also need to inspect the copies configuration files 
 	and change accordingly (for the `www.apache` version you will only need to 
