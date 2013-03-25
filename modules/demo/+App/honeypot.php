@@ -7,12 +7,15 @@
 
 
 /**
- * @method \app\Controller_Dashboard channel_is($channel)
- * @method \app\Channel channel()
  * @method \app\Controller_Dashboard add_preprocessor($name, $processor)
  * @method \app\Controller_Dashboard add_postprocessor($name, $processor)
  * @method \app\Controller_Dashboard preprocess()
  * @method \app\Controller_Dashboard postprocess()
+ * @method \app\Controller_Dashboard channel_is($channel)
+ * @method \app\Channel channel()
+ * @method \app\Renderable public_index()
+ * @method \app\Lang lang()
+ * @method \app\Theme theme()
  */
 class Controller_Dashboard extends \demo\core\Controller_Dashboard
 {
@@ -21,12 +24,15 @@ class Controller_Dashboard extends \demo\core\Controller_Dashboard
 }
 
 /**
- * @method \app\Controller_Home channel_is($channel)
- * @method \app\Channel channel()
  * @method \app\Controller_Home add_preprocessor($name, $processor)
  * @method \app\Controller_Home add_postprocessor($name, $processor)
  * @method \app\Controller_Home preprocess()
  * @method \app\Controller_Home postprocess()
+ * @method \app\Controller_Home channel_is($channel)
+ * @method \app\Channel channel()
+ * @method \app\Renderable public_index()
+ * @method \app\Lang lang()
+ * @method \app\Theme theme()
  */
 class Controller_Home extends \demo\core\Controller_Home
 {
@@ -35,16 +41,19 @@ class Controller_Home extends \demo\core\Controller_Home
 }
 
 /**
- * @method \app\Controller_Login channel_is($channel)
- * @method \app\Channel channel()
  * @method \app\Controller_Login add_preprocessor($name, $processor)
  * @method \app\Controller_Login add_postprocessor($name, $processor)
  * @method \app\Controller_Login preprocess()
  * @method \app\Controller_Login postprocess()
+ * @method \app\Controller_Login channel_is($channel)
+ * @method \app\Channel channel()
  * @method \app\Renderable action_signin()
  * @method \app\Renderable public_signin()
  * @method \app\Renderable public_signout()
  * @method \app\Renderable signin_view($errors = null)
+ * @method \app\Renderable public_index()
+ * @method \app\Lang lang()
+ * @method \app\Theme theme()
  */
 class Controller_Login extends \demo\core\Controller_Login
 {

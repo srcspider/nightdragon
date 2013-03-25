@@ -3,10 +3,16 @@ Install Guide
 
 ## Requirements
 
- * **console version** of [git](http://git-scm.com/), you can use the [github install guide](https://help.github.com/articles/set-up-git); reference: [git docs](http://git-scm.com/documentation), or [git ref](http://gitref.org/)
- * **if you own private repositories**: SSH access to the repos ([SSH guide for github](https://help.github.com/articles/generating-ssh-keys))
- * a working \*nix compatible console (on windows use `git bash` that comes with git)
- * a working server (LAMP/WAMP/MAMP are fine for development), a server setup should contain
+ 1. **console version** of [git](http://git-scm.com/), you can use the 
+ [github install guide](https://help.github.com/articles/set-up-git); 
+ reference: [git docs](http://git-scm.com/documentation), or 
+ [git ref](http://gitref.org/)
+ 2. **if you own private repositories**: SSH access to the repos 
+ ([SSH guide for github](https://help.github.com/articles/generating-ssh-keys))
+ 3. a working \*nix compatible console (on windows use `git bash` that comes 
+ with git)
+ 4. a working server (LAMP/WAMP/MAMP are fine for development), a server setup 
+ should contain
    - PHP (on windows it's easier to install a separate version for console use)
    - a web server (Apache, nginx, etc)
    - optionally a database (by default support for MySQL is available)
@@ -16,7 +22,7 @@ Install Guide
 To get everything up and running requires a 3 step process.
  
  1. setting up the project files
- 2. setting up the private files
+ 2. setting up the key files
  3. setting up the public files
 
 From here on we will consider your https or git protocol repository url as 
@@ -35,7 +41,7 @@ take them literally.
 
 ### Step 1: Setting up the project files
 
-First we need to retrieve a local copy of the project files...  (ie. `git clone`)
+First we need to retrieve a local copy of the project files... (ie. `git clone`)
 
 	cd /path/to/your/working/directory-or-partition/
 	git clone REPO PROJECT
@@ -46,14 +52,15 @@ First we need to retrieve a local copy of the project files...  (ie. `git clone`
 You should make sure all your files contain appropriate permissions 
 (use `ls -l` to check).
 
-The files **should be already setup correctly**, but in case they aren't you can use
-the following commands to ensure the files have appropriate access levels.
+The files **should be already setup correctly**, but in case they aren't you 
+can use the following commands to ensure the files have appropriate access 
+levels.
 
 	chmod +x order
 	chmod -R +x bin/
-	chmod 750 etc/logs/
-	chmod 750 etc/cache/
-	chmod 750 etc/tmp
+	chmod 770 etc/logs/
+	chmod 770 etc/cache/
+	chmod 770 etc/tmp
 
 It's also recommended you set up a appropriate user to manage the project. 
 Assuming your user is the same as PROJECT and your group is SERVGROUP you would
@@ -65,11 +72,12 @@ a user with administrative access (`root` on *nix systems):
 
 This setup allows your server to access the files and via your account you can
 perform maintenance with out any risk of damaging other files on the server.
+(The default server group is usually `www-data`.)
 
 Make sure your user has SSH setup correctly to access to appropriate 
 repositories. In the case of Github, this implies you have an account (any
-free account will do), and the owner of the repository has either added you as a 
-collaborator or to a team with appropriate access.
+free account will do), and the owner of the repository has either added you as 
+a collaborator or to a team with appropriate access.
 
 ### Step 1.2: Installing PHP dependencies
 
@@ -94,19 +102,26 @@ Once you've confirmed the integrity of the installed PHP dependencies run:
 
 You should see a help list of commands. If you aren't seeing this something has
 gone horribly wrong when installing your dependencies. Please review the 
-previous steps. 
+previous steps. The system should also be telling you haven't set up neighter a
+`.www.path` file, nor a `.key.path` file, ignore these for now, we'll deal with
+them in step 2, and 3 respectively.
 
 If all is well up to this point run:
 
 	./order status
 
 This will run dependency checks specified by project modules. If all 
-dependencies are satisfied you should get a "passed" rating, this is appropriate
-for production, if the rating is "failed" the module is missing some key 
-functionality but it is still able to function with out them (more or less), if
-the rating is "error" the module is missing a critical requirement, you will 
-need to check your server setup and configuration to ensure the requirement is
-satisfied or otherwise the system will run in an unstable state.
+dependencies are satisfied you should get a "passed" rating, this is 
+appropriate for production, if the rating is "failed" the module is missing 
+some key functionality but it is still able to function with out them (more or 
+less), if the rating is "error" the module is missing a critical requirement, 
+you will need to check your server setup and configuration to ensure the 
+requirement is satisfied or otherwise the system will run in an unstable state. 
+At this point you should see `[error]` ratings on various keys on the system; 
+ignore them for the time being and check back after you have finished setting 
+up the private files. Once you set up the public files and specify their 
+location via a `.www.path` file on your project root you should see some extra 
+tests pop up as well, which are verifying permissions are in order.
 
 In production you should always aim for all "passed", in development you may
 get away with some components on "failed" depending on what you're working on.
@@ -133,8 +148,8 @@ First we need to install all the dependencies:
 
 This will pull in dependencies such as jquery, plugins, style libraries such as
 bootstrap and other dependencies specified by themes on the system. Each theme
-will require it's own copy of the dependencies so you may see multiple instances
-of the same dependency during the install; this is perfectly normal.
+will require it's own copy of the dependencies so you may see multiple 
+instances of the same dependency during the install; this is perfectly normal.
 
 After the dependencies have been installed (almost always these will be 
 installed in source format for development purposes) most of them will require
@@ -146,12 +161,33 @@ version of the files* run:
 The process may occasionally stall for up to a minute if is require to download
 some appropriate compiler.
 
-*Note: the `./order compile` is for generating production files. If you are doing
-development on the files you may want to use the appropriate polling script 
-(typically this takes the form of a `start.rb` file) to benefit from debug 
-information such as source maps, etc.*
+*Note: the `./order compile` is for generating production files. If you are 
+doing development on the files you may want to use the appropriate polling 
+script (typically this takes the form of a `start.rb` file) to benefit from 
+debug information such as source maps, etc.*
 
-### Step 1.4: Installing the database (optional)
+### Step 2: Setting up the key files
+
+The private files are for the most part the configuration files containing your
+secret keys. **It is imperative that you do NOT place ANY security information 
+in your project files!**
+
+To setup the files first copy the draft version of the files to a secure 
+location preferably where only the root user and server has access, and then
+create a file `.key.path` on the project root where you specify this path
+so the system knows where to find them:
+
+	cp -R drafts/keys.draft /secure/private/path/PROJECT
+	echo "/secure/private/path/PROJECT/" > .key.path
+
+Of course at this point you would `cd /secure/private/path/PROJECT/` and start
+filling in the keys. The files should NEVER contain anything more then security
+information such as public / private keys, users, passwords, database names, 
+etc, because otherwise you will need to give access to your development team to
+them if somehow they overwrite more then that; and you should never need to do
+that.
+
+### Step 2.1: Installing the database (optional)
 
 **DO NOT PERFORM IF THE DATABASE ISNT EMPTY**
 
@@ -170,33 +206,14 @@ likely won't work since the values in your private files will overwrite them.
 Troubleshooting Checklist:
 
  1. did you create the database
- 2. did you specify the correct path to your private files in the file 
- `privatefiles` on the root of your project
+ 2. did you specify the correct path to your private key files in the file 
+ `.key.path` on the root of your project
  3. did you insert the correct user / password in the database configuration in
  your private files
  4. are your dependencies installed correctly (see previous steps)
  5. are your permissions set up correctly
 
 If you've gone though all that and still can't figure it out, debug it.
-
-### Step 2: Setting up the private files
-
-The private files are for the most part the configuration files containing your
-secret keys. **It is imperative that you do NOT place ANY security information 
-in your project files!**
-
-To setup the files first copy the draft version of the files to a secure 
-location preferably where only the root user and server has access, and then
-create a file `privatefiles` on the project root where you specify this path
-so the system knows where to find them:
-
-	cp -R drafts/project.private /secure/path/PROJECT.private/
-	echo "/secure/path/PROJECT.private/" > privatefiles
-
-Of course at this point you would `cd /secure/path/PROJECT.private/` and start
-filling in the keys. The files should NEVER contain anything more then security
-information such as public / private keys, users, passwords, database names, 
-etc.
 
 ### Step 3: Setting up the public files
 
@@ -206,53 +223,78 @@ publicly accessible files via the web server. If you are running the project in
 a folder consider that folder to be `www`.
 
 	cd /path/to/www
+
+Then for domain based sites,
+
 	cp -R /path/to/PROJECT/drafts/www .
+	
+Then for folder based sites,
+
+	cp -R /path/to/PROJECT/drafts/www ./PROJECT
+	
+(You can obviously also have it in sub-sub-folders if you want.)
 
 You should now have a `config.php` file on the project root. This is the domain
 configuration. You may have multiple domains using the same project files, the
-`config.php` files on their root specify their settings.
+`config.php` files on their root specify their domain settings.
+
+The configuration file should walk you though the important settings, but in
+case you're having problems refer to the checklist bellow.
 
 A quick checklist:
 	
  * insert an appropriate domain name, ie. `www.exmple.com`, or `example.com`
- * set up an apropriate path base, ie. `/` for root, `/some/path/` for folder 
- based sites
- * set the site's development mode to on if you're doing development (by default
- development mode is off)
+ in development 127.0.0.1 is recomended
+ * set up an apropriate base path, ie. `/` for sites directly on the domain, 
+ `/some/path/` for folder based sites
+ * set the site's development mode to `true` if you're doing development (by 
+ default development mode is `false`)
  * set up caching (by default caching is turned on)
-
- * set the `private.files` value to the appropriate path to your private files,
- ie. `/secure/path/PROJECT.private/` in the examples above
- * set the `system.dir` to the appropriate system directory (ie. where you 
+ * set the `key.path` value to the appropriate path to your private files,
+ ie. `/secure/private/path/PROJECT/` in the examples above
+ * set the `sys.path` to the appropriate system directory (ie. where you 
  cloned your project)
-
-When you are ready disable maintenance to open your site to the public (by 
-default maintanence is on). The option is `maintancen` in your `config.php` 
-file.
 
 ### Step 3.1: Setting up the server specific files
 
-Some servers may require additional files besides the base files required by 
-your project's PHP code. Assuming your server is apache as an example, you would
-have to copy the extra files like this
+Most servers require additional files besides the base files required by 
+your project's PHP code. Assuming your server is apache as an example, you 
+would have to copy the extra files like this
 
-	cp -R /path/to/PROJECT/drafts/www.apache .
+	cd /path/to/PROJECT
+	cp -ruT drafts/www.apache /path/to/public/files
 
-And you would of course also need to inspect the copies configuration files and
-change accordingly (for the `www.apache` version you will only need to change
-the `RewriteBase` in the main `.htaccess` file if you're not on the domain 
-root).
+Make sure to add the `T` flag, otherwise the directory `www.apache` will be 
+copied insite the public files directory instead of the files inside it 
+overwriting the files inside the public directory.
+
+	* You would of course also need to inspect the copies configuration files 
+	and change accordingly (for the `www.apache` version you will only need to 
+	change the `RewriteBase` in the main `.htaccess` file if you're not on the 
+	domain root).
+	
+As another example in the case of nginx, you would need to do
+	
+	cd /path/to/PROJECT
+	cp drafts/nginx/site.draft /path/to/sites/PROJECT
+	
+Where `PROJECT` in this case is a file and `/path/to/sites` is a directory from
+which nginx loads location files into the main server (note: the setup 
+described is a development friendly setup; you may wish to alter it for 
+production). As with the previous apache configuration open the new file and
+configure it to match your server settings.
 
 *Please inspect your project's `drafts` folder for any additional dependencies, 
-such as node server files, etc. You will have to follow the instruction provided
-by each since covering them is outside the scope of this document.*
+such as node server files, etc. The instructions here only cover the default 
+ones. You will have to follow the instruction provided by each since covering 
+them is outside the scope of this readme.*
 
 ## Congratulations on completing the setup
 
 You should at this point have an working project. Regardless if you're doing
 prototyping, development or are here to alter/enhance the project, you should
-refer to the manual; sections for starting up, to working on an existing project
-are available.
+refer to the manual; sections for starting up, to working on an existing 
+project are available.
 
 Sections of the manual are maintained by each module. And modules may insert 
 their own manual entries (this includes project specific modules). To generate
