@@ -1,5 +1,7 @@
 <?php namespace app;
 
+	\defined('EXT') or \define('EXT', '.php');
+
 	// load the configuration
 	$wwwconfig = include '../config.php';
 
