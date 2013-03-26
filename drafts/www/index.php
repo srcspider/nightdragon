@@ -17,12 +17,13 @@
 		$parts = null;
 		if (\preg_match("#^{$wwwconfig['path']}media(?P<uri>/.+)$#", $_SERVER['REQUEST_URI'], $parts))
 		{
-			$_SERVER['REQUEST_URI'] = $parts['uri'];
 			require 'media/index.php';
 			exit;
 		}
-		else if (\preg_match("#^{$wwwconfig['path']}thumbs(?P<uri>/.+)$#", $_SERVER['REQUEST_URI'], $parts))
+		else if (\preg_match("#^{$wwwconfig['path']}thumbs/(?P<width>[0-9]+)/(?P<height>[0-9]+)/(?P<path>.+)$#", $_SERVER['REQUEST_URI'], $parts))
 		{
+			$_SERVER['REQUEST_URI'] = "{$wwwconfig['path']}thumbs/timthumb.php";
+			$_GET = [ 'h' => $parts['height'], 'w' => $parts['width'], 'src' => $parts['path'] ];
 			require 'thumbs/timthumb.php';
 			exit;
 		}

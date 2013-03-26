@@ -268,10 +268,10 @@ Make sure to add the `T` flag, otherwise the directory `www.apache` will be
 copied insite the public files directory instead of the files inside it 
 overwriting the files inside the public directory.
 
-	* You would of course also need to inspect the copies configuration files 
-	and change accordingly (for the `www.apache` version you will only need to 
-	change the `RewriteBase` in the main `.htaccess` file if you're not on the 
-	domain root).
+* You would of course also need to inspect the copies configuration files 
+  and change accordingly (for the `www.apache` version you will only need to 
+  change the `RewriteBase` in the main `.htaccess` file if you're not on the 
+  domain root).
 	
 As another example in the case of nginx, you would need to do
 	
