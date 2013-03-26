@@ -16,16 +16,6 @@
 		// is your site in a directory on the server?
 		'path' => '/', # must end and start with a /
 
-		// additional information required by various processes
-		'system' => array
-			(
-				'title' => 'Untitled',
-				'quote' => '',
-
-				// general purpose email
-				'email' => 'contact@your.domain.tld',
-			),
-
 		# Performance Settings
 		# ---------------------------------------------------------------------
 
