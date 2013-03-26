@@ -43,7 +43,7 @@
 	// inject defaults
 	include $cfsfilepath.'default.mjolnir'.EXT;
 
-	\app\CFS::cache(\app\Stash_File::instance());
+	\app\CFS::cache(\app\Stash::instance());
 	\mjolnir\log_settings(\app\CFS::config('mjolnir/base')['logging']);
 
 	#

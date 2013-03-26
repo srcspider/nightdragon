@@ -25,7 +25,6 @@
 		// do you wish for rarely changed assets to be saved to disk?
 		'static-assets' => false, # tip: keep it false in development
 
-
 		# Optional Settings
 		# ---------------------------------------------------------------------
 
