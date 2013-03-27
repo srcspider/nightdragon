@@ -1,31 +1,34 @@
 # Ignore project specific files
 # -----------------------------
-etc/logs/*
-etc/cache/*
-etc/tmp/*
+/etc/logs/*
+/etc/cache/*
+/etc/tmp/*
 
 
 # Ignore context specific files
 # -----------------------------
-.key.path
-.www.path
-.www.url
+/.key.path
+/.www.path
+/.www.url
+
 
 # Ignore development helpers
 # -----------------------------
-reload
+/reload
+/reload.*
+/cron.*
 
 
 # Ignore composer files
 # -----------------------------
-vendor/*
-composer.phar
-composer.lock
+/vendor/*
+/bin/composer.phar
+/etc/composer.lock
 
 # Ignore generated manual files
 # -----------------------------
-manual.html
-manual.pdf
+/manual.html
+/manual.pdf
 
 
 # Ignore Eclipse project files
