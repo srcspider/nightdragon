@@ -9,5 +9,5 @@
 
 <div>
 	<h2><?= $lang->idx('title:dashboard') ?></h2>
-	<p><?= $lang->idx('demo:dashboard/foreword') ?></p>
+	<p><?= $lang->idx('foreword') ?></p>
 </div>
