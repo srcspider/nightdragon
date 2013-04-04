@@ -305,3 +305,26 @@ the latest copy run the following:
 	./order librarian --manual
 
 A html (and pdf) version will be generated on the project root.
+
+## File Permission Testing & Dependency Checks
+
+With the system setup, you can use various tools in the backend to manage the 
+core features of the system. Two of these features is the System Information
+panel and the File Permissions panel. 
+
+These two panels will tell you if all your dependencies are in order, and if
+your file permissions are correct respectively.
+
+To access the panels you'll have to create a system administrator account, you
+can do this from the command line by typing
+
+	./order make:user -u <username> -p <password> -r admin
+
+If you haven't setup any login system, you can access the internal default one
+at the url:
+
+	/access/signin
+
+The system can no check your server configuration so if you encounter an error
+and mjolnir is not reporting anything unusual then it is possible your server
+configuration is off.

@@ -1,6 +1,59 @@
 Changelog
 =========
 
+liquid/2.2
+----------
+
+core
+
+ - improved display of file permissions system
+
+ - several new display helpers for permissions have been added to the Filesystem
+   class
+
+template
+
+ - README.md updated with basic information on new backend panels
+
+ - bin/vendor/install now only installs core dependencies using /composer.json
+   in addition the script will run with --prefer-dist which is more reliable
+ 
+ - bin/vendor/development now installs development dependencies 
+   using /etc/composer.json, this method also uses --prefer-source
+
+bugs
+
+ - file permission errors are now correctly reported on directories
+
+liquid/2.1
+----------
+
+core
+
+ - the cfs module now provides a File Permissions backend which checks file
+   permissions to ensure permissions weren't accidentally butchered
+
+ - backend now contains a signout button on the admin panels page
+
+ - 'satisfied' is now the correct passed state in require.php tests; the old
+   'available' state is still supported, but should be considered deprecated.
+
+ - status is now available in the application admin backend; the list should
+   be more user friendly and also guaranteed to reflect server status; 
+   whereas the command version (which is still available) is highly prone to 
+   errors such as using different CLI configuration for a lot of tests
+
+bugs
+
+ - images will now be re-orientated to gurantee compatibility with systems
+   that do not read exif data before processing (eg. thumbnail systems); the 
+   class \mjolnir\base\Image has been introduced for this purpose and may be 
+   used outside of image uploads
+
+ - fix'ed video rotation bug
+
+ - fix'ed theme exception system
+
 liquid/2.0
 ----------
 
