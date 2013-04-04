@@ -1,1 +1,1 @@
-See `INSTALL.md` for installation instructions.
+See [INSTALL.md](INSTALL.md) for installation instructions.
