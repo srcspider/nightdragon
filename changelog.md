@@ -4,52 +4,52 @@ Changelog
 liquid/2.2
 ----------
 
-core
+*core*
 
  - improved display of file permissions system
 
- - several new display helpers for permissions have been added to the Filesystem
-   class
+ - several new display helpers for permissions have been added to the 
+   `Filesystem` class
 
-template
+*template*
 
- - README.md updated with basic information on new backend panels
+ - `README.md` updated with basic information on new backend panels
 
- - bin/vendor/install now only installs core dependencies using /composer.json
-   in addition the installation will run with --prefer-dist, which is more 
-   reliable
+ - `bin/vendor/install` now only installs core dependencies using 
+   `/composer.json` in addition the installation will run with `--prefer-dist`, 
+   which is more reliable
  
- - bin/vendor/development now installs development dependencies 
-   using /etc/composer.json, unlike bin/vendor/install this script uses 
-   --prefer-source
+ - `bin/vendor/development` now installs development dependencies 
+   using `/etc/composer.json`, unlike `bin/vendor/install` this script uses 
+   `--prefer-source`
 
-bugs
+*bugs*
 
  - file permission errors are now correctly reported on directories
 
 liquid/2.1
 ----------
 
-core
+*core*
 
- - the cfs module now provides a File Permissions backend which checks file
+ - the `cfs` module now provides a File Permissions backend which checks file
    permissions to ensure permissions weren't accidentally butchered
 
  - backend now contains a signout button on the admin panels page
 
- - 'satisfied' is now the correct passed state in require.php tests; the old
-   'available' state is still supported, but should be considered deprecated.
+ - `satisfied` is now the correct passed state in `require.php` tests; the old
+   `available` state is still supported
 
  - status is now available in the application admin backend; the list should
    be more user friendly and also guaranteed to reflect server status; 
    whereas the command version (which is still available) is highly prone to 
    errors such as using different CLI configuration for a lot of tests
 
-bugs
+*bugs*
 
- - images will now be re-orientated to gurantee compatibility with systems
+ - images will now be re-orientated to guarantee compatibility with systems
    that do not read exif data before processing (eg. thumbnail systems); the 
-   class \mjolnir\base\Image has been introduced for this purpose and may be 
+   class `\mjolnir\base\Image` has been introduced for this purpose and may be 
    used outside of image uploads
 
  - fix'ed video rotation bug
@@ -59,7 +59,7 @@ bugs
 liquid/2.0
 ----------
 
-core
+*core*
 
  - the use of `\defined` and `\defined` is now considered bad practice and has
    been removed; its use has been replaced by the \app\Env class, calling the
@@ -70,13 +70,13 @@ core
    when using main; note that some constants such as VERSION and EXT have
    remained
 
- - PUBDIR is now \app\Env::key('www.path')
+ - `PUBDIR` is now `\app\Env::key('www.path')`
 
- - DOCROOT is now \app\Env::key('sys.path')
+ - `DOCROOT` is now `\app\Env::key('sys.path')`
 
- - ETCPATH is now \app\Env::key('etc.path')
+ - `ETCPATH` is now `\app\Env::key('etc.path')`
 
- - VDRPATH is now \app\Env::key('vendor.path')
+ - `VDRPATH` is now `\app\Env::key('vendor.path')`
 
  - other paths should follow the changes above
 
@@ -104,9 +104,10 @@ core
  - fix'ed Shell::cmd_exists not handling fail state
 
 
-template
+*template*
 
- - changelog.md is now included; changelog has been trimmed to liquid/1.0 and up
+ - `changelog.md` is now included; changelog has been trimmed to `liquid/1.0` 
+    and up
 
  - the main template has been reorganized slightly; `mjolnir.php` and
    `environement.php` are now correctly located in `etc/` instead of the root
@@ -167,14 +168,14 @@ template
 
  - the demo now uses the indexed language system instead of the key system
 
-bugs
+*bugs*
 
  - a cache bug with resetpwd has been fixed
 
 liquid/1.1 (dev)
 ----------------
 
-core
+*core*
 
  - new instance based Lang system introduced, the system requires libraries to
    be loaded before use allowing for lower overhead and simple unnamespaced
@@ -185,7 +186,7 @@ core
 
  - improved status/require system
 
-template
+*template*
 
  - `DOCROOT/+App` is now `DOCROOT/etc`
 
@@ -193,7 +194,7 @@ template
 liquid/1.0
 ----------
 
-core
+*core*
 
  - refactored all interfaces to reuse each other as much as possible
 
@@ -205,10 +206,10 @@ core
 
  - refactored language system
 
- - refactored HTML & Form system
+ - refactored html & form system
 
  - cleaned up access system
 
-template
+*template*
 
  - drafts is not back to being outside of the application dir
