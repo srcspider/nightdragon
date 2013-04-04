@@ -16,10 +16,12 @@ template
  - README.md updated with basic information on new backend panels
 
  - bin/vendor/install now only installs core dependencies using /composer.json
-   in addition the script will run with --prefer-dist which is more reliable
+   in addition the installation will run with --prefer-dist, which is more 
+   reliable
  
  - bin/vendor/development now installs development dependencies 
-   using /etc/composer.json, this method also uses --prefer-source
+   using /etc/composer.json, unlike bin/vendor/install this script uses 
+   --prefer-source
 
 bugs
 
