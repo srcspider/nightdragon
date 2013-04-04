@@ -24,6 +24,7 @@
 /vendor/*
 /bin/composer.phar
 /etc/composer.lock
+/composer.lock
 
 # Ignore generated manual files
 # -----------------------------
