@@ -22,8 +22,8 @@
 		// do you want to use caching?
 		'caching' => true,
 
-		// do you wish for rarely changed assets to be saved to disk?
-		'static-assets' => false, # tip: keep it false in development
+		// do you wish for assets to be saved to disk?
+		'static-assets' => false, 
 
 		# Optional Settings
 		# ---------------------------------------------------------------------
