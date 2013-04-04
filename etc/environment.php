@@ -5,7 +5,6 @@
 		'modules' => array
 			(
 				// project modules
-				$modpath.'demo' => 'demo\core',
 
 			// ---- Plugins ---------------------------------------------------
 
@@ -44,7 +43,7 @@
 				// explicit themes; themes can also just be embeded in modules,
 				// in which case there's no need for them to appear here.
 
-				'demo-theme' => $syspath.'themes/the-demo/',
+//				'demo-theme' => $syspath.'themes/the-demo/',
 			),
 
 	); # config
