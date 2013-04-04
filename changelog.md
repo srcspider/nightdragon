@@ -62,12 +62,12 @@ liquid/2.0
 *core*
 
  - the use of `\defined` and `\defined` is now considered bad practice and has
-   been removed; its use has been replaced by the \app\Env class, calling the
-   static methods of \app\Env is equivalent to calling the methods on
-   `\app\Env::instance('main')`, for *direct*/*include* interoperability with
+   been removed; its use has been replaced by the `\app\Env` class, calling the
+   static methods of `\app\Env` is equivalent to calling the methods on
+   `\app\Env::instance('main')`, for direct/include interoperability with
    another mjolnir application an application must support non-main environment
    execution—interoperability with non-mjolnir applications should be clean even
-   when using main; note that some constants such as VERSION and EXT have
+   when using main; note that some constants such as `VERSION` and `EXT` have
    remained
 
  - `PUBDIR` is now `\app\Env::key('www.path')`
