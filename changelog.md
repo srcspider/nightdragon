@@ -11,6 +11,11 @@ liquid/2.2
  - several new display helpers for permissions have been added to the 
    `Filesystem` class
 
+ - when `development` in `mjolnir/base` (ie. `www.path/config`) is set to true
+   the javascript loader will inject the script sources directly into the page
+
+ - style source handler implemented
+
 *template*
 
  - `README.md` updated with basic information on new backend panels
@@ -26,6 +31,8 @@ liquid/2.2
 *bugs*
 
  - file permission errors are now correctly reported on directories
+
+ - fix'ed a bug where theme loader priority wasn't respected
 
 liquid/2.1
 ----------
