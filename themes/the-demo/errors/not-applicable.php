@@ -1,5 +1,0 @@
-<?
-	namespace app;
-?>
-
-Not applicable

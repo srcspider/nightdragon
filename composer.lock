@@ -1,0 +1,683 @@
+{
+    "hash": "103d5cdc7d7424771ca4709fb0840e4b",
+    "packages": [
+        {
+            "name": "mjolnir/access",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-access.git",
+                "reference": "7f77aef41163c0db4ee5030ebe912da54c8eadb6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-access/zipball/7f77aef41163c0db4ee5030ebe912da54c8eadb6",
+                "reference": "7f77aef41163c0db4ee5030ebe912da54c8eadb6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\access": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Security and access control structures and utilities.",
+            "homepage": "https://github.com/ibidem",
+            "keywords": [
+                "access"
+            ],
+            "time": "2013-04-02 08:57:17"
+        },
+        {
+            "name": "mjolnir/backend",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-backend.git",
+                "reference": "58572fad37d96834cb36c2afb2334b34a46a813a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-backend/zipball/58572fad37d96834cb36c2afb2334b34a46a813a",
+                "reference": "58572fad37d96834cb36c2afb2334b34a46a813a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\backend": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Universal entry point(s) for system admin-specific utilities and structures.",
+            "homepage": "https://github.com/ibidem",
+            "keywords": [
+                "backend"
+            ],
+            "time": "2013-04-02 12:15:57"
+        },
+        {
+            "name": "mjolnir/base",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-base.git",
+                "reference": "7ab033e1e4131a3b96ea9e7e63c21a0643bc10e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-base/zipball/7ab033e1e4131a3b96ea9e7e63c21a0643bc10e7",
+                "reference": "7ab033e1e4131a3b96ea9e7e63c21a0643bc10e7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.4",
+                "swiftmailer/swiftmailer": "v4.2.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\base": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Collection of general purpose utilities.",
+            "homepage": "https://github.com/ibidem",
+            "keywords": [
+                "library"
+            ],
+            "time": "2013-04-04 07:40:26"
+        },
+        {
+            "name": "mjolnir/cache",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-cache.git",
+                "reference": "556d0c6a05e69cdf7070b24ec0d7c23b4d8d2e07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-cache/zipball/556d0c6a05e69cdf7070b24ec0d7c23b4d8d2e07",
+                "reference": "556d0c6a05e69cdf7070b24ec0d7c23b4d8d2e07",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\cache": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Caching implementations.",
+            "homepage": "https://github.com/ibidem",
+            "time": "2013-04-02 09:02:15"
+        },
+        {
+            "name": "mjolnir/cfs",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-cfs.git",
+                "reference": "e063827513452f7ee089d7229813e9a71e888d7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-cfs/zipball/e063827513452f7ee089d7229813e9a71e888d7a",
+                "reference": "e063827513452f7ee089d7229813e9a71e888d7a",
+                "shasum": ""
+            },
+            "require": {
+                "mjolnir/testing": "dev-liquid/2.x",
+                "mjolnir/types": "dev-liquid/2.x",
+                "php": ">=5.4.10"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\cfs": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Namespace based Cascading File System autoloader, with command line support.",
+            "homepage": "https://github.com/ibidem",
+            "keywords": [
+                "autoloader"
+            ],
+            "time": "2013-04-04 10:27:51"
+        },
+        {
+            "name": "mjolnir/database",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-database.git",
+                "reference": "bc2782067725d769205c8d59b7660ade46da4866"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-database/zipball/bc2782067725d769205c8d59b7660ade46da4866",
+                "reference": "bc2782067725d769205c8d59b7660ade46da4866",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\database": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Database tools, helpers and related structures.",
+            "homepage": "https://github.com/ibidem",
+            "time": "2013-04-02 09:01:54"
+        },
+        {
+            "name": "mjolnir/foundation",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-foundation.git",
+                "reference": "c2b836a343839272fe97d69a4d8bc36fc3a1af76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-foundation/zipball/c2b836a343839272fe97d69a4d8bc36fc3a1af76",
+                "reference": "c2b836a343839272fe97d69a4d8bc36fc3a1af76",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\foundation": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Application composition structures: layers, exceptions, routing, etc.",
+            "homepage": "https://github.com/ibidem",
+            "time": "2013-04-04 10:23:55"
+        },
+        {
+            "name": "mjolnir/html",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-html.git",
+                "reference": "2f74f09b1a59714508b84d2d730240e336f8bcb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-html/zipball/2f74f09b1a59714508b84d2d730240e336f8bcb2",
+                "reference": "2f74f09b1a59714508b84d2d730240e336f8bcb2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\html": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Raw HTML composition and management utilities.",
+            "homepage": "https://github.com/ibidem",
+            "keywords": [
+                "html"
+            ],
+            "time": "2013-04-03 12:54:20"
+        },
+        {
+            "name": "mjolnir/legacy",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-legacy.git",
+                "reference": "09e96c089d244f574f6e393ac192bdaeb55a957d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-legacy/zipball/09e96c089d244f574f6e393ac192bdaeb55a957d",
+                "reference": "09e96c089d244f574f6e393ac192bdaeb55a957d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\legacy": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Mjolnir compatiblity and legacy support.",
+            "homepage": "https://github.com/ibidem",
+            "time": "2013-03-25 13:06:57"
+        },
+        {
+            "name": "mjolnir/librarian",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-librarian.git",
+                "reference": "f4ea67ac66dff6e483fa79e806dbee3cb385eaca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-librarian/zipball/f4ea67ac66dff6e483fa79e806dbee3cb385eaca",
+                "reference": "f4ea67ac66dff6e483fa79e806dbee3cb385eaca",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\librarian": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Documentation and non-html document support (Markdown, PDFs, etc)",
+            "homepage": "https://github.com/ibidem",
+            "time": "2013-04-02 09:01:20"
+        },
+        {
+            "name": "mjolnir/profile",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-profile.git",
+                "reference": "6b1d1edb69f093bc2b546d671ecb01be71676962"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-profile/zipball/6b1d1edb69f093bc2b546d671ecb01be71676962",
+                "reference": "6b1d1edb69f093bc2b546d671ecb01be71676962",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.10"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\profile": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Tooling specific to Mjolnir classes.",
+            "homepage": "https://github.com/ibidem",
+            "time": "2013-03-25 13:07:25"
+        },
+        {
+            "name": "mjolnir/testing",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-testing.git",
+                "reference": "200b2386363e2222d7a7ee90b628ced6fee741b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-testing/zipball/200b2386363e2222d7a7ee90b628ced6fee741b7",
+                "reference": "200b2386363e2222d7a7ee90b628ced6fee741b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\testing": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Test helpers for Mjolnir.",
+            "homepage": "https://github.com/ibidem",
+            "time": "2013-03-25 13:12:38"
+        },
+        {
+            "name": "mjolnir/theme",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-theme.git",
+                "reference": "56b8bb95a35c5d7f21ce9536ea0f450e7e92fcc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-theme/zipball/56b8bb95a35c5d7f21ce9536ea0f450e7e92fcc9",
+                "reference": "56b8bb95a35c5d7f21ce9536ea0f450e7e92fcc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\theme": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Theme drivers, Theme composition, Theme management and Mockup helpers.",
+            "homepage": "https://github.com/ibidem",
+            "time": "2013-04-04 10:29:39"
+        },
+        {
+            "name": "mjolnir/types",
+            "version": "dev-liquid/2.x",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibidem/mjolnir-types.git",
+                "reference": "b72eab0a0e7c849739b51cdd3536478af09cbe2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibidem/mjolnir-types/zipball/b72eab0a0e7c849739b51cdd3536478af09cbe2c",
+                "reference": "b72eab0a0e7c849739b51cdd3536478af09cbe2c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-wip/v1.0": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "mjolnir\\types": "../.."
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "srcspider",
+                    "homepage": "https://github.com/srcspider"
+                }
+            ],
+            "description": "Mjolnir type information (with Traits).",
+            "homepage": "https://github.com/ibidem",
+            "time": "2013-04-04 12:15:14"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v4.2.2",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/swiftmailer/swiftmailer.git",
+                "reference": "v4.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/swiftmailer/swiftmailer/zipball/v4.2.2",
+                "reference": "v4.2.2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Chris Corbyn"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "http://swiftmailer.org",
+            "keywords": [
+                "mail",
+                "mailer"
+            ],
+            "time": "2012-10-25 01:30:40"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "mjolnir/cfs": 20,
+        "mjolnir/base": 20,
+        "mjolnir/foundation": 20,
+        "mjolnir/html": 20,
+        "mjolnir/access": 20,
+        "mjolnir/cache": 20,
+        "mjolnir/database": 20,
+        "mjolnir/backend": 20,
+        "mjolnir/theme": 20,
+        "mjolnir/types": 20,
+        "mjolnir/librarian": 20,
+        "mjolnir/legacy": 20,
+        "mjolnir/profile": 20
+    },
+    "platform": {
+        "php": ">=5.4.10"
+    },
+    "platform-dev": [
+
+    ]
+}

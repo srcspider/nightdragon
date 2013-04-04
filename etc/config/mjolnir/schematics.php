@@ -1,7 +1,11 @@
 <?php return array
 	(
+		'definitions' => array
+			(
+				// empty
+			),
 		'steps' => array
 			(
-				'mjolnir-access:demo' => [ 'serial' => '2:0-default' ],
+				// empty
 			),
 	);
