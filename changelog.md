@@ -1,6 +1,24 @@
 Changelog
 =========
 
+liquid/2.4
+----------
+
+*core*
+
+ - new "raw" layer stack included
+
+*bugs*
+
+ - script loader block no longer appears if there are no javascripts to load
+
+liquid/2.3
+----------
+
+*core*
+
+ - re-included footerinclude and headinclude shorthands in ThemeView
+
 liquid/2.2
 ----------
 
