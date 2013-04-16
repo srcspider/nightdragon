@@ -142,19 +142,7 @@ files.
 
 ### Step 1.3: Installing style dependencies
 
-First we need to install all the dependencies:
-
-	./order bower --install
-
-This will pull in dependencies such as jquery, plugins, style libraries such as
-bootstrap and other dependencies specified by themes on the system. Each theme
-will require it's own copy of the dependencies so you may see multiple 
-instances of the same dependency during the install; this is perfectly normal.
-
-After the dependencies have been installed (almost always these will be 
-installed in source format for development purposes) most of them will require
-some form of compilation before we can use them. *To obtain a production ready
-version of the files* run:
+To obtain a production ready version of the files run:
 
 	./order compile
 

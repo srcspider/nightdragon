@@ -1,12 +1,35 @@
 Changelog
 =========
 
+   solid = has complete tests and docs, is/was used in production and no 
+           changes or issues were required, reported or otherwise signaled on 
+           it for several months
+
+  stable = has complete tests and docs
+
+  liquid = incomplete tests and docs
+
+unstable = former stable/solid branch which has had bugs reported on it
+
+  future = changes planned but not yet implemented (ie. heads up!)
+
+future/3.x
+----------
+
+ - bower support removed; use of bower discouraged
+
 liquid/2.4
 ----------
 
 *core*
 
  - new "raw" layer stack included
+
+ - HTMLFormField_Hidden no longer can be autocompletes by default; this change
+   has been made to avoid hard to spot errors occuring on POST operations with
+   out redirects
+
+ - bower support is now deprecated and scheduled for removal in 3.x
 
 *bugs*
 
