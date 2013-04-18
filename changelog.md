@@ -17,6 +17,7 @@ future/3.x
 ----------
 
  - bower support removed; use of bower discouraged
+ - mjolnir\base\Controller removed
 
 liquid/2.4
 ----------
@@ -30,6 +31,12 @@ liquid/2.4
    out redirects
 
  - bower support is now deprecated and scheduled for removal in 3.x
+ 
+ - convention: all default base classes are abstract classes with the Base 
+   suffix; these are shorthands, they are convenient but using traits and 
+   interfaces directly is recommended since it allows for trait method rewrite
+
+ - class \mjolnir\base\Controller deprecated (see convention above)
 
 *bugs*
 
