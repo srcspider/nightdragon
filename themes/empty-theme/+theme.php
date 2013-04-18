@@ -4,10 +4,10 @@
 
 		'loaders' => array # null = default configuration
 			(
+				'bootstrap' => null,
 //				'dart' => [ 'head' => [ 'loader' ] ],
 				'style' => [ 'default.style' => 'example-style' ],
 				'javascript' => null,
-				'bootstrap' => null,
 			),
 
 		// target-to-file mapping
