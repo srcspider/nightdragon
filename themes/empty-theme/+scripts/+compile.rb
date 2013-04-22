@@ -50,10 +50,22 @@ def read_configuration()
 		$config['targeted-common'] = $config['targeted-common'].find_all do |item| item !~ /(^[a-z]+:\/\/|^\/\/).*$/ end
 	end#def
 
+	# remove aliased keys
+	$config['targeted-mapping'].each do |key, files|
+		if files.is_a? String
+			$config['targeted-mapping'].delete(key);
+		end#if
+	end#each
+
 	# include common files
 	$config['targeted-mapping'].each do |key, files|
 		files = files.find_all do |item| item !~ /(^[a-z]+:\/\/|^\/\/).*$/ end
-		$config['targeted-mapping'][key] = $config['targeted-common'] + files;
+		$config['targeted-mapping'][key] = $config['targeted-common'].clone;
+		files.each do |file|
+			if ( ! $config['targeted-mapping'][key].include?(file))
+				$config['targeted-mapping'][key].push(file)
+			end#if
+		end#each
 	end#each
 
 	# convert to paths

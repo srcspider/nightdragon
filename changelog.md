@@ -40,6 +40,8 @@ liquid/2.4
 
  - better logging for Sphinx api calls
 
+ - script loader can be turned off
+
 *bugs*
 
  - script loader block no longer appears if there are no javascripts to load
