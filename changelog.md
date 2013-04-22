@@ -38,6 +38,8 @@ liquid/2.4
 
  - class \mjolnir\base\Controller deprecated (see convention above)
 
+ - better logging for Sphinx api calls
+
 *bugs*
 
  - script loader block no longer appears if there are no javascripts to load
