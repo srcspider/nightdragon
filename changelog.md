@@ -1,23 +1,33 @@
 Changelog
 =========
 
+With the exception of stable/solid versions a lot of versions is internal and 
+may not have direct branch or tag.
+
    solid = has complete tests and docs, is/was used in production and no 
            changes or issues were required, reported or otherwise signaled on 
            it for several months
 
-  stable = has complete tests and docs
+  stable = has complete tests and potentially incomplete but usable docs
 
   liquid = incomplete tests and docs
 
 unstable = former stable/solid branch which has had bugs reported on it
 
-  future = changes planned but not yet implemented (ie. heads up!)
+  future = changes planned but not yet implemented (ie. heads up!) or 
+           implemented in legacy (ie. if you don't have the legacy module 
+           enabled, you are technically working with the future version today)
 
 future/3.x
 ----------
 
  - bower support removed; use of bower discouraged
+
  - mjolnir\base\Controller removed
+
+ - mjolnir\foundation\Puppet::modelclass removed; nothing particularly wrong 
+   with it, design consideration because Puppet is used and may be used with 
+   various non-model related classes
 
 liquid/2.4
 ----------
@@ -41,6 +51,19 @@ liquid/2.4
  - better logging for Sphinx api calls
 
  - script loader can be turned off
+
+ - Puppet::modelclass is now deprecated and part of legacy module
+
+ - Puppet iterface/trait now provides codename and codegroup which are at the
+   library level implemented as underscore version of the singular and plural
+   names, but obviously like other Puppet interface methods may/should be 
+   customized to take advantage of class usage circumstances
+
+ - Validator has been moved to the mjolnir\base namespace
+
+ - added \mjolnir\base\Auditor which implements \mjolnir\types\Validator, unlike
+   \mjolnir\base\Validator, the Auditor class is designed to validate partial 
+   data and also validate multiple field sets with the same object
 
 *bugs*
 
