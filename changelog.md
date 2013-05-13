@@ -65,6 +65,8 @@ liquid/2.4
    \mjolnir\base\Validator, the Auditor class is designed to validate partial 
    data and also validate multiple field sets with the same object
 
+ - theme drivers now support some basic browser caching
+
 *bugs*
 
  - script loader block no longer appears if there are no javascripts to load
