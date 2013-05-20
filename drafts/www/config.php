@@ -23,7 +23,7 @@
 		'caching' => true,
 
 		// do you wish for assets to be saved to disk?
-		'static-assets' => false, 
+		'static-assets' => false,
 
 		# Optional Settings
 		# ---------------------------------------------------------------------
@@ -92,5 +92,10 @@
 		// as-is you may wish to adjust the following setting; leave as-is in
 		// every other scenario or undefined behaviour may happen
 		'error-reporting' => -1,
+
+		// when locked, migration system will only allow safe operations such
+		// as installing/reseting as long it doesn't require overwrites, or
+		// inspecting, upgrading, etc
+		'db:lock' => true,
 
 	); # config
