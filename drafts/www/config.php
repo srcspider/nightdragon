@@ -119,4 +119,9 @@
 		// The paradox system will abide by it.
 		'db:lock' => true,
 
+		// when locked, migration system will only allow safe operations such
+		// as installing/reseting as long it doesn't require overwrites, or
+		// inspecting, upgrading, etc
+		'db:lock' => true,
+
 	); # config
