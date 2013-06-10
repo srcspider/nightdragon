@@ -108,17 +108,6 @@
 		// every other scenario or undefined behaviour may happen
 		'error-reporting' => -1,
 	
-		// In a locked state:
-		// 
-		//     uninstall - never allowed
-		//         reset - not allowed if the database exists; and only to latest
-		//       upgrade - allowed
-		//        status - allowed
-		// 
-		// May be ignored by some migration systems. 
-		// The paradox system will abide by it.
-		'db:lock' => true,
-
 		// when locked, migration system will only allow safe operations such
 		// as installing/reseting as long it doesn't require overwrites, or
 		// inspecting, upgrading, etc
