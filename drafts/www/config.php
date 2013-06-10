@@ -23,10 +23,13 @@
 		'caching' => true,
 
 		// do you wish for assets to be saved to disk?
-		'static-assets' => false, 
+		'static-assets' => false,
 
 		# Optional Settings
 		# ---------------------------------------------------------------------
+	
+		// what database migration system do you want to use?
+		'db:migrations' => 'paradox',
 
 		// what is the default protocol you want to use inside the application?
 		'protocol' => 'http://', # eg. //, http://, https://
@@ -85,6 +88,18 @@
 				'passcode' => 'opensesame',
 			),
 
+		// web console access
+		'overlord' => array
+			(
+				// console is only accessible if maintenance is enabled
+				// you access the console using the overlord.php script
+
+				// enter a password; longer is always better
+				'password' => null,
+				// enter your ip address; use /overlord.php?ip to find it
+				'ip' => null, # eg. 127.0.0.1
+			),
+
 		// should index.php route to media/ thumbs/ etc?
 		'hard-routing' => true,
 
@@ -92,5 +107,16 @@
 		// as-is you may wish to adjust the following setting; leave as-is in
 		// every other scenario or undefined behaviour may happen
 		'error-reporting' => -1,
+	
+		// In a locked state:
+		// 
+		//     uninstall - never allowed
+		//         reset - not allowed if the database exists; and only to latest
+		//       upgrade - allowed
+		//        status - allowed
+		// 
+		// May be ignored by some migration systems. 
+		// The paradox system will abide by it.
+		'db:lock' => true,
 
 	); # config
