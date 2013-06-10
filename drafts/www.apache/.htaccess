@@ -14,7 +14,7 @@
 # Mjolnir configuration
 # ------------------------------------------------------------------------------
 
-# allow the error handlers to handle errors
+# Allow the errors to be displayed to the user
 php_flag display_errors On
 
 # Enable short_open_tag
