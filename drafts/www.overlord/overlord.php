@@ -115,7 +115,7 @@
 		<form action="overlord.php" method="POST">
 			<div class="form-inline">
 				Password
-				<input name="password" type="text"/>
+				<input name="password" type="password"/>
 				<button class="btn btn-primary">Access</button>
 			</div>
 		</form>
