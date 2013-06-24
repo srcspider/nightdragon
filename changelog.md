@@ -38,6 +38,24 @@ liquid/2.5
 
 *core*
 
+  - theme:packager introduced; theme packager converts current compiled copy
+    into a package based on detectable version; .gitignore files are removed
+    when the compiled version is turned into a package; enable
+	theme -> packaging in mjolnir/base (ie. preferably www.config) to have the
+	system switch to using packages on a production server. Server compiling
+	is still ideal (especially in development), packages are an alternative
+	simplified method. Packaging is particularly useful when very complicated
+	compiling is required since it bypasses complicated the server setup at the
+	expense of source tree pollution.
+
+  - the constant APPVERSION and VERSION are now MJ_APP_VERSION to ensure
+    compatibility; library version remains unchanged due to these constants (a)
+    being partially an error when used, and (b) not used for anything critical
+	in the library--the constant EXT remain global
+
+  - log:cache, log:cache:get, log:queries are now available; appropriate
+    development settings and mjolnir/profile module required
+
   - as long as you have the profiling module loaded and logging -> devlogs
     enabled in your configuration you can view the status of access checks with
     the new command order log:access; this is useful when writing or
@@ -68,6 +86,13 @@ liquid/2.5
     will ignore data damaging operations (install-overs, resets, uninstalls,
     etc). ON by default. Does not apply to deprecated Schematic system, for
 	legacy compatibility reasons.
+
+  - honeypot task now contains a prefix flag which allows you to generate based
+    on a partial namespace pattern
+
+*template*
+
+  - template theme has been tweaked slightly to account for new theme:packager
 
 liquid/2.4
 ----------
