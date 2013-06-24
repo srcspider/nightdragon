@@ -52,6 +52,10 @@
 				// identified or for outputing debug information
 				'devlogs' => true,
 
+				// log queries in a consice one-line format; mjolnir/profile
+				// module is required
+				'short.sql.log' => true,
+
 				// you may ignore certain types of log errors if you already
 				// have an alternative system in place that catches them and
 				// reports them to you; one such case are 404 errors typically
@@ -85,6 +89,27 @@
 				'passcode' => 'opensesame',
 			),
 
+		// theme related settings
+		'theme' => array
+			(
+				// uses packages instead of raw files; packages need to be
+				// generated though theme:packager and are under
+				'packaged' => false,
+
+			),
+
+		// web console access; requires www.overlord to be included
+		'overlord' => array
+			(
+				// console is only accessible if maintenance is enabled
+				// you access the console using the overlord.php script
+
+				// enter a password; longer is always better
+				'password' => null,
+				// enter your ip address; use /overlord.php?ip to find it
+				'ip' => null, # eg. 127.0.0.1
+			),
+
 		// should index.php route to media/ thumbs/ etc?
 		'hard-routing' => true,
 
@@ -94,7 +119,7 @@
 		'error-reporting' => -1,
 
 		// when locked, migration system will only allow safe operations such
-		// as installing/reseting as long it doesn't require overwrites, or
+		// as installing/reseting ONLY IF it doesn't require overwrites, or
 		// inspecting, upgrading, etc
 		'db:lock' => true,
 
