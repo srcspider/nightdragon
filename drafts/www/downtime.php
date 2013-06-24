@@ -3,9 +3,9 @@
 
 	$system_config = include 'config.php';
 
-	if ($system_config['maintanence']['retry-after'] !== null)
+	if ($system_config['maintenance']['retry-after'] !== null)
 	{
-		\header('Retry-After: '.$system_config['maintanence']['retry-after']);
+		\header('Retry-After: '.$system_config['maintenance']['retry-after']);
 	}
 ?>
 <!doctype html>

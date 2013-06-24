@@ -87,6 +87,15 @@ liquid/2.5
     etc). ON by default. Does not apply to deprecated Schematic system, for
 	legacy compatibility reasons.
 
+  - base configuration now controls which migration system is use though
+    db:migrations; this is meant to prevent accidental use of the wrong
+    migration system, potentially causing a full database wipe
+
+  - overlord script introduced; script is intended to provide access to tasks on
+    systems where ssh access is not available; script is located in www.overlord
+    draft and requires configuration in www.path/config.php before it will allow
+    access
+
   - honeypot task now contains a prefix flag which allows you to generate based
     on a partial namespace pattern
 

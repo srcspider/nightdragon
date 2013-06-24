@@ -6,7 +6,7 @@
 	#
 
 	// define a globally recognized version
-	\defined('VERSION') or \define('VERSION', '1.0');
+	\defined('MJ_APP_VERSION') or \define('MJ_APP_VERSION', '1.0.0');
 
 	// gurantee EXT is defined
 	\defined('EXT') or \define('EXT', '.php');

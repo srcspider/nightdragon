@@ -28,6 +28,9 @@
 		# Optional Settings
 		# ---------------------------------------------------------------------
 
+		// what database migration system do you want to use?
+		'db:migrations' => 'paradox',
+
 		// what is the default protocol you want to use inside the application?
 		'protocol' => 'http://', # eg. //, http://, https://
 		// what is the timezone you want to use?
