@@ -33,6 +33,33 @@ future/3.x
 
  - removed Schematic-based migration system
 
+ - removed Layer_HTML legacy support for underscore version of keys and
+   headscript support
+
+liquid/2.6
+----------
+
+ *core*
+
+   - Layer_HTML will not prioritize channel settings over configuration
+     settings; all properties are now compatible with channel settings, the
+     channel version of the keys has the "html:" prefix unless it's a
+     common key—currently assuming no backwards compatibility issues exist due
+     to previous code requiring retrieval of "layer:html" which won't break
+     under the new system
+
+   - all underscore keys have been converted to dash keys (legacy module now
+	 will convert all underscores to dashes)
+
+   - Layer_HTML "headscript" is now "startup-script" (legacy module now merge
+     "headscript" into "startup-script," unique values only)
+
+   - Layer_HTML now accepts "js-loader-handler," will default to "yepnope" if
+     not specified
+
+   - The Pdx class now has a t($model, $temptable = null) method for dealing
+     with tables that have been permanently DROPed from a project.
+
 liquid/2.5
 ----------
 
