@@ -3,7 +3,6 @@ echo
 echo " Step 1: Removing existing packages "
 echo "----------------------------------------"
 rm -rf vendor/
-rm etc/composer.lock
 rm composer.lock
 echo "completed."
 
