@@ -19,7 +19,24 @@
 			 * create basic protocols for common access requirements.
 			 */
 
-			// empty
+			'+common' => array
+				(
+					Allow::relays
+						(
+							'frontend.public'
+						)
+						->unrestricted(),
+				),
+
+			'+admin' => array
+				(
+					Allow::backend
+						(
+							'post-index',
+							'post-edit',
+							'post-new'
+						),
+				)
 		),
 
 	'blacklist' => array # disallow! (no matter what)

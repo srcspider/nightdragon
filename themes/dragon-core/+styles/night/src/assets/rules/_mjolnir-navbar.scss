@@ -1,0 +1,13 @@
+%mjonir-navbar {
+	margin-bottom: -52px;
+	//background-color: #111;
+	//background-image: url('images/subtlepatterns/pw_maze_black.png');
+	background-color: transparent;
+	border-color: transparent; 
+	//border-color: #666;
+
+	.nav.navbar-nav li > a:hover,
+	&.navbar-default .navbar-header a.navbar-brand:hover {
+		color: #000 !important;
+	}
+}

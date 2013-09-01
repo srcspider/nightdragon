@@ -1,0 +1,19 @@
+// BOOTSTRAP
+@import 'library/twbs-bootstrap';
+
+// FONTAWESOME
+//$FontAwesomePath: "library/fontawesome/font";
+//@import 'library/fontawesome/scss/font-awesome.scss';
+
+// equity
+@import 'assets/**/*';
+@import 'equity/capital/**/*';
+@import 'equity/page';
+
+#srcspider-blogtitle {
+	font-family: Lato, serif !important;
+	font-weight: 200;
+	.accent {
+		font-weight: bold;
+	}
+}

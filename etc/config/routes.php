@@ -2,6 +2,6 @@
 	(
 
 		'/'
-			=> [ 'home.public' ],
-	
+			=> [ 'frontend.public' ],
+
 	);

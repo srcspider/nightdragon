@@ -1,0 +1,15 @@
+#wrap {
+	@extend %mjolnir-page;
+
+	.navbar {
+		@extend %mjonir-navbar;
+	}
+
+	.jumbotron {
+		@extend %mjolnir-jumbotron;
+	}
+
+	.content {
+		@extend %mjolnir-content;
+	}
+}

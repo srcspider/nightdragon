@@ -1,0 +1,64 @@
+html {
+	overflow-y: scroll;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+	height: 100%;
+	font-family: Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by its height */
+	margin: 0 auto -60px;
+	/* Pad bottom by footer height */
+	padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+	height: 60px;
+}
+
+#wrap > .container {
+	padding: 60px 15px 0;
+}
+.container .credit {
+	margin: 20px 0;
+}
+
+#footer > .container {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.jumbotron {
+	@extend %mjolnir-jumbotron;
+}
+
+.btn-mjolnir-jumpstart {
+	background: rgba(255, 255, 255, 0.38);;
+	color: #ddd;
+	margin: 45px;
+	font-family: Lato, serif;
+	line-height: 1.2;
+	font-size: 200%;
+	font-weight: 300;
+	&:hover {
+		color: #666;
+		background: rgba(255, 255, 255, 0.78);;
+	}
+}
+
+pre {
+	background-color: transparent;
+	border: 0;
+}

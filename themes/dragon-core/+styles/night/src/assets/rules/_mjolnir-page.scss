@@ -1,0 +1,32 @@
+%mjolnir-page {
+	background-color: #eee;
+	background-image: url('images/subtlepatterns/pw_maze_white.png');
+	color: #999;
+
+	.hero-unit {
+		text-align: center;
+
+		h1 {
+			margin-top: 200px;
+			font-family: Lato, sans-serif;
+			font-weight: 200;
+			font-size: 800%;
+			text-shadow: white 0.1em 0.1em 0.2em;
+
+			.name {
+				font-weight: 700;
+			}
+		}
+
+		.lead {
+			font-family: Lato, serif;
+			font-weight: 300;
+			font-size: 180%;
+		}
+	}
+
+	.mjolnir-sidebar {
+		padding: 5px 0;
+		border-radius: 5px;
+	}
+}
