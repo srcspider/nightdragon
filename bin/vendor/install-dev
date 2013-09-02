@@ -2,9 +2,20 @@
 echo
 echo " Step 1: Removing existing packages "
 echo "----------------------------------------"
-rm -rf vendor/
-rm composer.lock
-echo "completed."
+
+if [ -d vendor ]; then
+	rm -rf vendor/
+else
+	echo "The vendor/ directory appears to have already been removed."
+fi
+
+if [ -f file ]; then
+	rm composer.lock
+else
+	echo "No composer.lock found. Assuming fresh composer install."
+fi
+
+echo "Cleanup complete."
 
 echo
 echo
@@ -14,14 +25,13 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
 
 echo
 echo
-echo " Step 3: Updating composer"
+echo " Step 3: Version check"
 echo "----------------------------------------"
-php bin/composer.phar self-update
 php bin/composer.phar --version
 
 echo
 echo
 echo " Step 4: Installing dependencies"
 echo "----------------------------------------"
-php bin/composer.phar install --working-dir=. --prefer-source
+php bin/composer.phar install --working-dir=. --prefer-dist
 
