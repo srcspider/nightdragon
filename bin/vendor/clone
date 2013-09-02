@@ -25,14 +25,13 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
 
 echo
 echo
-echo " Step 3: Updating composer"
+echo " Step 3: Version check"
 echo "----------------------------------------"
-php bin/composer.phar self-update
 php bin/composer.phar --version
 
 echo
 echo
 echo " Step 4: Installing dependencies"
 echo "----------------------------------------"
-php bin/composer.phar install --working-dir=. --prefer-dist --no-dev
+php bin/composer.phar install --working-dir=. --prefer-source
 
