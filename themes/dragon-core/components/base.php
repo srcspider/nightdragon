@@ -15,7 +15,7 @@
 <div id="footer">
 	<div class="container">
 		<p class="text-muted credit">
-			<i>This humble blog is built with <a href="http://ibidem.github.io">The Mjolnir Library</a>. Source for this blog can be found on <a href="https://github.com/srcspider/nightdragon">github.</a></i>
+			<i>This humble blog is built with <a href="http://ibidem.github.io">The Mjolnir Library</a>. The source can be found on <a href="https://github.com/srcspider/nightdragon">github.</a></i>
 		</p>
 	</div>
 </div>
